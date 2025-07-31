@@ -13,3 +13,8 @@ export enum ESectionId {
     NEWS = "news",
     CONTACT = "contact",
 }
+
+export type TProjectInfo = {
+    label: string;
+    value: string;
+};
