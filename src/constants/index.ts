@@ -20,3 +20,5 @@ export const SECTION_TITLES: Record<ESectionId, string> = {
 };
 
 export const VN_PHONE_REGEX = /^(?:\+?84|0)(3|5|7|8|9)\d{8}$/;
+
+export const SECONDARY_IN_VIEWS: ESectionId[] = [ESectionId.VIDEO];

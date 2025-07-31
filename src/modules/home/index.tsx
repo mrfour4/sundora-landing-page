@@ -1,9 +1,6 @@
 "use client";
 
 import { albra, sparkling } from "@/app/fonts";
-import { CallButton } from "@/components/call-button";
-import { Logo } from "@/components/logo";
-import { Sidebar } from "@/components/sidebar";
 import { HERO_IMG_URL } from "@/constants";
 import { useSectionObserver } from "@/hooks/use-section-observer";
 import { cn } from "@/lib/utils";
@@ -19,14 +16,6 @@ export const Home = () => {
             className="from-secondary to-secondary-foreground flex h-screen flex-col bg-gradient-to-r bg-cover bg-no-repeat pt-16"
             style={{ backgroundImage: `url(${HERO_IMG_URL})` }}
         >
-            <div className="flex items-center justify-between px-14">
-                <Logo />
-                <div className="flex items-center gap-6">
-                    <CallButton />
-                    <Sidebar />
-                </div>
-            </div>
-
             <div className="relative mt-9 flex flex-1 items-center justify-center px-14 text-white">
                 <h2 className="absolute top-52 left-32 -rotate-90 text-4xl uppercase">
                     sundora tower đà nẵng
