@@ -1,0 +1,15 @@
+export enum ESectionId {
+    HOME = "home",
+    VIDEO = "video",
+    OVERVIEW = "overview",
+    INSPIRATION = "inspiration",
+    LOCATION = "location",
+    PRIVILEGE = "privilege",
+    UTILITIES = "utilities",
+    GROUND = "ground",
+    APARTMENT = "apartment",
+    LIBRARY = "library",
+    PARTNERS = "partners",
+    NEWS = "news",
+    CONTACT = "contact",
+}
