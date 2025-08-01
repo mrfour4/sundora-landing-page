@@ -115,7 +115,7 @@ export const RegisterForm = () => {
                     <Button
                         type="submit"
                         variant="secondary"
-                        className="px-10 py-2"
+                        className="text-secondary-foreground-foreground px-10 py-2"
                     >
                         gửi thông tin
                     </Button>

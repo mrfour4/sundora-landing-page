@@ -3,6 +3,7 @@ import { ESectionId } from "../types";
 export const HERO_IMG_URL = "/images/bg-home.png";
 export const HOME_BOTTOM_IMG = "/images/bg-bottom-home.png";
 export const OVERVIEW_IMG = "/images/bg-overview.png";
+export const INSPIRATION_IMG = "/images/bg-inspiration.png";
 
 export const SECTION_TITLES: Record<ESectionId, string> = {
     [ESectionId.HOME]: "Trang chủ",
@@ -50,4 +51,13 @@ export const PROJECT_INFO = [
     { label: "Loại hình căn hộ", value: "1PN, 2PN, 3PN, Duplex, Penthouse" },
     { label: "Tổng diện tích Văn phòng cho thuê cao cấp", value: "4.195,15m²" },
     { label: "Dự kiến bàn giao", value: "Quý I/2027" },
+];
+
+export const RICH_LOGO_IN_VIEWS: ESectionId[] = [
+    ESectionId.INSPIRATION,
+    ESectionId.PRIVILEGE,
+    ESectionId.UTILITIES,
+    ESectionId.GROUND,
+    ESectionId.APARTMENT,
+    ESectionId.NEWS,
 ];

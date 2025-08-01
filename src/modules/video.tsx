@@ -40,7 +40,7 @@ export const Video = () => {
     };
 
     return (
-        <div
+        <section
             id={ESectionId.VIDEO}
             className="bg-secondary relative aspect-video w-full"
         >
@@ -50,6 +50,7 @@ export const Video = () => {
                 preload="none"
                 playsInline
                 poster="/images/thumbnail.png"
+                loop
             >
                 <source src="/video/sundora-final.webm" type="video/webm" />
                 <source src="/video/sundora-final.mp4" type="video/mp4" />
@@ -65,6 +66,6 @@ export const Video = () => {
                     </button>
                 </div>
             )}
-        </div>
+        </section>
     );
 };

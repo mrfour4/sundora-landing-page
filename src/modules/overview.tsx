@@ -11,7 +11,7 @@ import { ReactSVG } from "react-svg";
 export const Overview = () => {
     useSectionObserver(ESectionId.OVERVIEW);
     return (
-        <div
+        <section
             id={ESectionId.OVERVIEW}
             className="h-screen bg-cover bg-no-repeat px-40 pt-44"
             style={{ backgroundImage: `url(${OVERVIEW_IMG})` }}
@@ -57,6 +57,6 @@ export const Overview = () => {
             >
                 khám phá vị trí dự án
             </Button>
-        </div>
+        </section>
     );
 };
