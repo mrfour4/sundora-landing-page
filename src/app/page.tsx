@@ -3,6 +3,7 @@ import { NavigationDots } from "@/components/navigation-dots";
 import { Contact } from "@/modules/contact";
 import { Home } from "@/modules/home";
 import { Inspiration } from "@/modules/inspiration";
+import { Library } from "@/modules/library";
 import { Location } from "@/modules/location";
 import { News } from "@/modules/news";
 import { Overview } from "@/modules/overview";
@@ -23,6 +24,7 @@ export default function AppPage() {
             <Location />
             <Privilege />
             <Utilities />
+            <Library />
             <Partner />
             <News />
             <Contact />
