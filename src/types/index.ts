@@ -32,15 +32,21 @@ export type TTravelGroup = {
     locations: TLocationItem[];
 };
 
+export type TNews = {
+    imageUrl: string;
+    title: string;
+    href: string;
+};
+
 export type TContactLocation = {
     office: string;
     address: string;
 };
 
-type CustomIcon = typeof Icons.mail;
+type TCustomIcon = typeof Icons.mail;
 
 export type TContact = {
-    icon: LucideIcon | CustomIcon;
+    icon: LucideIcon | TCustomIcon;
     href: string;
     label: string;
     content: string;

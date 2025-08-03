@@ -1,6 +1,12 @@
 import { Icons } from "@/components/icons";
 import { Globe, Phone } from "lucide-react";
-import { ESectionId, TContact, TContactLocation, TTravelGroup } from "../types";
+import {
+    ESectionId,
+    TContact,
+    TContactLocation,
+    TNews,
+    TTravelGroup,
+} from "../types";
 
 export const HERO_IMG_URL = "/images/bg-home.png";
 export const HOME_BOTTOM_IMG = "/images/bg-bottom-home.png";
@@ -129,6 +135,29 @@ export const UTILITIES_DATA: string[] = [
     "Căn hộ lưu trú cao cấp",
     "Chuỗi tiện ích sức khoẻ",
     "Khu thư giãn và làm đẹp",
+];
+
+export const NEWS: TNews[] = [
+    {
+        imageUrl: "/images/news-1.png",
+        title: "Sống trọn từng khoảnh khắc tại Sundora Tower",
+        href: "#!",
+    },
+    {
+        imageUrl: "/images/news-2.png",
+        title: "Sống trọn từng khoảnh khắc tại Sundora Tower",
+        href: "#!",
+    },
+    {
+        imageUrl: "/images/news-3.png",
+        title: "Sống trọn từng khoảnh khắc tại Sundora Tower",
+        href: "#!",
+    },
+    {
+        imageUrl: "/images/news-4.png",
+        title: "Sống trọn từng khoảnh khắc tại Sundora Tower",
+        href: "#!",
+    },
 ];
 
 export const CONTACT_LOCATIONS: TContactLocation[] = [

@@ -4,6 +4,7 @@ import { Contact } from "@/modules/contact";
 import { Home } from "@/modules/home";
 import { Inspiration } from "@/modules/inspiration";
 import { Location } from "@/modules/location";
+import { News } from "@/modules/news";
 import { Overview } from "@/modules/overview";
 import { Privilege } from "@/modules/privilege";
 import { Utilities } from "@/modules/utilities";
@@ -21,6 +22,7 @@ export default function AppPage() {
             <Location />
             <Privilege />
             <Utilities />
+            <News />
             <Contact />
         </main>
     );
