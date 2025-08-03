@@ -32,6 +32,12 @@ export type TTravelGroup = {
     locations: TLocationItem[];
 };
 
+export type TPartner = {
+    imageUrl: string;
+    href: string;
+    title: string;
+};
+
 export type TNews = {
     imageUrl: string;
     title: string;

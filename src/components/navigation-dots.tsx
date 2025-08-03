@@ -35,14 +35,16 @@ export const NavigationDots = () => {
                         >
                             {title}
                         </p>
-                        <button
-                            className={cn(
-                                "bg-primary text-secondary flex size-6 translate-x-1 items-center justify-center rounded-full",
-                                isSecondary && "bg-secondary text-primary",
-                            )}
-                        >
-                            <Icons.dot />
-                        </button>
+                        <Link href={`#${id}`}>
+                            <button
+                                className={cn(
+                                    "bg-primary text-secondary flex size-6 translate-x-1 cursor-pointer items-center justify-center rounded-full",
+                                    isSecondary && "bg-secondary text-primary",
+                                )}
+                            >
+                                <Icons.dot />
+                            </button>
+                        </Link>
                     </div>
                 ) : (
                     <Tooltip delayDuration={0} key={id}>

@@ -5,6 +5,7 @@ import {
     TContact,
     TContactLocation,
     TNews,
+    TPartner,
     TTravelGroup,
 } from "../types";
 
@@ -13,6 +14,7 @@ export const HOME_BOTTOM_IMG = "/images/bg-bottom-home.png";
 export const OVERVIEW_IMG = "/images/bg-overview.png";
 export const INSPIRATION_IMG = "/images/bg-inspiration.png";
 export const LOCATION_IMG = "/images/bg-location.png";
+export const PARTNER_IMG = "/images/bg-partner.png";
 export const CONTACT_IMG = "/images/bg-contact.png";
 
 export const SECTION_TITLES: Record<ESectionId, string> = {
@@ -135,6 +137,29 @@ export const UTILITIES_DATA: string[] = [
     "Căn hộ lưu trú cao cấp",
     "Chuỗi tiện ích sức khoẻ",
     "Khu thư giãn và làm đẹp",
+];
+
+export const PARTNERS: TPartner[] = [
+    {
+        imageUrl: "/images/partner-logo.png",
+        title: "Đơn vị \nquản lý vận hành",
+        href: "#!",
+    },
+    {
+        imageUrl: "/images/partner-logo.png",
+        title: "Đơn vị \nthiết kế nội thất",
+        href: "#!",
+    },
+    {
+        imageUrl: "/images/partner-logo.png",
+        title: "Đơn vị \nthiết kế cảnh quan",
+        href: "#!",
+    },
+    {
+        imageUrl: "/images/partner-logo.png",
+        title: "Ngân hàng \nbảo lãnh dự án",
+        href: "#!",
+    },
 ];
 
 export const NEWS: TNews[] = [
