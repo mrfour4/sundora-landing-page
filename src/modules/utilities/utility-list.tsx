@@ -48,14 +48,14 @@ export const UtilityList = () => {
             <div className="relative ml-auto flex h-40 items-center gap-x-1.5 overflow-hidden">
                 <Icons.arrowLeft className="absolute top-1/2 right-1/6 rotate-180 cursor-pointer text-white" />
                 <Image
-                    src="/images/utilities-3.png"
+                    src="/images_avif/utilities-3.avif"
                     alt=""
                     width={232}
                     height={162}
                     className="shrink-0 object-cover"
                 />
                 <Image
-                    src="/images/utilities-4.png"
+                    src="/images_avif/utilities-4.avif"
                     alt=""
                     width={232}
                     height={162}

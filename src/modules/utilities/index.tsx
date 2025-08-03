@@ -16,14 +16,14 @@ export const Utilities = () => {
         >
             <div className="relative pt-14 pr-14">
                 <Image
-                    src="/images/utilities-1.png"
+                    src="/images_avif/utilities-1.avif"
                     alt="Sundora"
                     width={799}
                     height={696}
                     className="shrink-0 object-cover"
                 />
                 <Image
-                    src="/images/utilities-2.png"
+                    src="/images_avif/utilities-2.avif"
                     alt="Sundora"
                     width={639}
                     height={283}

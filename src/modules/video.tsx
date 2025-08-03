@@ -49,7 +49,7 @@ export const Video = () => {
                 controls
                 preload="none"
                 playsInline
-                poster="/images/thumbnail.png"
+                poster="/images_avif/thumbnail.avif"
                 loop
             >
                 <source src="/video/sundora-final.webm" type="video/webm" />

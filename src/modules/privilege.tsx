@@ -15,7 +15,7 @@ export const Privilege = () => {
             className="relative flex h-screen items-center"
         >
             <Image
-                src="/images/bg-privilege.png"
+                src="/images_avif/bg-privilege.avif"
                 alt="Sundora"
                 width={1119}
                 height={1080}
@@ -57,7 +57,7 @@ export const Privilege = () => {
 
             <div className="flex flex-col">
                 <Image
-                    src="/images/privilege-1.png"
+                    src="/images_avif/privilege-1.avif"
                     alt="Bến du thuyền"
                     width={743}
                     height={528}
@@ -81,7 +81,7 @@ export const Privilege = () => {
             </div>
 
             <Image
-                src="/images/privilege-2.png"
+                src="/images_avif/privilege-2.avif"
                 alt="Bến du thuyền"
                 width={455}
                 height={398}

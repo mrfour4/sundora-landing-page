@@ -19,14 +19,14 @@ export const Inspiration = () => {
             <div className="mt-56 flex items-center gap-x-20">
                 <div className="relative">
                     <Image
-                        src="/images/inspiration-view-1.png"
+                        src="/images_avif/inspiration-view-1.avif"
                         alt="Trái tim thành phố Đà Nẵng"
                         width={799}
                         height={723}
                         className="relative z-10 ml-24 object-cover"
                     />
                     <Image
-                        src="/images/inspiration-view-2.png"
+                        src="/images_avif/inspiration-view-2.avif"
                         alt="Trái tim thành phố Đà Nẵng"
                         width={639}
                         height={403}

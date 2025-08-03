@@ -18,7 +18,7 @@ export const Library = () => {
         >
             <div>
                 <Image
-                    src="/images/library-1.png"
+                    src="/images_avif/library-1.avif"
                     alt="Hình ảnh dự án"
                     width={722}
                     height={696}
@@ -53,7 +53,7 @@ export const Library = () => {
                     <div>
                         <Link href="#!" className="relative">
                             <Image
-                                src="/images/library-2.png"
+                                src="/images_avif/library-2.avif"
                                 alt="Video dự án"
                                 width={420}
                                 height={305}
@@ -67,7 +67,7 @@ export const Library = () => {
                     <div className="translate-y-24">
                         <Link href="#!">
                             <Image
-                                src="/images/library-3.png"
+                                src="/images_avif/library-3.avif"
                                 alt="Tài liệu & CSBH"
                                 width={420}
                                 height={305}

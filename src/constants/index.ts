@@ -9,13 +9,13 @@ import {
     TTravelGroup,
 } from "../types";
 
-export const HERO_IMG_URL = "/images/bg-home.png";
-export const HOME_BOTTOM_IMG = "/images/bg-bottom-home.png";
-export const OVERVIEW_IMG = "/images/bg-overview.png";
-export const INSPIRATION_IMG = "/images/bg-inspiration.png";
-export const LOCATION_IMG = "/images/bg-location.png";
-export const PARTNER_IMG = "/images/bg-partner.png";
-export const CONTACT_IMG = "/images/bg-contact.png";
+export const HERO_IMG_URL = "/images_avif/bg-home.avif";
+export const HOME_BOTTOM_IMG = "/images_avif/bg-bottom-home.avif";
+export const OVERVIEW_IMG = "/images_avif/bg-overview.avif";
+export const INSPIRATION_IMG = "/images_avif/bg-inspiration.avif";
+export const LOCATION_IMG = "/images_avif/bg-location.avif";
+export const PARTNER_IMG = "/images_avif/bg-partner.avif";
+export const CONTACT_IMG = "/images_avif/bg-contact.avif";
 
 export const SECTION_TITLES: Record<ESectionId, string> = {
     [ESectionId.HOME]: "Trang chủ",
@@ -141,22 +141,22 @@ export const UTILITIES_DATA: string[] = [
 
 export const PARTNERS: TPartner[] = [
     {
-        imageUrl: "/images/partner-logo.png",
+        imageUrl: "/images_avif/partner-logo.avif",
         title: "Đơn vị \nquản lý vận hành",
         href: "#!",
     },
     {
-        imageUrl: "/images/partner-logo.png",
+        imageUrl: "/images_avif/partner-logo.avif",
         title: "Đơn vị \nthiết kế nội thất",
         href: "#!",
     },
     {
-        imageUrl: "/images/partner-logo.png",
+        imageUrl: "/images_avif/partner-logo.avif",
         title: "Đơn vị \nthiết kế cảnh quan",
         href: "#!",
     },
     {
-        imageUrl: "/images/partner-logo.png",
+        imageUrl: "/images_avif/partner-logo.avif",
         title: "Ngân hàng \nbảo lãnh dự án",
         href: "#!",
     },
@@ -164,22 +164,22 @@ export const PARTNERS: TPartner[] = [
 
 export const NEWS: TNews[] = [
     {
-        imageUrl: "/images/news-1.png",
+        imageUrl: "/images_avif/news-1.avif",
         title: "Sống trọn từng khoảnh khắc tại Sundora Tower",
         href: "#!",
     },
     {
-        imageUrl: "/images/news-2.png",
+        imageUrl: "/images_avif/news-2.avif",
         title: "Sống trọn từng khoảnh khắc tại Sundora Tower",
         href: "#!",
     },
     {
-        imageUrl: "/images/news-3.png",
+        imageUrl: "/images_avif/news-3.avif",
         title: "Sống trọn từng khoảnh khắc tại Sundora Tower",
         href: "#!",
     },
     {
-        imageUrl: "/images/news-4.png",
+        imageUrl: "/images_avif/news-4.avif",
         title: "Sống trọn từng khoảnh khắc tại Sundora Tower",
         href: "#!",
     },
