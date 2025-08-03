@@ -1,0 +1,73 @@
+"use client";
+
+import { albra, sparkling } from "@/app/fonts";
+import { useSectionObserver } from "@/hooks/use-section-observer";
+import { cn } from "@/lib/utils";
+import { ESectionId } from "@/types";
+import Image from "next/image";
+
+export const Privilege = () => {
+    useSectionObserver(ESectionId.PRIVILEGE);
+    return (
+        <section
+            id={ESectionId.PRIVILEGE}
+            className="relative flex h-screen items-center"
+        >
+            <Image
+                src="/images/bg-privilege.png"
+                alt="Sundora"
+                width={1119}
+                height={1080}
+                className="absolute top-0 left-0 -z-10 object-cover"
+            />
+            <div className="pr-20 pl-36">
+                <h1
+                    className={cn(
+                        "from-secondary to-secondary-foreground -translate-x-12 bg-gradient-to-b bg-clip-text text-4xl leading-24 text-transparent",
+                        sparkling.className,
+                    )}
+                >
+                    Bến du thuyền
+                </h1>
+                <h2
+                    className={cn(
+                        "text-7xl font-light text-white uppercase",
+                        albra.className,
+                    )}
+                >
+                    đặc quyền
+                </h2>
+                <h2 className="text-secondary mt-3 text-3xl font-semibold uppercase">
+                    của nhịp sống bên sông
+                </h2>
+                <div className="w-96 space-y-5 pt-10 text-justify text-lg text-white">
+                    <p>
+                        Giữa nhịp sống rộn ràng của thành phố trẻ, Sundora chọn
+                        cách hiện diện khác biệt nhẹ nhàng nhưng đủ cuốn hút để
+                        tạo dấu ấn riêng.
+                    </p>
+                    <p>
+                        Như một nốt ngân tuyệt đẹp nơi ánh sáng, thiên nhiên và
+                        kiến trúc hòa quyện để tạo nên chất sống thanh lịch cho
+                        những ai quý trọng sự bình yên.
+                    </p>
+                </div>
+            </div>
+
+            <Image
+                src="/images/privilege-1.png"
+                alt="Bến du thuyền"
+                width={743}
+                height={528}
+                className="shrink-0 object-cover"
+            />
+            <Image
+                src="/images/privilege-2.png"
+                alt="Bến du thuyền"
+                width={455}
+                height={398}
+                className="ml-auto shrink-0 object-cover"
+            />
+        </section>
+    );
+};

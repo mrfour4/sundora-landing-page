@@ -5,7 +5,7 @@ import {
     TooltipContent,
     TooltipTrigger,
 } from "@/components/ui/tooltip";
-import { SECTION_TITLES } from "@/constants";
+import { EXCEPTIONS, SECTION_TITLES } from "@/constants";
 import { useIsSecondary } from "@/hooks/use-is-secondary";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
@@ -14,7 +14,13 @@ import { useNavigationContext } from "./navigation-context";
 
 export const NavigationDots = () => {
     const { sectionId } = useNavigationContext();
-    const isSecondary = useIsSecondary();
+
+    let isSecondary = useIsSecondary();
+
+    const isException = !!sectionId && EXCEPTIONS.includes(sectionId);
+    if (isException) {
+        isSecondary = !isSecondary;
+    }
 
     return (
         <nav className="fixed top-1/2 right-16 z-50 flex -translate-y-1/2 flex-col items-end gap-5">

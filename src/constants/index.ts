@@ -33,6 +33,12 @@ export const SECONDARY_IN_VIEWS: ESectionId[] = [
     ESectionId.CONTACT,
 ];
 
+export const EXCEPTIONS: ESectionId[] = [
+    ESectionId.PRIVILEGE,
+    ESectionId.APARTMENT,
+    ESectionId.PARTNERS,
+];
+
 export const PROJECT_INFO = [
     { label: "Tên Dự Án", value: "Sundora Tower" },
     { label: "Diện tích xây dựng dự án", value: "1.270,4m²" },
