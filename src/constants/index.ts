@@ -1,9 +1,10 @@
-import { ESectionId } from "../types";
+import { ESectionId, TravelGroup } from "../types";
 
 export const HERO_IMG_URL = "/images/bg-home.png";
 export const HOME_BOTTOM_IMG = "/images/bg-bottom-home.png";
 export const OVERVIEW_IMG = "/images/bg-overview.png";
 export const INSPIRATION_IMG = "/images/bg-inspiration.png";
+export const LOCATION_IMG = "/images/bg-location.png";
 
 export const SECTION_TITLES: Record<ESectionId, string> = {
     [ESectionId.HOME]: "Trang chủ",
@@ -60,4 +61,55 @@ export const RICH_LOGO_IN_VIEWS: ESectionId[] = [
     ESectionId.GROUND,
     ESectionId.APARTMENT,
     ESectionId.NEWS,
+];
+
+export const TRAVEL_NEARBY_DATA: TravelGroup[] = [
+    {
+        duration: "03 PHÚT",
+        locations: [
+            { name: "Công viên Như Nguyệt", distance: "0.58 km" },
+            { name: "UBND Phường Thuận Phước", distance: "0.6 km" },
+            { name: "Trường Tiểu học Võ Thị Sáu", distance: "0.65 km" },
+        ],
+    },
+    {
+        duration: "05 PHÚT",
+        locations: [
+            { name: "RMIT Vietnam", distance: "0.75 km" },
+            { name: "Bệnh viện Đa khoa Hải Châu", distance: "1.5 km" },
+            { name: "Trường THCS Lê Thánh Tôn", distance: "0.95 km" },
+            { name: "Quận ủy Hải Châu", distance: "1.5 km" },
+            { name: "Công viên Đầm Rong II", distance: "1 km" },
+            { name: "Trường Đại học Sư phạm Kỹ thuật", distance: "1.6 km" },
+            { name: "Trường THCS Lê Hồng Phong", distance: "1.1 km" },
+            { name: "BV Đà Nẵng", distance: "1.7 km" },
+            { name: "Trường Tiểu học Trần Thị Lý", distance: "1.3 km" },
+            { name: "BV Giao thông Vận tải 5", distance: "1.8 km" },
+            { name: "Trường tư thục Sakura Olympia", distance: "1.3 km" },
+            { name: "Đại học Mở", distance: "1.9 km" },
+        ],
+    },
+    {
+        duration: "10 PHÚT",
+        locations: [
+            { name: "Nhà hát Trưng Vương", distance: "2 km" },
+            { name: "Tượng Cá Chép Hóa Rồng", distance: "4 km" },
+            { name: "Bệnh viện Y học Cổ truyền", distance: "2.3 km" },
+            { name: "DANA Show", distance: "4.2 km" },
+            { name: "Nhà hát Tuồng", distance: "2.5 km" },
+            { name: "Bảo tàng Hồ Chí Minh", distance: "4.3 km" },
+            { name: "Bảo tàng Điêu khắc Chăm", distance: "2.7 km" },
+            { name: "Bãi biển Mỹ Khê", distance: "5 km" },
+            { name: "TTTM Vincom Plaza Đà Nẵng", distance: "3.9 km" },
+        ],
+    },
+    {
+        duration: "20 PHÚT",
+        locations: [
+            { name: "Vòng quay Mặt Trời", distance: "6 km" },
+            { name: "Furama Resort Đà Nẵng", distance: "7 km" },
+            { name: "Chùa Nam Sơn", distance: "11 km" },
+            { name: "Bán đảo Sơn Trà", distance: "15 km" },
+        ],
+    },
 ];

@@ -18,3 +18,13 @@ export type TProjectInfo = {
     label: string;
     value: string;
 };
+
+export type LocationItem = {
+    name: string;
+    distance: string;
+};
+
+export type TravelGroup = {
+    duration: string;
+    locations: LocationItem[];
+};
