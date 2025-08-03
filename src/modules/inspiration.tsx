@@ -34,10 +34,10 @@ export const Inspiration = () => {
                     />
 
                     <div className="absolute right-10 -bottom-16 flex items-baseline gap-x-2.5">
-                        <Icons.arrowLeft className="text-secondary" />
+                        <Icons.arrowLeft className="text-secondary-foreground" />
                         <div
                             className={cn(
-                                "text-secondary inline-flex items-baseline gap-x-1",
+                                "text-secondary-foreground inline-flex items-baseline gap-x-1",
                                 albra.className,
                             )}
                         >
@@ -47,7 +47,7 @@ export const Inspiration = () => {
                             <span>/</span>
                             <span>02</span>
                         </div>
-                        <Icons.arrowLeft className="text-secondary rotate-180" />
+                        <Icons.arrowLeft className="text-secondary-foreground rotate-180" />
                     </div>
                 </div>
                 <div className="pl-20">

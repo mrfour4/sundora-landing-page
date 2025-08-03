@@ -1,6 +1,7 @@
 "use client";
 
 import { albra, sparkling } from "@/app/fonts";
+import { Icons } from "@/components/icons";
 import { useSectionObserver } from "@/hooks/use-section-observer";
 import { cn } from "@/lib/utils";
 import { ESectionId } from "@/types";
@@ -54,13 +55,31 @@ export const Privilege = () => {
                 </div>
             </div>
 
-            <Image
-                src="/images/privilege-1.png"
-                alt="Bến du thuyền"
-                width={743}
-                height={528}
-                className="shrink-0 object-cover"
-            />
+            <div className="flex flex-col">
+                <Image
+                    src="/images/privilege-1.png"
+                    alt="Bến du thuyền"
+                    width={743}
+                    height={528}
+                    className="shrink-0 object-cover"
+                />
+
+                <div className="flex translate-y-12 items-baseline gap-x-2.5">
+                    <Icons.arrowLeft className="text-secondary-foreground" />
+                    <div
+                        className={cn(
+                            "text-secondary inline-flex items-baseline gap-x-1",
+                            albra.className,
+                        )}
+                    >
+                        <span className="text-3xl text-white">01</span>
+                        <span>/</span>
+                        <span>02</span>
+                    </div>
+                    <Icons.arrowLeft className="text-secondary rotate-180" />
+                </div>
+            </div>
+
             <Image
                 src="/images/privilege-2.png"
                 alt="Bến du thuyền"
