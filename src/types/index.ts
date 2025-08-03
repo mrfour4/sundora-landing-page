@@ -1,3 +1,6 @@
+import { Icons } from "@/components/icons";
+import { LucideIcon } from "lucide-react";
+
 export enum ESectionId {
     HOME = "home",
     VIDEO = "video",
@@ -19,12 +22,26 @@ export type TProjectInfo = {
     value: string;
 };
 
-export type LocationItem = {
+export type TLocationItem = {
     name: string;
     distance: string;
 };
 
-export type TravelGroup = {
+export type TTravelGroup = {
     duration: string;
-    locations: LocationItem[];
+    locations: TLocationItem[];
+};
+
+export type TContactLocation = {
+    office: string;
+    address: string;
+};
+
+type CustomIcon = typeof Icons.mail;
+
+export type TContact = {
+    icon: LucideIcon | CustomIcon;
+    href: string;
+    label: string;
+    content: string;
 };

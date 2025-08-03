@@ -1,10 +1,13 @@
-import { ESectionId, TravelGroup } from "../types";
+import { Icons } from "@/components/icons";
+import { Globe, Phone } from "lucide-react";
+import { ESectionId, TContact, TContactLocation, TTravelGroup } from "../types";
 
 export const HERO_IMG_URL = "/images/bg-home.png";
 export const HOME_BOTTOM_IMG = "/images/bg-bottom-home.png";
 export const OVERVIEW_IMG = "/images/bg-overview.png";
 export const INSPIRATION_IMG = "/images/bg-inspiration.png";
 export const LOCATION_IMG = "/images/bg-location.png";
+export const CONTACT_IMG = "/images/bg-contact.png";
 
 export const SECTION_TITLES: Record<ESectionId, string> = {
     [ESectionId.HOME]: "Trang chủ",
@@ -69,7 +72,7 @@ export const RICH_LOGO_IN_VIEWS: ESectionId[] = [
     ESectionId.NEWS,
 ];
 
-export const TRAVEL_NEARBY_DATA: TravelGroup[] = [
+export const TRAVEL_NEARBY_DATA: TTravelGroup[] = [
     {
         duration: "03 PHÚT",
         locations: [
@@ -126,4 +129,42 @@ export const UTILITIES_DATA: string[] = [
     "Căn hộ lưu trú cao cấp",
     "Chuỗi tiện ích sức khoẻ",
     "Khu thư giãn và làm đẹp",
+];
+
+export const CONTACT_LOCATIONS: TContactLocation[] = [
+    {
+        office: "Văn phòng Đà Nẵng",
+        address: "K77A/7 Lê Độ, Phường Thanh Khê, Thành phố Đà Nẵng, Việt Nam",
+    },
+    {
+        office: "Văn phòng Hà Nội",
+        address:
+            "Tòa nhà Bình Minh, 81 Đàm Quang Trung, Phường Long Biên, Thành phố Hà Nội",
+    },
+    {
+        office: "Văn phòng Hồ Chí Minh",
+        address:
+            "Biệt thự số 10, Đường 56, Phường An Khánh, Thành phố Hồ Chí Minh",
+    },
+];
+
+export const CONTACTS: TContact[] = [
+    {
+        icon: Phone,
+        href: "tel:0984868463",
+        label: "HOTLINE",
+        content: "0984 868 463",
+    },
+    {
+        icon: Icons.mail,
+        href: "mailto:info@sundoratower.com",
+        label: "Email",
+        content: "info@sundoratower.com",
+    },
+    {
+        icon: Globe,
+        href: "https://sundoratower.vn",
+        label: "Website",
+        content: "https://sundoratower.vn",
+    },
 ];

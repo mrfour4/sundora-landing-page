@@ -155,4 +155,163 @@ export const Icons = {
             />
         </svg>
     ),
+    mail: (props: IconProps) => (
+        <svg
+            width={35}
+            height={23}
+            viewBox="0 0 35 23"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            {...props}
+        >
+            <g clipPath="url(#clip0_1_1064)">
+                <path
+                    d="M33.2194 0.258947C29.6468 3.59118 26.1373 6.99204 22.5251 10.2878C22.4194 10.3841 22.2856 10.4435 22.1799 10.5399C20.5832 11.9919 18.8646 14.484 16.3182 13.5304C15.4685 13.2121 13.2688 11.0125 12.4748 10.2878C8.86218 6.99253 5.35261 3.59167 1.78003 0.258947L2.97332 0H32.0272L33.2199 0.258947H33.2194Z"
+                    fill="url(#paint0_linear_1_1064)"
+                />
+                <path
+                    d="M33.2194 22.7414L32.0267 23.0003H2.97332L1.78055 22.7414L12.3494 12.9102C13.161 13.5054 13.8004 14.3305 14.6766 14.8737C16.2198 15.8296 18.2591 15.9046 19.8933 15.1107C20.9856 14.5802 21.7192 13.612 22.6506 12.9102L33.2194 22.7414Z"
+                    fill="url(#paint1_linear_1_1064)"
+                />
+                <path
+                    d="M0.277497 21.3367L0 20.2221L0.000520632 2.71542L0.277497 1.66406L10.8656 11.4773L0.277497 21.3367Z"
+                    fill="url(#paint2_linear_1_1064)"
+                />
+                <path
+                    d="M34.7225 21.3367L24.1344 11.5235L34.7225 1.66406L35 2.7787L34.9995 20.2853L34.7225 21.3367Z"
+                    fill="url(#paint3_linear_1_1064)"
+                />
+            </g>
+            <defs>
+                <linearGradient
+                    id="paint0_linear_1_1064"
+                    x1="17.5"
+                    y1={0}
+                    x2="17.5"
+                    y2="13.7422"
+                    gradientUnits="userSpaceOnUse"
+                >
+                    <stop stopColor="#FFD69A" />
+                    <stop offset={1} stopColor="#C39249" />
+                </linearGradient>
+                <linearGradient
+                    id="paint1_linear_1_1064"
+                    x1="17.5"
+                    y1="12.9102"
+                    x2="17.5"
+                    y2="23.0003"
+                    gradientUnits="userSpaceOnUse"
+                >
+                    <stop stopColor="#FFD69A" />
+                    <stop offset={1} stopColor="#C39249" />
+                </linearGradient>
+                <linearGradient
+                    id="paint2_linear_1_1064"
+                    x1="5.43279"
+                    y1="1.66406"
+                    x2="5.43279"
+                    y2="21.3367"
+                    gradientUnits="userSpaceOnUse"
+                >
+                    <stop stopColor="#FFD69A" />
+                    <stop offset={1} stopColor="#C39249" />
+                </linearGradient>
+                <linearGradient
+                    id="paint3_linear_1_1064"
+                    x1="29.5672"
+                    y1="1.66406"
+                    x2="29.5672"
+                    y2="21.3367"
+                    gradientUnits="userSpaceOnUse"
+                >
+                    <stop stopColor="#FFD69A" />
+                    <stop offset={1} stopColor="#C39249" />
+                </linearGradient>
+                <clipPath id="clip0_1_1064">
+                    <rect width={35} height={23} fill="white" />
+                </clipPath>
+            </defs>
+        </svg>
+    ),
+    facebook: (props: IconProps) => (
+        <svg
+            width={54}
+            height={54}
+            viewBox="0 0 54 54"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            {...props}
+        >
+            <g clipPath="url(#clip0_1_1001)">
+                <path
+                    d="M32.2118 54.0002V34.589H37.5535L38.6432 26.9565H30.6853V21.1218C30.6853 20.757 31.3011 19.4813 31.5566 19.1579C32.1637 18.3956 33.5963 17.7948 34.555 17.7948H39.8421V11.1431C39.0996 11.0448 38.3506 10.8963 37.6059 10.8177C33.9195 10.4223 29.9537 10.2956 26.8329 12.5805C22.1704 15.9905 23.1422 21.8711 23.0527 26.9565H16.9467V34.589H23.0527V54.0002C10.8647 52.2526 1.5571 42.4902 0.174721 30.2681C-1.46972 15.724 8.68517 2.22834 23.234 0.255766C41.0192 -2.15588 55.9939 12.8339 53.7838 30.5936C52.349 42.1167 43.6027 51.7065 32.2139 54.0002H32.2118Z"
+                    fill="url(#paint0_linear_1_1001)"
+                />
+            </g>
+            <defs>
+                <linearGradient
+                    id="paint0_linear_1_1001"
+                    x1="27.0006"
+                    y1={0}
+                    x2="27.0006"
+                    y2="54.0002"
+                    gradientUnits="userSpaceOnUse"
+                >
+                    <stop stopColor="#FFD69A" />
+                    <stop offset={1} stopColor="#C39249" />
+                </linearGradient>
+                <clipPath id="clip0_1_1001">
+                    <rect width={54} height={54} fill="white" />
+                </clipPath>
+            </defs>
+        </svg>
+    ),
+    youtube: (props: IconProps) => (
+        <svg
+            width={57}
+            height={57}
+            viewBox="0 0 57 57"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            {...props}
+        >
+            <g clipPath="url(#clip0_1_1070)">
+                <path
+                    d="M57 28.5C57 44.2404 44.2402 57 28.5011 57C12.7621 57 0 44.2404 0 28.5C0 12.7596 12.7598 0 28.4989 0C44.2379 0 56.9978 12.7596 56.9978 28.5H57ZM18.3436 17.8451C15.6432 18.2866 13.7343 20.3957 13.4846 23.1157C14.1602 28.4955 10.9112 37.9019 18.5377 39.1861C24.9689 38.8494 31.8684 39.6409 38.246 39.1928C41.1628 38.9877 43.2924 36.6556 43.5266 33.7862C43.7607 30.9168 43.7206 26.295 43.5333 23.4301C43.346 20.5651 41.4349 18.2308 38.4601 17.8161L18.3436 17.8451Z"
+                    fill="url(#paint0_linear_1_1070)"
+                />
+                <path
+                    d="M24.4894 23.9375L32.3946 28.5548L24.4894 33.0652V23.9375Z"
+                    fill="url(#paint1_linear_1_1070)"
+                />
+            </g>
+            <defs>
+                <linearGradient
+                    id="paint0_linear_1_1070"
+                    x1="28.5"
+                    y1={0}
+                    x2="28.5"
+                    y2={57}
+                    gradientUnits="userSpaceOnUse"
+                >
+                    <stop stopColor="#FFD69A" />
+                    <stop offset={1} stopColor="#C39249" />
+                </linearGradient>
+                <linearGradient
+                    id="paint1_linear_1_1070"
+                    x1="28.442"
+                    y1="23.9375"
+                    x2="28.442"
+                    y2="33.0652"
+                    gradientUnits="userSpaceOnUse"
+                >
+                    <stop stopColor="#FFD69A" />
+                    <stop offset={1} stopColor="#C39249" />
+                </linearGradient>
+                <clipPath id="clip0_1_1070">
+                    <rect width={57} height={57} fill="white" />
+                </clipPath>
+            </defs>
+        </svg>
+    ),
 };

@@ -1,5 +1,6 @@
 import { Header } from "@/components/header";
 import { NavigationDots } from "@/components/navigation-dots";
+import { Contact } from "@/modules/contact";
 import { Home } from "@/modules/home";
 import { Inspiration } from "@/modules/inspiration";
 import { Location } from "@/modules/location";
@@ -20,6 +21,7 @@ export default function AppPage() {
             <Location />
             <Privilege />
             <Utilities />
+            <Contact />
         </main>
     );
 }
