@@ -119,3 +119,11 @@ export const TRAVEL_NEARBY_DATA: TravelGroup[] = [
         ],
     },
 ];
+
+export const UTILITIES_DATA: string[] = [
+    "Khối đế thương mại sôi động",
+    "Tổ hợp văn phòng thời thượng",
+    "Căn hộ lưu trú cao cấp",
+    "Chuỗi tiện ích sức khoẻ",
+    "Khu thư giãn và làm đẹp",
+];
