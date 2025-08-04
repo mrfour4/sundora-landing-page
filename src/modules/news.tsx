@@ -13,14 +13,17 @@ export const News = () => {
     useSectionObserver(ESectionId.NEWS);
 
     return (
-        <section id={ESectionId.NEWS} className="h-screen px-40 pt-72">
+        <section
+            id={ESectionId.NEWS}
+            className="flex h-screen flex-col justify-center px-24"
+        >
             <h1
-                className={cn("text-7xl font-light uppercase", albra.className)}
+                className={cn("text-5xl font-light uppercase", albra.className)}
             >
                 tin tức
             </h1>
 
-            <div className="mt-14 flex gap-20">
+            <div className="mt-7 flex justify-between gap-x-10">
                 {NEWS.map((news, index) => (
                     <div
                         key={index}
@@ -30,17 +33,17 @@ export const News = () => {
                             <Image
                                 src={news.imageUrl}
                                 alt={news.title}
-                                width={336}
-                                height={446}
+                                width={270}
+                                height={357}
                                 className="shrink-0 object-cover"
                             />
                         </Link>
-                        <p className="text-primary mt-5 font-semibold">
+                        <p className="text-primary mt-3 line-clamp-2 w-[180px] text-xs font-semibold">
                             {news.title}
                         </p>
                         <Link
                             href={news.href}
-                            className="text-secondary-foreground mt-2.5 flex items-center gap-x-2 font-semibold hover:underline"
+                            className="text-secondary-foreground mt-2 flex items-center gap-x-2 text-xs font-semibold hover:underline"
                         >
                             Xem chi tiết
                             <Icons.arrowLeft className="text-secondary-foreground rotate-180" />
