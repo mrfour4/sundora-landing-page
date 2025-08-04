@@ -12,34 +12,34 @@ export const Partner = () => {
     return (
         <section
             id={ESectionId.PARTNERS}
-            className="h-screen bg-no-repeat px-44 pt-80 text-center"
+            className="flex h-screen flex-col items-center justify-center bg-no-repeat pb-16"
             style={{ backgroundImage: `url(${PARTNER_IMG})` }}
         >
-            <h2 className="text-4xl font-semibold text-white uppercase">
+            <h2 className="mt-auto text-lg font-semibold text-white uppercase">
                 một sản phẩm kiến tạo bởi
             </h2>
             <h1
                 className={cn(
-                    "mt-6 text-8xl font-light text-white uppercase",
+                    "text-[55px] leading-20 font-light text-white uppercase",
                     albra.className,
                 )}
             >
                 PHÚC HOÀNG NGUYÊN GROUP
             </h1>
-            <div className="mt-16 flex items-center justify-between gap-x-8">
+            <div className="mt-5 flex items-center justify-between gap-x-8">
                 {PARTNERS.map((p, index) => (
                     <div
                         key={index}
-                        className="rounded-md bg-linear-180 from-[#301C0E]/70 from-40% to-transparent px-8 py-2"
+                        className="flex flex-col items-center justify-center rounded-md bg-linear-180 from-[#301C0E]/70 from-40% to-transparent px-4 py-1.5"
                     >
                         <Image
                             src={p.imageUrl}
                             alt={p.title}
-                            width={266}
-                            height={177}
+                            width={151}
+                            height={100}
                             className="shrink-0 object-cover"
                         />
-                        <p className="text-2xl font-semibold whitespace-pre-line text-white uppercase">
+                        <p className="-translate-y-2 text-center text-sm font-semibold whitespace-pre-line text-white uppercase">
                             {p.title}
                         </p>
                     </div>
