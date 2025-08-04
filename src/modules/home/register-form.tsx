@@ -51,11 +51,11 @@ export const RegisterForm = () => {
     return (
         <div
             style={{ backgroundImage: `url(${HOME_BOTTOM_IMG})` }}
-            className="flex h-40 items-center justify-center gap-32"
+            className="flex h-28 items-center justify-between gap-x-20 px-20"
         >
             <Label
                 className={cn(
-                    "text-secondary text-3xl font-light",
+                    "text-secondary ml-auto text-lg font-light",
                     albra.className,
                 )}
                 htmlFor={inputId}
@@ -65,7 +65,7 @@ export const RegisterForm = () => {
             <Form {...form}>
                 <form
                     onSubmit={form.handleSubmit(onSubmit)}
-                    className="flex items-center gap-x-32"
+                    className="flex items-center gap-x-10"
                 >
                     <FormField
                         control={form.control}
@@ -77,7 +77,7 @@ export const RegisterForm = () => {
                                         id={inputId}
                                         placeholder="Họ và tên*"
                                         className={cn(
-                                            "border-secondary-foreground border-b text-3xl font-light text-white outline-none placeholder:text-white focus-visible:border-b-2 focus-visible:placeholder:text-white/80",
+                                            "border-secondary-foreground border-b font-light text-white outline-none placeholder:text-sm placeholder:text-white focus-visible:border-b-2 focus-visible:placeholder:text-white/80",
                                             albra.className,
                                         )}
                                         {...field}
@@ -85,7 +85,7 @@ export const RegisterForm = () => {
                                 </FormControl>
 
                                 <FormMessage
-                                    className={cn("text-xl", albra.className)}
+                                    className={cn("text-sm", albra.className)}
                                 />
                             </FormItem>
                         )}
@@ -99,7 +99,7 @@ export const RegisterForm = () => {
                                     <input
                                         placeholder="Số điện thoại*"
                                         className={cn(
-                                            "border-secondary-foreground border-b text-3xl font-light text-white outline-none placeholder:text-white focus-visible:border-b-2 focus-visible:placeholder:text-white/80",
+                                            "border-secondary-foreground border-b font-light text-white outline-none placeholder:text-sm placeholder:text-white focus-visible:border-b-2 focus-visible:placeholder:text-white/80",
                                             albra.className,
                                         )}
                                         {...field}
@@ -107,7 +107,7 @@ export const RegisterForm = () => {
                                 </FormControl>
 
                                 <FormMessage
-                                    className={cn("text-xl", albra.className)}
+                                    className={cn("text-sm", albra.className)}
                                 />
                             </FormItem>
                         )}
@@ -115,7 +115,7 @@ export const RegisterForm = () => {
                     <Button
                         type="submit"
                         variant="secondary"
-                        className="text-secondary-foreground-foreground px-10 py-2"
+                        className="text-secondary-foreground-foreground px-5 py-1"
                     >
                         gửi thông tin
                     </Button>

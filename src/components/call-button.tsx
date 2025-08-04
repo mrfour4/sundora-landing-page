@@ -11,15 +11,15 @@ export const CallButton = () => {
 
     return (
         <Button
-            className="gap-2 rounded-full"
+            className="gap-1 rounded-full"
             asChild
             variant={isSecondary ? "secondary" : "default"}
         >
             <Link href="tel:0984868463">
-                <Phone className="size-5!" />
+                <Phone className="size-3!" />
                 <span
                     className={cn(
-                        "from-secondary to-secondary-foreground bg-gradient-to-r bg-clip-text text-2xl font-bold tracking-wider text-transparent",
+                        "from-secondary to-secondary-foreground bg-gradient-to-r bg-clip-text text-sm font-bold tracking-wider text-transparent",
                         isSecondary && "text-primary",
                     )}
                 >

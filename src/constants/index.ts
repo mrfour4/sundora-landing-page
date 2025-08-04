@@ -9,6 +9,8 @@ import {
     TTravelGroup,
 } from "../types";
 
+export const BREAKPOINTS = [1536, 1280, 1024];
+
 export const HERO_IMG_URL = "/images_avif/bg-home.avif";
 export const HOME_BOTTOM_IMG = "/images_avif/bg-bottom-home.avif";
 export const OVERVIEW_IMG = "/images_avif/bg-overview.avif";

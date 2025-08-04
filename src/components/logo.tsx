@@ -16,6 +16,7 @@ export const Logo = () => {
                 alt="Sundora"
                 width={243}
                 height={137}
+                className="h-20 w-36"
             />
         </Link>
     );

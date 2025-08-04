@@ -13,26 +13,31 @@ export const Home = () => {
     return (
         <section
             id={ESectionId.HOME}
-            className="from-secondary to-secondary-foreground flex h-screen flex-col bg-gradient-to-r bg-cover bg-no-repeat"
+            className="flex h-screen flex-col bg-cover bg-no-repeat"
             style={{ backgroundImage: `url(${HERO_IMG_URL})` }}
         >
-            <div className="relative mx-14 mt-44 flex flex-1 items-center justify-center text-white">
-                <h2 className="absolute top-64 left-28 -rotate-90 text-4xl uppercase">
+            <div className="relative flex-1 px-20 text-white xl:px-36 2xl:px-56">
+                <h2 className="absolute top-56 left-32 -rotate-90 text-lg uppercase xl:top-64 xl:left-40 2xl:top-72 2xl:left-56">
                     sundora tower đà nẵng
                 </h2>
-                <div className="absolute top-36 right-80 space-y-4">
+                <div className="absolute top-40 right-32 xl:right-72 2xl:top-56 2xl:right-96">
                     <h1
                         className={cn(
-                            "text-8xl font-light uppercase",
+                            "text-[55px] font-light uppercase",
                             albra.className,
                         )}
                     >
                         Nắng Vàng
                     </h1>
-                    <h2 className={cn("-ml-20 text-5xl", sparkling.className)}>
+                    <h2
+                        className={cn(
+                            "-ml-16 text-3xl xl:-ml-20",
+                            sparkling.className,
+                        )}
+                    >
                         Bên dòng sông thơ
                     </h2>
-                    <p className="mt-36 text-3xl leading-12 tracking-widest italic">
+                    <p className="mt-20 text-lg leading-8 tracking-widest italic">
                         Sunshine <br />
                         Riverside <br />
                         Redefined

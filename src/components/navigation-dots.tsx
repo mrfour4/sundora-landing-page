@@ -23,13 +23,13 @@ export const NavigationDots = () => {
     }
 
     return (
-        <nav className="fixed top-1/2 right-16 z-50 flex -translate-y-1/2 flex-col items-end gap-5">
+        <nav className="fixed top-1/2 right-8 z-50 flex -translate-y-1/2 flex-col items-end gap-y-2.5">
             {Object.entries(SECTION_TITLES).map(([id, title]) =>
                 id === sectionId ? (
-                    <div className="flex items-center gap-3" key={id}>
+                    <div className="flex items-center gap-x-1" key={id}>
                         <p
                             className={cn(
-                                "text-primary text-sm font-semibold",
+                                "text-primary text-xs font-semibold",
                                 isSecondary && "text-secondary",
                             )}
                         >
@@ -38,7 +38,7 @@ export const NavigationDots = () => {
                         <Link href={`#${id}`}>
                             <button
                                 className={cn(
-                                    "bg-primary text-secondary flex size-6 translate-x-1 cursor-pointer items-center justify-center rounded-full",
+                                    "bg-primary text-secondary flex size-2.5 translate-x-1 cursor-pointer items-center justify-center rounded-full",
                                     isSecondary && "bg-secondary text-primary",
                                 )}
                             >
@@ -49,10 +49,10 @@ export const NavigationDots = () => {
                 ) : (
                     <Tooltip delayDuration={0} key={id}>
                         <TooltipTrigger asChild>
-                            <Link href={`#${id}`}>
+                            <Link href={`#${id}`} className="flex h-auto">
                                 <button
                                     className={cn(
-                                        "border-primary/50 hover:bg-primary size-4 cursor-pointer rounded-full border-2",
+                                        "border-primary/50 hover:bg-primary size-1.5 cursor-pointer rounded-full border-1",
                                         isSecondary &&
                                             "border-secondary/50 hover:bg-secondary",
                                     )}
@@ -62,7 +62,7 @@ export const NavigationDots = () => {
                         <TooltipContent
                             side="left"
                             className={cn(
-                                "bg-primary text-secondary",
+                                "bg-primary text-secondary text-xs",
                                 isSecondary && "bg-secondary text-primary",
                             )}
                         >
