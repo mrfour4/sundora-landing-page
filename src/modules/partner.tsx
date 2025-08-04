@@ -12,10 +12,10 @@ export const Partner = () => {
     return (
         <section
             id={ESectionId.PARTNERS}
-            className="flex h-screen flex-col items-center justify-center bg-no-repeat pb-16"
+            className="flex h-screen flex-col items-center justify-center bg-no-repeat"
             style={{ backgroundImage: `url(${PARTNER_IMG})` }}
         >
-            <h2 className="mt-auto text-lg font-semibold text-white uppercase">
+            <h2 className="text-lg font-semibold text-white uppercase">
                 một sản phẩm kiến tạo bởi
             </h2>
             <h1

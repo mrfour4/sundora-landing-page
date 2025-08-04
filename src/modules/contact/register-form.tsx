@@ -50,10 +50,10 @@ export const RegisterForm = () => {
     };
 
     return (
-        <div className="from-secondary to-secondary-foreground rounded-md bg-gradient-to-b px-40 py-14">
+        <div className="from-secondary to-secondary-foreground rounded-md bg-gradient-to-b px-8 py-6">
             <h1
                 className={cn(
-                    "text-primary text-center text-7xl font-light uppercase",
+                    "text-primary text-center text-4xl font-light uppercase",
                     albra.className,
                 )}
             >
@@ -61,7 +61,7 @@ export const RegisterForm = () => {
             </h1>
             <h2
                 className={cn(
-                    "text-primary mt-3 text-center text-4xl",
+                    "text-primary mt-2 text-center text-lg",
                     sparkling.className,
                 )}
             >
@@ -70,7 +70,7 @@ export const RegisterForm = () => {
             <Form {...form}>
                 <form
                     onSubmit={form.handleSubmit(onSubmit)}
-                    className="mt-16 space-y-10"
+                    className="mt-6 space-y-5"
                 >
                     <FormField
                         control={form.control}
@@ -80,7 +80,7 @@ export const RegisterForm = () => {
                                 <div className="group border-secondary-foreground flex flex-row gap-3 border-b">
                                     <FormLabel
                                         className={cn(
-                                            "text-2xl font-light text-white opacity-50 group-focus-within:opacity-100",
+                                            "text-sm font-light text-white opacity-50 group-focus-within:opacity-100",
                                             albra.className,
                                         )}
                                     >
@@ -89,7 +89,7 @@ export const RegisterForm = () => {
                                     <FormControl>
                                         <input
                                             className={cn(
-                                                "text-2xl font-light text-white outline-none",
+                                                "text-sm font-light text-white outline-none",
                                                 albra.className,
                                             )}
                                             {...field}
@@ -111,7 +111,7 @@ export const RegisterForm = () => {
                                 <div className="group border-secondary-foreground flex flex-row gap-3 border-b">
                                     <FormLabel
                                         className={cn(
-                                            "text-2xl font-light text-white opacity-50 group-focus-within:opacity-100",
+                                            "text-sm font-light text-white opacity-50 group-focus-within:opacity-100",
 
                                             albra.className,
                                         )}
@@ -121,7 +121,7 @@ export const RegisterForm = () => {
                                     <FormControl>
                                         <input
                                             className={cn(
-                                                "text-2xl font-light text-white outline-none",
+                                                "text-sm font-light text-white outline-none",
                                                 albra.className,
                                             )}
                                             {...field}
@@ -143,7 +143,7 @@ export const RegisterForm = () => {
                                 <div className="group border-secondary-foreground flex flex-row gap-3 border-b">
                                     <FormLabel
                                         className={cn(
-                                            "text-2xl font-light text-white opacity-50 group-focus-within:opacity-100",
+                                            "text-sm font-light text-white opacity-50 group-focus-within:opacity-100",
 
                                             albra.className,
                                         )}
@@ -153,7 +153,7 @@ export const RegisterForm = () => {
                                     <FormControl>
                                         <input
                                             className={cn(
-                                                "border-secondary-foreground border-b text-2xl font-light text-white outline-none",
+                                                "border-secondary-foreground border-b text-sm font-light text-white outline-none",
                                                 albra.className,
                                             )}
                                             {...field}
@@ -174,7 +174,7 @@ export const RegisterForm = () => {
                             <FormItem className="group border-secondary-foreground flex flex-col gap-3 border-b">
                                 <FormLabel
                                     className={cn(
-                                        "text-2xl font-light text-white opacity-50 group-focus-within:opacity-100",
+                                        "text-sm font-light text-white opacity-50 group-focus-within:opacity-100",
 
                                         albra.className,
                                     )}
@@ -184,7 +184,7 @@ export const RegisterForm = () => {
                                 <FormControl>
                                     <textarea
                                         className={cn(
-                                            "border-secondary-foreground resize-none border-b text-2xl font-light text-white outline-none",
+                                            "border-secondary-foreground resize-none border-b text-sm font-light text-white outline-none",
                                             albra.className,
                                         )}
                                         rows={3}
@@ -198,7 +198,7 @@ export const RegisterForm = () => {
                         <Button
                             type="submit"
                             variant="outline"
-                            className="text-muted-foreground mt-10 size-auto cursor-pointer rounded-full bg-white! px-10 py-2 text-xl font-bold uppercase"
+                            className="text-muted-foreground mt-6 size-auto cursor-pointer rounded-full bg-white! px-10 py-1 text-xs font-bold uppercase"
                         >
                             gửi thông tin
                         </Button>

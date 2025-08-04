@@ -1,6 +1,7 @@
 "use client";
 
 import { Icons } from "@/components/icons";
+import { Separator } from "@/components/ui/separator";
 import { CONTACT_IMG, CONTACT_LOCATIONS, CONTACTS } from "@/constants";
 import { useSectionObserver } from "@/hooks/use-section-observer";
 import { ESectionId } from "@/types";
@@ -14,13 +15,13 @@ export const Contact = () => {
     return (
         <section
             id={ESectionId.CONTACT}
-            className="flex h-screen items-center justify-center gap-x-28 pt-36"
+            className="flex h-screen items-center justify-center gap-x-40 px-28"
             style={{ backgroundImage: `url(${CONTACT_IMG})` }}
         >
-            <div className="space-y-8">
-                <div className="flex gap-x-8">
-                    <MapPin className="fill-secondary size-10" />
-                    <ul className="space-y-5">
+            <div className="space-y-6">
+                <div className="flex gap-x-3">
+                    <MapPin className="fill-secondary mt-1 size-4" />
+                    <ul className="space-y-3">
                         {CONTACT_LOCATIONS.map((c, index) => (
                             <li key={index}>
                                 <ContactItem
@@ -32,22 +33,22 @@ export const Contact = () => {
                         ))}
                     </ul>
                 </div>
-                <ul className="space-y-8">
+                <ul className="space-y-3">
                     {CONTACTS.map((c, index) => (
-                        <li key={index} className="flex gap-x-8">
-                            <c.icon className="fill-secondary size-8" />
+                        <li key={index} className="flex items-start gap-x-3">
+                            <c.icon className="fill-secondary mt-1 size-4" />
                             <ContactItem {...c} />
                         </li>
                     ))}
                 </ul>
 
-                <hr />
+                <Separator className="bg-secondary-foreground" />
 
-                <div className="flex items-center gap-x-6">
-                    <p className="text-xl font-semibold text-white">
+                <div className="flex items-center gap-x-4 [&_svg]:size-6">
+                    <p className="text-sm font-semibold text-white">
                         Theo dõi chúng tôi tại:
                     </p>
-                    <Link href="#!" className="ml-4">
+                    <Link href="#!" className="ml-2">
                         <Icons.facebook />
                     </Link>
                     <Link href="#!">

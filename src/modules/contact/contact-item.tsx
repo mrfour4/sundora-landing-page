@@ -8,16 +8,14 @@ type Props = {
 
 export const ContactItem = ({ href, label, content }: Props) => {
     return (
-        <div>
+        <div className="max-w-[308px]">
             <Link
                 href={href}
-                className="text-secondary-foreground text-2xl font-medium"
+                className="text-secondary-foreground text-sm font-medium"
             >
                 {label}
             </Link>
-            <p className="mt-2 w-lg text-xl font-semibold text-white">
-                {content}
-            </p>
+            <p className="text-sm font-semibold text-white">{content}</p>
         </div>
     );
 };
