@@ -38,7 +38,7 @@ export const NavigationDots = () => {
                         <Link href={`#${id}`}>
                             <button
                                 className={cn(
-                                    "bg-primary text-secondary flex size-5 translate-x-1 cursor-pointer items-center justify-center rounded-full",
+                                    "bg-primary text-secondary flex size-5 translate-x-1 cursor-pointer items-center justify-center rounded-full p-0.5",
                                     isSecondary && "bg-secondary text-primary",
                                 )}
                             >
