@@ -12,19 +12,19 @@ export const Privilege = () => {
     return (
         <section
             id={ESectionId.PRIVILEGE}
-            className="relative flex h-screen items-center"
+            className="relative flex h-screen items-center justify-between gap-x-10"
         >
             <Image
                 src="/images_avif/bg-privilege.avif"
-                alt="Sundora"
-                width={1119}
-                height={1080}
-                className="absolute top-0 left-0 -z-10 object-cover"
+                alt=""
+                width={596}
+                height={576}
+                className="absolute inset-y-0 left-0 -z-10 h-full w-7/12 object-cover"
             />
-            <div className="pr-20 pl-36">
+            <div className="pl-24">
                 <h1
                     className={cn(
-                        "from-secondary to-secondary-foreground -translate-x-12 bg-gradient-to-b bg-clip-text text-4xl leading-24 text-transparent",
+                        "from-secondary to-secondary-foreground -translate-x-8 bg-gradient-to-b bg-clip-text text-xl leading-16 text-transparent",
                         sparkling.className,
                     )}
                 >
@@ -32,16 +32,16 @@ export const Privilege = () => {
                 </h1>
                 <h2
                     className={cn(
-                        "text-7xl font-light text-white uppercase",
+                        "text-5xl font-light text-white uppercase",
                         albra.className,
                     )}
                 >
                     đặc quyền
                 </h2>
-                <h2 className="text-secondary mt-3 text-3xl font-semibold uppercase">
+                <h2 className="text-secondary mt-2 text-xl font-semibold uppercase">
                     của nhịp sống bên sông
                 </h2>
-                <div className="w-96 space-y-5 pt-10 text-justify text-lg text-white">
+                <div className="mt-4 w-[300px] space-y-5 text-left text-sm text-white">
                     <p>
                         Giữa nhịp sống rộn ràng của thành phố trẻ, Sundora chọn
                         cách hiện diện khác biệt nhẹ nhàng nhưng đủ cuốn hút để
@@ -55,16 +55,16 @@ export const Privilege = () => {
                 </div>
             </div>
 
-            <div className="flex flex-col">
+            <div className="flex flex-col gap-y-4">
                 <Image
                     src="/images_avif/privilege-1.avif"
                     alt="Bến du thuyền"
-                    width={743}
-                    height={528}
+                    width={500}
+                    height={767}
                     className="shrink-0 object-cover"
                 />
 
-                <div className="flex translate-y-12 items-baseline gap-x-2.5">
+                <div className="flex items-baseline gap-x-2.5">
                     <Icons.arrowLeft className="text-secondary-foreground" />
                     <div
                         className={cn(
@@ -72,7 +72,7 @@ export const Privilege = () => {
                             albra.className,
                         )}
                     >
-                        <span className="text-3xl text-white">01</span>
+                        <span className="text-2xl text-white">01</span>
                         <span>/</span>
                         <span>02</span>
                     </div>
@@ -83,9 +83,9 @@ export const Privilege = () => {
             <Image
                 src="/images_avif/privilege-2.avif"
                 alt="Bến du thuyền"
-                width={455}
-                height={398}
-                className="ml-auto shrink-0 object-cover"
+                width={400}
+                height={350}
+                className="shrink-0 object-cover"
             />
         </section>
     );

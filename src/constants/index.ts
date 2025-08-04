@@ -16,6 +16,7 @@ export const HOME_BOTTOM_IMG = "/images_avif/bg-bottom-home.avif";
 export const OVERVIEW_IMG = "/images_avif/bg-overview.avif";
 export const INSPIRATION_IMG = "/images_avif/bg-inspiration.avif";
 export const LOCATION_IMG = "/images_avif/bg-location.avif";
+export const PRIVILEGE_IMG = "/images_avif/bg-privilege.avif";
 export const PARTNER_IMG = "/images_avif/bg-partner.avif";
 export const CONTACT_IMG = "/images_avif/bg-contact.avif";
 
