@@ -17,7 +17,7 @@ export const Home = () => {
             style={{ backgroundImage: `url(${HERO_IMG_URL})` }}
         >
             <div className="relative flex-1 px-20 text-white xl:px-36 2xl:px-56">
-                <h2 className="absolute top-56 left-32 -rotate-90 text-lg uppercase xl:top-64 xl:left-52 2xl:top-72 2xl:left-56">
+                <h2 className="absolute top-56 left-24 -rotate-90 text-lg uppercase xl:top-64 xl:left-52 2xl:top-72 2xl:left-56">
                     sundora tower đà nẵng
                 </h2>
                 <div className="absolute top-40 right-32 xl:top-48 xl:right-96 2xl:top-56">
