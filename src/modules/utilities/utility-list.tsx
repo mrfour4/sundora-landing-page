@@ -8,8 +8,8 @@ import { useState } from "react";
 export const UtilityList = () => {
     const [activeId, setActiveId] = useState(0);
     return (
-        <div className="mt-16 ml-24 flex items-end gap-10">
-            <ul className="space-y-8">
+        <div className="mt-4 ml-20 flex items-end justify-between">
+            <ul className="space-y-5">
                 {UTILITIES_DATA.map((uti, index) => {
                     const isActive = activeId === index;
                     return (
@@ -24,19 +24,19 @@ export const UtilityList = () => {
                         >
                             <span
                                 className={cn(
-                                    "text-muted text-3xl font-light opacity-40",
+                                    "text-muted font-light opacity-40",
                                     albra.className,
                                     isActive &&
-                                        "from-secondary to-secondary-foreground bg-gradient-to-b bg-clip-text text-5xl text-transparent opacity-100",
+                                        "from-secondary to-secondary-foreground bg-gradient-to-b bg-clip-text text-2xl text-transparent opacity-100",
                                 )}
                             >
                                 0{index + 1}
                             </span>
                             <p
                                 className={cn(
-                                    "text-muted border-muted flex-1 border-b text-lg leading-loose uppercase",
+                                    "text-muted border-muted flex-1 border-b text-sm leading-loose uppercase",
                                     isActive &&
-                                        "text-secondary-foreground border-none text-2xl font-semibold",
+                                        "text-secondary-foreground border-none font-semibold",
                                 )}
                             >
                                 {uti}
@@ -45,20 +45,20 @@ export const UtilityList = () => {
                     );
                 })}
             </ul>
-            <div className="relative ml-auto flex h-40 items-center gap-x-1.5 overflow-hidden">
+            <div className="relative ml-auto flex h-[88px] items-center gap-x-1.5 overflow-hidden">
                 <Icons.arrowLeft className="absolute top-1/2 right-1/6 rotate-180 cursor-pointer text-white" />
                 <Image
                     src="/images_avif/utilities-3.avif"
                     alt=""
-                    width={232}
-                    height={162}
+                    width={126}
+                    height={88}
                     className="shrink-0 object-cover"
                 />
                 <Image
                     src="/images_avif/utilities-4.avif"
                     alt=""
-                    width={232}
-                    height={162}
+                    width={126}
+                    height={88}
                     className="shrink-0 object-cover"
                 />
             </div>

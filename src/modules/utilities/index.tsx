@@ -12,28 +12,28 @@ export const Utilities = () => {
     return (
         <section
             id={ESectionId.UTILITIES}
-            className="flex h-screen pt-48 pl-40"
+            className="flex h-screen items-center justify-between pl-40"
         >
-            <div className="relative pt-14 pr-14">
+            <div className="relative pt-8 pr-7">
                 <Image
                     src="/images_avif/utilities-1.avif"
                     alt="Sundora"
-                    width={799}
-                    height={696}
+                    width={550}
+                    height={480}
                     className="shrink-0 object-cover"
                 />
                 <Image
                     src="/images_avif/utilities-2.avif"
                     alt="Sundora"
-                    width={639}
-                    height={283}
+                    width={478}
+                    height={212}
                     className="absolute top-0 right-0 -z-10 shrink-0 object-cover"
                 />
             </div>
             <div>
                 <h1
                     className={cn(
-                        "text-primary ml-24 text-7xl font-light uppercase",
+                        "text-primary ml-14 text-5xl font-light uppercase",
                         albra.className,
                     )}
                 >
@@ -42,13 +42,13 @@ export const Utilities = () => {
                 </h1>
                 <h2
                     className={cn(
-                        "text-primary-foreground mt-2 ml-8 text-4xl",
+                        "text-primary-foreground ml-5 text-lg",
                         sparkling.className,
                     )}
                 >
                     Chạm đến mọi giác quan
                 </h2>
-                <p className="text-muted-foreground mt-10 ml-28 w-[539px] text-justify text-lg">
+                <p className="text-muted-foreground mt-5 ml-14 w-[339px] text-justify text-sm">
                     Sundora được kiến tạo như một tổ hợp sống hoàn chỉnh, nơi
                     mọi chức năng - từ sống, làm việc đến nghỉ dưỡng đều được
                     tích hợp mạch lạc trong một tổng thể kiến trúc tối ưu.
