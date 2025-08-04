@@ -241,3 +241,11 @@ export const GROUND_FLOORS: string[] = [
     "TẦNG 14",
     "TẦNG 15",
 ];
+
+export const APARTMENTS: string[] = [
+    "STUDIO",
+    "2PN",
+    "3PN",
+    "DUPLEX",
+    "PENTHOUSE",
+];
