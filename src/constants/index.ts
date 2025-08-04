@@ -225,3 +225,19 @@ export const CONTACTS: TContact[] = [
         content: "https://sundoratower.vn",
     },
 ];
+
+export const GROUNDS_DATA: string[] = [
+    "TRUNG TÂM THƯƠNG MẠI",
+    "VĂN PHÒNG CAO CẤP",
+    "CĂN HỘ TẦNG 11-15, 17-24",
+    "CĂN HỘ TẦNG 16",
+    "DUPLEX",
+];
+
+export const GROUND_FLOORS: string[] = [
+    "TẦNG 11",
+    "TẦNG 12",
+    "TẦNG 13",
+    "TẦNG 14",
+    "TẦNG 15",
+];
