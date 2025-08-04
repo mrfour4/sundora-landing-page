@@ -1,9 +1,9 @@
 "use client";
 
+import { Icons } from "@/components/icons";
 import { useSectionObserver } from "@/hooks/use-section-observer";
 import { ESectionId } from "@/types";
 import { useEffect, useRef, useState } from "react";
-import { ReactSVG } from "react-svg";
 
 export const Video = () => {
     useSectionObserver(ESectionId.VIDEO);
@@ -42,7 +42,7 @@ export const Video = () => {
     return (
         <section
             id={ESectionId.VIDEO}
-            className="bg-secondary relative aspect-video w-full"
+            className="bg-secondary relative aspect-video h-full w-full"
         >
             <video
                 ref={videoRef}
@@ -51,6 +51,7 @@ export const Video = () => {
                 playsInline
                 poster="/images_avif/thumbnail.avif"
                 loop
+                className="aspect-video h-full"
             >
                 <source src="/video/sundora-final.webm" type="video/webm" />
                 <source src="/video/sundora-final.mp4" type="video/mp4" />
@@ -62,7 +63,7 @@ export const Video = () => {
                         onClick={handleToggle}
                         className="flex items-center justify-center"
                     >
-                        <ReactSVG src="/play.svg" className="size-40" />
+                        <Icons.play className="size-14 xl:size-24 2xl:size-32" />
                     </button>
                 </div>
             )}

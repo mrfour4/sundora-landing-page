@@ -55,7 +55,7 @@ export const RegisterForm = () => {
         >
             <Label
                 className={cn(
-                    "text-secondary ml-auto text-lg font-light",
+                    "text-secondary text-lg font-light 2xl:ml-auto",
                     albra.className,
                 )}
                 htmlFor={inputId}
@@ -65,7 +65,7 @@ export const RegisterForm = () => {
             <Form {...form}>
                 <form
                     onSubmit={form.handleSubmit(onSubmit)}
-                    className="flex items-center gap-x-10"
+                    className="flex items-center gap-x-10 xl:gap-x-20"
                 >
                     <FormField
                         control={form.control}
