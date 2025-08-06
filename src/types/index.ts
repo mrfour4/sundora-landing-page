@@ -62,3 +62,8 @@ export type TUtility = {
     name: string;
     imageUrl: string;
 };
+
+export type TAparment = {
+    name: string;
+    imageUrls: string[];
+};

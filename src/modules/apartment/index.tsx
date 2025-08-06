@@ -12,7 +12,7 @@ export const Apartment = () => {
     return (
         <section
             id={ESectionId.APARTMENT}
-            className="relative flex h-screen items-center gap-x-20 pt-10 pl-20"
+            className="relative flex h-screen items-center gap-x-10 pt-10 pl-20"
         >
             <Image
                 src="/images/apartment-1.png"
@@ -21,7 +21,7 @@ export const Apartment = () => {
                 height={569}
                 className="absolute top-0 right-0 -z-10 h-screen w-2/3 shrink-0"
             />
-            <div>
+            <div className="w-[362px] shrink-0">
                 <h2
                     className={cn(
                         "text-primary-foreground text-xl",
@@ -57,25 +57,7 @@ export const Apartment = () => {
                     className="-mt-14 shrink-0 translate-x-10 rotate-90"
                 />
             </div>
-            <div className="ml-auto">
-                <ApartmentList />
-                <div className="mt-16 flex items-center gap-x-5 overflow-hidden">
-                    <Image
-                        src="/images_avif/apartment-3.avif"
-                        alt="Bộ sưu tập giới hạn"
-                        width={500}
-                        height={339}
-                        className="h-[339px] shrink-0"
-                    />
-                    <Image
-                        src="/images_avif/apartment-4.avif"
-                        alt="Bộ sưu tập giới hạn"
-                        width={270}
-                        height={175}
-                        className="h-[250px] shrink-0"
-                    />
-                </div>
-            </div>
+            <ApartmentList />
         </section>
     );
 };
