@@ -1,26 +1,28 @@
 import { albra } from "@/app/fonts";
-import { Icons } from "@/components/icons";
 import { UTILITIES_DATA } from "@/constants";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
-import { useState } from "react";
 
-export const UtilityList = () => {
-    const [activeId, setActiveId] = useState(0);
+type Props = {
+    activeIndex: number;
+    onChange: (index: number) => void;
+};
+
+export const UtilityList = ({ activeIndex, onChange }: Props) => {
     return (
         <div className="mt-4 ml-20 flex items-end justify-between">
-            <ul className="space-y-5">
+            <ul className="flex h-[258px] w-[300px] flex-1 flex-col justify-between">
                 {UTILITIES_DATA.map((uti, index) => {
-                    const isActive = activeId === index;
+                    const isActive = activeIndex === index;
                     return (
                         <li
-                            key={index}
+                            key={uti.imageUrl}
                             className={cn(
                                 "flex w-fit cursor-pointer items-center gap-7 transition-transform ease-linear",
                                 isActive &&
                                     "border-primary -translate-x-20 border-b-2",
                             )}
-                            onClick={() => setActiveId(index)}
+                            onClick={() => onChange(index)}
                         >
                             <span
                                 className={cn(
@@ -39,24 +41,23 @@ export const UtilityList = () => {
                                         "text-secondary-foreground border-none font-semibold",
                                 )}
                             >
-                                {uti}
+                                {uti.name}
                             </p>
                         </li>
                     );
                 })}
             </ul>
-            <div className="relative ml-auto flex h-[88px] items-center gap-x-1.5 overflow-hidden">
-                <Icons.arrowLeft className="absolute top-1/2 right-1/6 rotate-180 cursor-pointer text-white" />
+            <div className="invisible relative ml-auto flex h-[88px] items-center gap-x-1.5 overflow-hidden">
                 <Image
-                    src="/images_avif/utilities-3.avif"
-                    alt=""
+                    src={UTILITIES_DATA[activeIndex].imageUrl}
+                    alt={UTILITIES_DATA[activeIndex].name}
                     width={126}
                     height={88}
                     className="shrink-0 object-cover"
                 />
                 <Image
-                    src="/images_avif/utilities-4.avif"
-                    alt=""
+                    src={UTILITIES_DATA[activeIndex].imageUrl}
+                    alt={UTILITIES_DATA[activeIndex].name}
                     width={126}
                     height={88}
                     className="shrink-0 object-cover"

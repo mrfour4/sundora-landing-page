@@ -7,6 +7,7 @@ import {
     TNews,
     TPartner,
     TTravelGroup,
+    TUtility,
 } from "../types";
 
 export const BREAKPOINTS = [1536, 1280, 1024];
@@ -134,12 +135,27 @@ export const TRAVEL_NEARBY_DATA: TTravelGroup[] = [
     },
 ];
 
-export const UTILITIES_DATA: string[] = [
-    "Khối đế thương mại sôi động",
-    "Tổ hợp văn phòng thời thượng",
-    "Căn hộ lưu trú cao cấp",
-    "Chuỗi tiện ích sức khoẻ",
-    "Khu thư giãn và làm đẹp",
+export const UTILITIES_DATA: TUtility[] = [
+    {
+        name: "Khối đế thương mại sôi động",
+        imageUrl: "/images_avif/utilities-1.avif",
+    },
+    {
+        name: "Tổ hợp văn phòng thời thượng",
+        imageUrl: "/images_avif/utilities-2.avif",
+    },
+    {
+        name: "Căn hộ lưu trú cao cấp",
+        imageUrl: "/images_avif/utilities-3.avif",
+    },
+    {
+        name: "Chuỗi tiện ích sức khoẻ",
+        imageUrl: "/images_avif/utilities-4.avif",
+    },
+    {
+        name: "Khu thư giãn và làm đẹp",
+        imageUrl: "/images_avif/utilities-5.avif",
+    },
 ];
 
 export const PARTNERS: TPartner[] = [

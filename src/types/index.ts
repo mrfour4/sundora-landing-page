@@ -57,3 +57,8 @@ export type TContact = {
     label: string;
     content: string;
 };
+
+export type TUtility = {
+    name: string;
+    imageUrl: string;
+};

@@ -5,25 +5,29 @@ import { useSectionObserver } from "@/hooks/use-section-observer";
 import { cn } from "@/lib/utils";
 import { ESectionId } from "@/types";
 import Image from "next/image";
+import { useState } from "react";
+import { UtilityImage } from "./utility-image";
 import { UtilityList } from "./utility-list";
 
 export const Utilities = () => {
     useSectionObserver(ESectionId.UTILITIES);
+
+    const [activeIndex, setActiveIndex] = useState(0);
+    const [prevIndex, setPrevIndex] = useState(activeIndex);
+
     return (
         <section
             id={ESectionId.UTILITIES}
             className="flex h-screen items-center justify-between pl-40"
         >
-            <div className="relative pt-8 pr-7">
-                <Image
-                    src="/images_avif/utilities-1.avif"
-                    alt="Sundora"
-                    width={550}
-                    height={480}
-                    className="shrink-0 object-cover"
+            <div className="relative shrink-0 pt-8 pr-7">
+                <UtilityImage
+                    index={activeIndex}
+                    direction={activeIndex > prevIndex ? 1 : -1}
                 />
+
                 <Image
-                    src="/images_avif/utilities-2.avif"
+                    src="/images_avif/utilities-placeholder.avif"
                     alt="Sundora"
                     width={478}
                     height={212}
@@ -53,7 +57,10 @@ export const Utilities = () => {
                     mọi chức năng - từ sống, làm việc đến nghỉ dưỡng đều được
                     tích hợp mạch lạc trong một tổng thể kiến trúc tối ưu.
                 </p>
-                <UtilityList />
+                <UtilityList
+                    activeIndex={activeIndex}
+                    onChange={setActiveIndex}
+                />
             </div>
         </section>
     );
