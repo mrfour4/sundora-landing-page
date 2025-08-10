@@ -13,7 +13,6 @@ export const Utilities = () => {
     useSectionObserver(ESectionId.UTILITIES);
 
     const [activeIndex, setActiveIndex] = useState(0);
-    const [prevIndex, setPrevIndex] = useState(activeIndex);
 
     return (
         <section
@@ -23,7 +22,7 @@ export const Utilities = () => {
             <div className="relative shrink-0 pt-8 pr-7">
                 <UtilityImage
                     index={activeIndex}
-                    direction={activeIndex > prevIndex ? 1 : -1}
+                    direction={1}
                 />
 
                 <Image

@@ -67,3 +67,8 @@ export type TAparment = {
     name: string;
     imageUrls: string[];
 };
+
+export type TGround = {
+    name: string;
+    imageUrl: string;
+};

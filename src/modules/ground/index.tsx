@@ -4,16 +4,18 @@ import { albra } from "@/app/fonts";
 import { useSectionObserver } from "@/hooks/use-section-observer";
 import { cn } from "@/lib/utils";
 import { ESectionId } from "@/types";
-import Image from "next/image";
-import { FloorTabs } from "./floor-tabs";
+import { useState } from "react";
+import { GroundImages } from "./ground-images";
 import { GroupList } from "./ground-list";
 
 export const Ground = () => {
     useSectionObserver(ESectionId.GROUND);
+    const [activeIndex, setActiveIndex] = useState(0);
+
     return (
         <section
             id={ESectionId.GROUND}
-            className="flex h-screen items-center justify-center gap-x-20"
+            className="flex h-screen items-center justify-center gap-x-10"
         >
             <div>
                 <h1
@@ -24,19 +26,12 @@ export const Ground = () => {
                 >
                     mặt bằng tầng <br /> điển hình
                 </h1>
-                <GroupList />
-            </div>
-            <div>
-                <Image
-                    src="/images_avif/ground-1.avif"
-                    alt="mặt bằng tầng điển hình"
-                    width={600}
-                    height={360}
-                    unoptimized
-                    className="shrink-0"
+                <GroupList
+                    activeIndex={activeIndex}
+                    onChange={setActiveIndex}
                 />
-                <FloorTabs />
             </div>
+            <GroundImages index={activeIndex} direction={1} />
         </section>
     );
 };

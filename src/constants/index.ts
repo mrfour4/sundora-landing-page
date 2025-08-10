@@ -5,6 +5,7 @@ import {
     TAparment,
     TContact,
     TContactLocation,
+    TGround,
     TNews,
     TPartner,
     TTravelGroup,
@@ -243,12 +244,66 @@ export const CONTACTS: TContact[] = [
     },
 ];
 
-export const GROUNDS_DATA: string[] = [
-    "TRUNG TÂM THƯƠNG MẠI",
-    "VĂN PHÒNG CAO CẤP",
-    "CĂN HỘ TẦNG 11-15, 17-24",
-    "CĂN HỘ TẦNG 16",
-    "DUPLEX",
+// export const GROUNDS_DATA: TGround[] = [
+//     {
+//         name: "TRUNG TÂM THƯƠNG MẠI",
+//         imageUrl: "/images_avif/TRUNG-TAM-THUONG-MAI-tang-3.avif",
+//     },
+//     {
+//         name: "VĂN PHÒNG CAO CẤP",
+//         imageUrl: "/images_avif/VAN-PHONG-tang-4.avif",
+//     },
+//     {
+//         name: "CĂN HỘ TẦNG 11-15",
+//         imageUrl: "/images_avif/CAN-HO-tang-11-15.avif",
+//     },
+//     {
+//         name: "CĂN HỘ TẦNG 16",
+//         imageUrl: "/images_avif/CAN-HO-tang-16.avif",
+//     },
+//     {
+//         name: "CĂN HỘ TẦNG 17-24",
+//         imageUrl: "/images_avif/CAN-HO-tang-17-24.avif",
+//     },
+//     {
+//         name: "DUPLEX TẦNG 25",
+//         imageUrl: "/images_avif/DUPLEX-Tang-25.avif",
+//     },
+//     {
+//         name: "DUPLEX TẦNG 26",
+//         imageUrl: "/images_avif/DUPLEX-tang-26.avif",
+//     },
+// ];
+
+export const GROUNDS_DATA: TGround[] = [
+    {
+        name: "TRUNG TÂM THƯƠNG MẠI",
+        imageUrl: "/images_avif/shopping-center-floor-3.avif",
+    },
+    {
+        name: "VĂN PHÒNG CAO CẤP",
+        imageUrl: "/images_avif/premium-office-floor-4.avif",
+    },
+    {
+        name: "CĂN HỘ TẦNG 11-15",
+        imageUrl: "/images_avif/apartment-floor-11-15.avif",
+    },
+    {
+        name: "CĂN HỘ TẦNG 16",
+        imageUrl: "/images_avif/apartment-floor-16.avif",
+    },
+    {
+        name: "CĂN HỘ TẦNG 17-24",
+        imageUrl: "/images_avif/apartment-floor-17-24.avif",
+    },
+    {
+        name: "DUPLEX TẦNG 25",
+        imageUrl: "/images_avif/duplex-floor-25.avif",
+    },
+    {
+        name: "DUPLEX TẦNG 26",
+        imageUrl: "/images_avif/duplex-floor-26.avif",
+    },
 ];
 
 export const GROUND_FLOORS: string[] = [
