@@ -162,22 +162,22 @@ export const UTILITIES_DATA: TUtility[] = [
 
 export const PARTNERS: TPartner[] = [
     {
-        imageUrl: "/images_avif/partner-logo.avif",
+        imageUrl: "/images_avif/partner-1.avif",
         title: "Đơn vị \nquản lý vận hành",
         href: "#!",
     },
     {
-        imageUrl: "/images_avif/partner-logo.avif",
+        imageUrl: "/images_avif/partner-2.avif",
         title: "Đơn vị \nthiết kế nội thất",
         href: "#!",
     },
     {
-        imageUrl: "/images_avif/partner-logo.avif",
+        imageUrl: "/images_avif/partner-3.avif",
         title: "Đơn vị \nthiết kế cảnh quan",
         href: "#!",
     },
     {
-        imageUrl: "/images_avif/partner-logo.avif",
+        imageUrl: "/images_avif/partner-4.avif",
         title: "Ngân hàng \nbảo lãnh dự án",
         href: "#!",
     },

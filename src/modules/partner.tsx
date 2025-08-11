@@ -35,11 +35,11 @@ export const Partner = () => {
                         <Image
                             src={p.imageUrl}
                             alt={p.title}
-                            width={151}
-                            height={100}
-                            className="shrink-0 object-cover"
+                            width={130}
+                            height={80}
+                            className="h-20 shrink-0 object-contain"
                         />
-                        <p className="-translate-y-2 text-center text-sm font-semibold whitespace-pre-line text-white uppercase">
+                        <p className="text-center text-sm font-semibold whitespace-pre-line text-white uppercase">
                             {p.title}
                         </p>
                     </div>
