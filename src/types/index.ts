@@ -72,3 +72,5 @@ export type TGround = {
     name: string;
     imageUrl: string;
 };
+
+export type Underline = { left: number; width: number };

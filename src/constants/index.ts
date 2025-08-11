@@ -20,6 +20,7 @@ export const OVERVIEW_IMG = "/images_avif/bg-overview.avif";
 export const INSPIRATION_IMG = "/images_avif/bg-inspiration.avif";
 export const LOCATION_IMG = "/images_avif/bg-location.avif";
 export const PRIVILEGE_IMG = "/images_avif/bg-privilege.avif";
+export const APARTMENT_IMG = "/images_avif/bg-apartment.avif";
 export const PARTNER_IMG = "/images_avif/bg-partner.avif";
 export const CONTACT_IMG = "/images_avif/bg-contact.avif";
 
@@ -244,37 +245,6 @@ export const CONTACTS: TContact[] = [
     },
 ];
 
-// export const GROUNDS_DATA: TGround[] = [
-//     {
-//         name: "TRUNG TÂM THƯƠNG MẠI",
-//         imageUrl: "/images_avif/TRUNG-TAM-THUONG-MAI-tang-3.avif",
-//     },
-//     {
-//         name: "VĂN PHÒNG CAO CẤP",
-//         imageUrl: "/images_avif/VAN-PHONG-tang-4.avif",
-//     },
-//     {
-//         name: "CĂN HỘ TẦNG 11-15",
-//         imageUrl: "/images_avif/CAN-HO-tang-11-15.avif",
-//     },
-//     {
-//         name: "CĂN HỘ TẦNG 16",
-//         imageUrl: "/images_avif/CAN-HO-tang-16.avif",
-//     },
-//     {
-//         name: "CĂN HỘ TẦNG 17-24",
-//         imageUrl: "/images_avif/CAN-HO-tang-17-24.avif",
-//     },
-//     {
-//         name: "DUPLEX TẦNG 25",
-//         imageUrl: "/images_avif/DUPLEX-Tang-25.avif",
-//     },
-//     {
-//         name: "DUPLEX TẦNG 26",
-//         imageUrl: "/images_avif/DUPLEX-tang-26.avif",
-//     },
-// ];
-
 export const GROUNDS_DATA: TGround[] = [
     {
         name: "TRUNG TÂM THƯƠNG MẠI",
@@ -314,22 +284,42 @@ export const GROUND_FLOORS: string[] = [
     "TẦNG 15",
 ];
 
+// export const APARTMENTS: TAparment[] = [
+//     { name: "STUDIO", imageUrls: ["/images_avif/studio.avif"] },
+//     { name: "2PN", imageUrls: ["/images_avif/2pn.avif"] },
+//     { name: "3PN", imageUrls: ["/images_avif/3pn.avif"] },
+//     {
+//         name: "DUPLEX",
+//         imageUrls: [
+//             "/images_avif/duplex-t1.avif",
+//             "/images_avif/duplex-t2.avif",
+//         ],
+//     },
+//     {
+//         name: "PENTHOUSE",
+//         imageUrls: [
+//             "/images_avif/penhouse-t1.avif",
+//             "/images_avif/penhouse-t2.avif",
+//         ],
+//     },
+// ];
+
 export const APARTMENTS: TAparment[] = [
-    { name: "STUDIO", imageUrls: ["/images_avif/studio.avif"] },
-    { name: "2PN", imageUrls: ["/images_avif/2pn.avif"] },
-    { name: "3PN", imageUrls: ["/images_avif/3pn.avif"] },
+    { name: "STUDIO", imageUrls: ["/images_avif/studio-plan.avif"] },
+    { name: "2PN", imageUrls: ["/images_avif/2br-plan.avif"] },
+    { name: "3PN", imageUrls: ["/images_avif/3br-plan.avif"] },
     {
         name: "DUPLEX",
         imageUrls: [
-            "/images_avif/duplex-t1.avif",
-            "/images_avif/duplex-t2.avif",
+            "/images_avif/duplex-floor-01.avif",
+            "/images_avif/duplex-floor-02.avif",
         ],
     },
     {
         name: "PENTHOUSE",
         imageUrls: [
-            "/images_avif/penhouse-t1.avif",
-            "/images_avif/penhouse-t2.avif",
+            "/images_avif/penthouse-floor-01.avif",
+            "/images_avif/penthouse-floor-02.avif",
         ],
     },
 ];

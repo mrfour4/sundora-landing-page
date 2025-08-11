@@ -1,85 +1,82 @@
+// apartments.tsx (logic-only)
 "use client";
 
 import { APARTMENTS } from "@/constants";
 import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
+import { FloorTabs } from "./floor-tabs";
 
 export const ApartmentList = () => {
     const [active, setActive] = useState(0);
     const tabRefs = useRef<(HTMLDivElement | null)[]>([]);
-    const [underlineStyle, setUnderlineStyle] = useState({ left: 0, width: 0 });
-    const [prev, setPrev] = useState(0);
 
-    const direction = active > prev ? 1 : -1;
-
-    useEffect(() => {
-        const el = tabRefs.current[active];
-        if (el) {
-            setUnderlineStyle({
-                left: el.offsetLeft,
-                width: el.offsetWidth,
-            });
-        }
-    }, [active]);
+    const [floorIdx, setFloorIdx] = useState(0);
 
     const onClick = (idx: number) => {
         if (idx !== active) {
-            setPrev(active);
             setActive(idx);
+            setFloorIdx(0);
         }
     };
 
+    const floors = APARTMENTS[active].imageUrls;
+    const hasFloors = floors.length > 1;
+
     return (
-        <div className="relative flex w-full flex-1 flex-col items-center justify-center gap-6 overflow-hidden">
-            <div className="border-secondary-foreground relative flex w-fit items-center rounded-full border-2 bg-white px-14">
+        <div className="relative flex flex-col items-center justify-center gap-6 overflow-hidden">
+            <div
+                className="relative flex w-fit items-center rounded-full px-10"
+                style={{
+                    backgroundImage: `url(/images_avif/apartment-1.avif)`,
+                }}
+            >
                 {APARTMENTS.map((tab, idx) => (
                     <div
                         key={tab.name}
                         ref={(el) => void (tabRefs.current[idx] = el)}
                         onClick={() => onClick(idx)}
                         className={cn(
-                            "text-secondary-foreground cursor-pointer px-4 py-2 text-sm font-medium transition-colors",
-                            idx === active && "text-primary font-bold",
+                            "cursor-pointer px-5 py-2 text-xs font-medium text-[#BEC0C4] transition-colors",
+                            idx === active && "text-secondary font-bold",
                         )}
                     >
                         {tab.name}
                     </div>
                 ))}
-                <motion.div
-                    className="bg-secondary-foreground absolute bottom-0 h-[6px] translate-y-1 rounded-t-[4px]"
-                    layout
-                    transition={{ type: "spring", stiffness: 500, damping: 30 }}
-                    style={{
-                        left: underlineStyle.left,
-                        width: underlineStyle.width,
-                    }}
-                />
             </div>
 
-            <div className="relative flex w-full items-center justify-center gap-4 overflow-auto pr-4">
-                <AnimatePresence mode="wait" initial={false}>
-                    {APARTMENTS[active].imageUrls.map((url, index) => (
+            <div className="relative flex w-full items-center justify-center gap-4 overflow-auto">
+                <div className="relative h-[440px] w-[650px]">
+                    <AnimatePresence mode="wait" initial={false}>
                         <motion.div
-                            key={url}
-                            initial={{ x: direction * 100, opacity: 0 }}
+                            key={`${active}-${floorIdx}`}
+                            initial={{ x: -100, opacity: 0 }}
                             animate={{ x: 0, opacity: 1 }}
-                            exit={{ x: -direction * 100, opacity: 0 }}
-                            transition={{ duration: 0.5, delay: index * 0.1 }}
-                            className="relative h-[339px] w-[500px]"
+                            exit={{ x: 100, opacity: 0 }}
+                            transition={{ duration: 0.2 }}
+                            className="absolute inset-0"
                         >
                             <Image
-                                src={url}
-                                alt={`Image ${index + 1}`}
-                                width={500}
-                                height={339}
-                                className="size-full rounded-md object-cover"
+                                src={floors[floorIdx] ?? floors[0]}
+                                alt={`${APARTMENTS[active].name} - tầng ${floorIdx + 1}`}
+                                width={650}
+                                height={440}
+                                className="size-full object-cover"
+                                priority
                             />
                         </motion.div>
-                    ))}
-                </AnimatePresence>
+                    </AnimatePresence>
+                </div>
             </div>
+
+            <FloorTabs
+                count={floors.length}
+                active={floorIdx}
+                onChange={setFloorIdx}
+                className={cn("invisible mt-1", hasFloors && "visible")}
+            />
         </div>
     );
 };
