@@ -30,7 +30,7 @@ export const Partner = () => {
                 {PARTNERS.map((p, index) => (
                     <div
                         key={index}
-                        className="flex flex-col items-center justify-center rounded-md bg-linear-180 from-[#301C0E]/70 from-40% to-transparent px-4 py-1.5"
+                        className="flex w-[200px] flex-col items-center justify-center rounded-md bg-linear-180 from-[#301C0E]/70 from-40% to-transparent px-4 py-2"
                     >
                         <Image
                             src={p.imageUrl}
