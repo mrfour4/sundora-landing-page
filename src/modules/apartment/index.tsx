@@ -13,7 +13,7 @@ export const Apartment = () => {
             id={ESectionId.APARTMENT}
             className="relative flex h-screen items-center justify-center gap-x-20"
         >
-            <div>
+            <div className="-translate-y-8">
                 <h2
                     className={cn(
                         "text-primary-foreground text-xl",

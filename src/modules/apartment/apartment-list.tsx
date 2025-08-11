@@ -25,7 +25,7 @@ export const ApartmentList = () => {
     const hasFloors = floors.length > 1;
 
     return (
-        <div className="relative flex flex-col items-center justify-center gap-6 overflow-hidden">
+        <div className="relative flex flex-col items-center justify-center overflow-hidden">
             <div
                 className="relative flex w-fit items-center rounded-full px-10"
                 style={{
@@ -47,8 +47,9 @@ export const ApartmentList = () => {
                 ))}
             </div>
 
-            <div className="relative flex w-full items-center justify-center gap-4 overflow-auto">
+            <div className="relative mt-6 flex w-full items-center justify-center gap-4 overflow-auto">
                 <div className="relative h-[440px] w-[650px]">
+                    <div className="absolute inset-0 -z-10 h-[400px] translate-y-4 animate-pulse bg-gray-200" />
                     <AnimatePresence mode="wait" initial={false}>
                         <motion.div
                             key={`${active}-${floorIdx}`}
@@ -75,7 +76,7 @@ export const ApartmentList = () => {
                 count={floors.length}
                 active={floorIdx}
                 onChange={setFloorIdx}
-                className={cn("invisible mt-1", hasFloors && "visible")}
+                className={cn("invisible mt-2", hasFloors && "visible")}
             />
         </div>
     );

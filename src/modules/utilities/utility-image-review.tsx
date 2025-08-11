@@ -45,6 +45,7 @@ export const UtilityImageSlider = ({ active }: Props) => {
                     exit={{ opacity: 0, x: direction * -100 }}
                     className="absolute inset-0"
                 >
+                    <div className="absolute inset-0 -z-10 h-[400px] translate-y-4 animate-pulse bg-gray-200" />
                     <Image
                         src={currentItem.imageUrl}
                         alt={currentItem.name}
