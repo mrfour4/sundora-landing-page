@@ -4,28 +4,39 @@ import Image from "next/image";
 
 type Props = {
     index: number;
-    direction: number;
 };
 
-export const GroundImages = ({ index, direction }: Props) => {
+export const GroundImages = ({ index }: Props) => {
     const currentItem = GROUNDS_DATA[index];
+
     return (
         <div className="relative mt-20 h-[460px] w-[650px] overflow-hidden">
-            <AnimatePresence mode="popLayout" custom={direction}>
+            {/* dùng mode="wait" để chờ item cũ exit xong rồi mới enter → tránh chồng chéo gây giật */}
+            <AnimatePresence mode="wait" initial={false}>
                 <motion.div
                     key={currentItem.imageUrl}
-                    custom={direction}
-                    initial={{ opacity: 0, x: direction * 100 }}
+                    // Luôn vào từ PHẢI → 0
+                    initial={{ opacity: 0, x: 100 }}
                     animate={{
                         opacity: 1,
                         x: 0,
                         transition: {
-                            type: "spring",
-                            duration: 0.5,
-                            bounce: 0.2,
+                            // dùng tween để không overshoot
+                            type: "tween",
+                            duration: 0.4,
+                            ease: [0.2, 0, 0, 1], // easeOut mượt, không nảy
                         },
                     }}
-                    exit={{ opacity: 0, x: direction * -100 }}
+                    // Luôn thoát sang TRÁI
+                    exit={{
+                        opacity: 0,
+                        x: -100,
+                        transition: {
+                            type: "tween",
+                            duration: 0.3,
+                            ease: "easeInOut",
+                        },
+                    }}
                     className="absolute inset-0 flex flex-col items-center justify-center"
                 >
                     <Image

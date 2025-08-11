@@ -31,7 +31,7 @@ export const Ground = () => {
                     onChange={setActiveIndex}
                 />
             </div>
-            <GroundImages index={activeIndex} direction={1} />
+            <GroundImages index={activeIndex} />
         </section>
     );
 };
