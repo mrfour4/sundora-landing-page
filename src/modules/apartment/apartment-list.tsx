@@ -49,7 +49,7 @@ export const ApartmentList = () => {
 
             <div className="relative mt-6 flex w-full items-center justify-center gap-4 overflow-auto">
                 <div className="relative h-[440px] w-[650px]">
-                    <div className="absolute inset-0 -z-10 h-[400px] translate-y-4 animate-pulse bg-gray-200" />
+                    <div className="absolute inset-0 -z-10 h-[440px] w-[650px] animate-pulse bg-gray-200" />
                     <AnimatePresence mode="wait" initial={false}>
                         <motion.div
                             key={`${active}-${floorIdx}`}
