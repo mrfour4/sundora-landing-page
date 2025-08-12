@@ -43,10 +43,13 @@ export const Library = () => {
                     <Button
                         variant="ghost"
                         className="border-secondary hover:text-secondary cursor-pointer rounded-full border-2 text-sm font-medium text-white hover:bg-transparent!"
+                        asChild
                     >
-                        <Icons.isolation className="shrink-0" />
-                        <span>VR 360 DỰ ÁN</span>
-                        <Icons.arrowLeft className="text-secondary shrink-0 rotate-180" />
+                        <Link href="https://tour.panoee.net/iframe/Sundora-Tower-Danang">
+                            <Icons.isolation className="shrink-0" />
+                            <span>VR 360 DỰ ÁN</span>
+                            <Icons.arrowLeft className="text-secondary shrink-0 rotate-180" />
+                        </Link>
                     </Button>
                 </div>
                 <div className="mt-10 flex gap-x-24">
