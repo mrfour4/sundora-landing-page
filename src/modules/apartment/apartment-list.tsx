@@ -24,6 +24,8 @@ export const ApartmentList = () => {
     const floors = APARTMENTS[active].imageUrls;
     const hasFloors = floors.length > 1;
 
+    const isStudio = APARTMENTS[active].name === "STUDIO";
+
     return (
         <div className="relative flex flex-col items-center justify-center overflow-hidden">
             <div
@@ -49,7 +51,12 @@ export const ApartmentList = () => {
 
             <div className="relative mt-6 flex w-full items-center justify-center gap-4 overflow-auto">
                 <div className="relative h-[440px] w-[650px]">
-                    <div className="absolute inset-0 -z-10 h-[440px] w-[650px] animate-pulse bg-gray-200" />
+                    <div
+                        className={cn(
+                            "absolute inset-0 -z-10 h-[440px] w-[650px] animate-pulse bg-gray-200",
+                            isStudio && "animate-none bg-[#62605f]",
+                        )}
+                    />
                     <AnimatePresence mode="wait" initial={false}>
                         <motion.div
                             key={`${active}-${floorIdx}`}
@@ -64,7 +71,10 @@ export const ApartmentList = () => {
                                 alt={`${APARTMENTS[active].name} - tầng ${floorIdx + 1}`}
                                 width={650}
                                 height={440}
-                                className="size-full object-cover"
+                                className={cn(
+                                    "size-full object-cover",
+                                    isStudio && "rotate-90",
+                                )}
                                 priority
                             />
                         </motion.div>

@@ -284,26 +284,6 @@ export const GROUND_FLOORS: string[] = [
     "TẦNG 15",
 ];
 
-// export const APARTMENTS: TAparment[] = [
-//     { name: "STUDIO", imageUrls: ["/images_avif/studio.avif"] },
-//     { name: "2PN", imageUrls: ["/images_avif/2pn.avif"] },
-//     { name: "3PN", imageUrls: ["/images_avif/3pn.avif"] },
-//     {
-//         name: "DUPLEX",
-//         imageUrls: [
-//             "/images_avif/duplex-t1.avif",
-//             "/images_avif/duplex-t2.avif",
-//         ],
-//     },
-//     {
-//         name: "PENTHOUSE",
-//         imageUrls: [
-//             "/images_avif/penhouse-t1.avif",
-//             "/images_avif/penhouse-t2.avif",
-//         ],
-//     },
-// ];
-
 export const APARTMENTS: TAparment[] = [
     { name: "STUDIO", imageUrls: ["/images_avif/studio-plan.avif"] },
     { name: "2PN", imageUrls: ["/images_avif/2br-plan.avif"] },
