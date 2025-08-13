@@ -22,7 +22,7 @@ import { useForm } from "react-hook-form";
 export const RegisterForm = () => {
     const form = useForm<TRegisterValues>({
         resolver: zodResolver(registerSchema),
-        defaultValues: { fullName: "koko", phone: "0397890989" },
+        defaultValues: { fullName: "", phone: "" },
     });
 
     const { submit, isPending } = useServerAction<TRegisterValues>(sendLead, {
