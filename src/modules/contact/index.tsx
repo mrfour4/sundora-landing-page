@@ -7,8 +7,8 @@ import { useSectionObserver } from "@/hooks/use-section-observer";
 import { ESectionId } from "@/types";
 import { MapPin } from "lucide-react";
 import Link from "next/link";
+import { ContactForm } from "./contact-form";
 import { ContactItem } from "./contact-item";
-import { RegisterForm } from "./register-form";
 
 export const Contact = () => {
     useSectionObserver(ESectionId.CONTACT);
@@ -60,7 +60,7 @@ export const Contact = () => {
                 </div>
             </div>
 
-            <RegisterForm />
+            <ContactForm />
         </section>
     );
 };

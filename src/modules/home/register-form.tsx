@@ -1,6 +1,6 @@
 "use client";
 
-import { sendRegister } from "@/app/actions/send-register";
+import { sendLead } from "@/app/actions/send-lead";
 import { albra } from "@/app/fonts";
 import { Button } from "@/components/ui/button";
 import {
@@ -14,7 +14,7 @@ import { Label } from "@/components/ui/label";
 import { HOME_BOTTOM_IMG } from "@/constants";
 import { useServerAction } from "@/hooks/use-server-action";
 import { cn } from "@/lib/utils";
-import { registerSchema, TRegisterValues } from "@/schemas/register-form";
+import { registerSchema, TRegisterValues } from "@/schemas/register";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useId } from "react";
 import { useForm } from "react-hook-form";
@@ -25,18 +25,15 @@ export const RegisterForm = () => {
         defaultValues: { fullName: "koko", phone: "0397890989" },
     });
 
-    const { submit, isPending } = useServerAction<TRegisterValues>(
-        sendRegister,
-        {
-            messages: {
-                loading: "Đang gửi...",
-                success: "Gửi thành công!",
-                error: (err) =>
-                    (err as Error).message || "Gửi thất bại, vui lòng thử lại.",
-            },
-            afterSuccess: () => form.reset(),
+    const { submit, isPending } = useServerAction<TRegisterValues>(sendLead, {
+        messages: {
+            loading: "Đang gửi...",
+            success: "Gửi thành công!",
+            error: (err) =>
+                (err as Error).message || "Gửi thất bại, vui lòng thử lại.",
         },
-    );
+        afterSuccess: () => form.reset(),
+    });
 
     const inputId = useId();
 
