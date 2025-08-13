@@ -1,6 +1,10 @@
 import { Icons } from "@/components/icons";
 import { LucideIcon } from "lucide-react";
 
+export type ActionState<T = void> =
+    | { ok: true; data?: T }
+    | { ok: false; error: string };
+
 export enum ESectionId {
     HOME = "home",
     VIDEO = "video",

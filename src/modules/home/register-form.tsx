@@ -1,5 +1,6 @@
 "use client";
 
+import { sendRegister } from "@/app/actions/send-register";
 import { albra } from "@/app/fonts";
 import { Button } from "@/components/ui/button";
 import {
@@ -10,42 +11,37 @@ import {
     FormMessage,
 } from "@/components/ui/form";
 import { Label } from "@/components/ui/label";
-import { HOME_BOTTOM_IMG, VN_PHONE_REGEX } from "@/constants";
+import { HOME_BOTTOM_IMG } from "@/constants";
+import { useServerAction } from "@/hooks/use-server-action";
 import { cn } from "@/lib/utils";
+import { registerSchema, TRegisterValues } from "@/schemas/register-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useId } from "react";
 import { useForm } from "react-hook-form";
-import { z } from "zod";
-
-const formSchema = z.object({
-    fullName: z
-        .string()
-        .trim()
-        .min(1, { message: "Vui lòng nhập họ và tên" })
-        .regex(/^[A-Za-zÀ-ỹỲ-ỷ\s]+$/, {
-            message: "Tên chỉ được chứa chữ và khoảng trắng",
-        }),
-    phone: z
-        .string()
-        .regex(VN_PHONE_REGEX, { message: "Số điện thoại không hợp lệ" }),
-});
-
-type FormValues = z.infer<typeof formSchema>;
 
 export const RegisterForm = () => {
-    const form = useForm<FormValues>({
-        resolver: zodResolver(formSchema),
-        defaultValues: {
-            fullName: "",
-            phone: "",
-        },
+    const form = useForm<TRegisterValues>({
+        resolver: zodResolver(registerSchema),
+        defaultValues: { fullName: "koko", phone: "0397890989" },
     });
+
+    const { submit, isPending } = useServerAction<TRegisterValues>(
+        sendRegister,
+        {
+            messages: {
+                loading: "Đang gửi...",
+                success: "Gửi thành công!",
+                error: (err) =>
+                    (err as Error).message || "Gửi thất bại, vui lòng thử lại.",
+            },
+            afterSuccess: () => form.reset(),
+        },
+    );
 
     const inputId = useId();
 
-    const onSubmit = (value: FormValues) => {
-        console.log("🚀 ~ onSubmit ~ value:", value);
-        alert("Submitted form: " + JSON.stringify(value, null, 2));
+    const onSubmit = (values: TRegisterValues) => {
+        submit(values);
     };
 
     return (
@@ -62,6 +58,7 @@ export const RegisterForm = () => {
             >
                 Đăng ký tư vấn
             </Label>
+
             <Form {...form}>
                 <form
                     onSubmit={form.handleSubmit(onSubmit)}
@@ -80,16 +77,17 @@ export const RegisterForm = () => {
                                             "border-secondary-foreground border-b font-light text-white outline-none placeholder:text-sm placeholder:text-white focus-visible:border-b-2 focus-visible:placeholder:text-white/80",
                                             albra.className,
                                         )}
+                                        disabled={isPending}
                                         {...field}
                                     />
                                 </FormControl>
-
                                 <FormMessage
                                     className={cn("text-sm", albra.className)}
                                 />
                             </FormItem>
                         )}
                     />
+
                     <FormField
                         control={form.control}
                         name="phone"
@@ -102,22 +100,24 @@ export const RegisterForm = () => {
                                             "border-secondary-foreground border-b font-light text-white outline-none placeholder:text-sm placeholder:text-white focus-visible:border-b-2 focus-visible:placeholder:text-white/80",
                                             albra.className,
                                         )}
+                                        disabled={isPending}
                                         {...field}
                                     />
                                 </FormControl>
-
                                 <FormMessage
                                     className={cn("text-sm", albra.className)}
                                 />
                             </FormItem>
                         )}
                     />
+
                     <Button
                         type="submit"
                         variant="secondary"
-                        className="text-secondary-foreground-foreground px-5 py-1"
+                        className="text-secondary-foreground-foreground px-5 py-1 uppercase"
+                        disabled={isPending}
                     >
-                        gửi thông tin
+                        {isPending ? "đang gửi..." : "gửi thông tin"}
                     </Button>
                 </form>
             </Form>

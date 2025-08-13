@@ -1,4 +1,5 @@
 import { NavigationProvider } from "@/components/navigation-context";
+import { Toaster } from "@/components/ui/sonner";
 import type { Metadata } from "next";
 import { montserrat } from "./fonts";
 import "./globals.css";
@@ -35,6 +36,7 @@ export default function RootLayout({
         <html lang="en">
             <body className={montserrat.className}>
                 <NavigationProvider>{children}</NavigationProvider>
+                <Toaster richColors theme="light" position="top-center" />
             </body>
         </html>
     );
