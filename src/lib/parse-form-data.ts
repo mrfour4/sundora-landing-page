@@ -1,11 +1,13 @@
 import { z } from "zod";
 import { ZodEffects } from "zod/v3";
 
+/* eslint-disable  @typescript-eslint/no-explicit-any */
 function unwrapObjectSchema(schema: z.ZodTypeAny): z.ZodObject<any> {
     let cur: z.ZodTypeAny = schema;
     while (cur instanceof ZodEffects) cur = cur.innerType();
     if (!(cur instanceof z.ZodObject))
         throw new Error("schema must be ZodObject");
+    /* eslint-disable  @typescript-eslint/no-explicit-any */
     return cur as z.ZodObject<any>;
 }
 

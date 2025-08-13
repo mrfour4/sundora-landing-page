@@ -51,11 +51,13 @@ export function useServerAction<TInput, TResult = void>(
                 loading: opts?.messages?.loading ?? "Đang xử lý...",
                 success: (res) =>
                     typeof opts?.messages?.success === "function"
-                        ? (opts.messages.success as any)(res)
+                        ? /* eslint-disable  @typescript-eslint/no-explicit-any */
+                          (opts.messages.success as any)(res)
                         : (opts?.messages?.success ?? "Thành công!"),
                 error: (err) =>
                     typeof opts?.messages?.error === "function"
-                        ? (opts.messages.error as any)(err)
+                        ? /* eslint-disable  @typescript-eslint/no-explicit-any */
+                          (opts.messages.error as any)(err)
                         : ((err as Error)?.message ?? "Có lỗi xảy ra"),
             });
         });
