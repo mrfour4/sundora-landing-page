@@ -1,4 +1,3 @@
-// apartments.tsx (logic-only)
 "use client";
 
 import { APARTMENTS } from "@/constants";
@@ -48,7 +47,7 @@ export const ApartmentList = () => {
             </div>
 
             <div className="relative mt-6 flex w-full items-center justify-center gap-4 overflow-auto">
-                <div className="relative h-[440px] w-[650px]">
+                <div className="relative h-[440px] w-[650px] overflow-hidden">
                     <div className="absolute inset-0 -z-10 h-[440px] w-[650px] animate-pulse bg-gray-200" />
                     <AnimatePresence mode="wait" initial={false}>
                         <motion.div
