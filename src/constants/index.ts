@@ -22,6 +22,7 @@ export const OVERVIEW_IMG_MOBILE = "/images_avif/bg-overview-mobile.avif";
 export const INSPIRATION_IMG = "/images_avif/bg-inspiration.avif";
 export const INSPIRATION_IMG_MOBILE = "/images_avif/bg-inspiration-mobile.avif";
 export const LOCATION_IMG = "/images_avif/bg-location.avif";
+export const LOCATION_IMG_MOBILE = "/images_avif/bg-location-mobile.avif";
 export const PRIVILEGE_IMG = "/images_avif/bg-privilege.avif";
 export const APARTMENT_IMG = "/images_avif/bg-apartment.avif";
 export const PARTNER_IMG = "/images_avif/bg-partner.avif";

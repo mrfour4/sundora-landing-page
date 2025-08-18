@@ -6,7 +6,7 @@ import { NavigationDots } from "@/components/navigation-dots";
 import { Home } from "@/modules/home";
 import { Inspiration } from "@/modules/inspiration";
 // import { Library } from "@/modules/library";
-// import { Location } from "@/modules/location";
+import { Location } from "@/modules/location";
 // import { News } from "@/modules/news";
 import { Overview } from "@/modules/overview";
 // import { Partner } from "@/modules/partner";
@@ -23,7 +23,7 @@ export default function AppPage() {
             <Video />
             <Overview />
             <Inspiration />
-            {/* <Location /> */}
+            <Location />
             {/* <Privilege /> */}
             {/* <Utilities /> */}
             {/* <Ground /> */}
