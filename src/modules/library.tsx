@@ -2,7 +2,7 @@
 
 import { albra } from "@/app/fonts";
 import { Icons } from "@/components/icons";
-import { Button } from "@/components/ui/button";
+import { VRButton } from "@/components/vr-button";
 import { useSectionObserver } from "@/hooks/use-section-observer";
 import { cn } from "@/lib/utils";
 import { ESectionId } from "@/types";
@@ -40,17 +40,8 @@ export const Library = () => {
                     >
                         thư viện
                     </h1>
-                    <Button
-                        variant="ghost"
-                        className="border-secondary hover:text-secondary cursor-pointer rounded-full border-2 text-sm font-medium text-white hover:bg-transparent!"
-                        asChild
-                    >
-                        <Link href="https://tour.panoee.net/iframe/Sundora-Tower-Danang">
-                            <Icons.isolation className="shrink-0" />
-                            <span>VR 360 DỰ ÁN</span>
-                            <Icons.arrowLeft className="text-secondary shrink-0 rotate-180" />
-                        </Link>
-                    </Button>
+
+                    <VRButton />
                 </div>
                 <div className="mt-10 flex gap-x-24">
                     <div>
