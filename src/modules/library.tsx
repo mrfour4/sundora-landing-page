@@ -17,11 +17,11 @@ export const Library = () => {
     return (
         <section
             id={ESectionId.LIBRARY}
-            className="bg-accent-foreground flex h-dvh pt-20 lg:items-center lg:gap-x-32 lg:pt-10"
+            className="bg-accent-foreground flex h-dvh pt-20 pb-6 lg:items-center lg:gap-x-32 lg:pt-10"
         >
-            <div className="w-full lg:w-auto">
+            <div className="mt-auto w-full lg:w-auto">
                 {isMobile && (
-                    <div className="mt-10 mb-9 flex flex-col items-center gap-y-3">
+                    <div className="mb-9 flex flex-col items-center gap-y-3">
                         <h1
                             className={cn(
                                 "text-4xl font-light text-white uppercase",

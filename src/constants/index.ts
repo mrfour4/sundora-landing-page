@@ -26,6 +26,7 @@ export const LOCATION_IMG_MOBILE = "/images_avif/bg-location-mobile.avif";
 export const PRIVILEGE_IMG = "/images_avif/bg-privilege.avif";
 export const APARTMENT_IMG = "/images_avif/bg-apartment.avif";
 export const PARTNER_IMG = "/images_avif/bg-partner.avif";
+export const PARTNER_IMG_MOBILE = "/images_avif/bg-partner-mobile.avif";
 export const CONTACT_IMG = "/images_avif/bg-contact.avif";
 
 export const SECTION_TITLES: Record<ESectionId, string> = {

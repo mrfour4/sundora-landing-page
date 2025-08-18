@@ -9,7 +9,7 @@ import { Library } from "@/modules/library";
 import { Location } from "@/modules/location";
 // import { News } from "@/modules/news";
 import { Overview } from "@/modules/overview";
-// import { Partner } from "@/modules/partner";
+import { Partner } from "@/modules/partner";
 import { Privilege } from "@/modules/privilege";
 import { Utilities } from "@/modules/utilities";
 import { Video } from "@/modules/video";
@@ -29,7 +29,7 @@ export default function AppPage() {
             <Ground />
             <Apartment />
             <Library />
-            {/* <Partner /> */}
+            <Partner />
             {/* <News /> */}
             {/* <Contact /> */}
         </main>
