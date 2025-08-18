@@ -19,7 +19,7 @@ export const Library = () => {
             id={ESectionId.LIBRARY}
             className="bg-accent-foreground flex h-dvh pt-20 lg:items-center lg:gap-x-32 lg:pt-10"
         >
-            <div className="w-full">
+            <div className="w-full lg:w-auto">
                 {isMobile && (
                     <div className="mt-10 mb-9 flex flex-col items-center gap-y-3">
                         <h1
@@ -39,7 +39,7 @@ export const Library = () => {
                     alt="Hình ảnh dự án"
                     width={385}
                     height={371}
-                    className="w-full shrink-0 object-cover"
+                    className="w-full shrink-0 object-cover lg:w-auto"
                 />
                 <div className="from-secondary-foreground to-secondary flex h-14 items-center bg-gradient-to-b pl-8">
                     <p className="text-primary text-sm font-semibold">
