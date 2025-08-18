@@ -12,7 +12,7 @@ import { Home } from "@/modules/home";
 // import { Partner } from "@/modules/partner";
 // import { Privilege } from "@/modules/privilege";
 // import { Utilities } from "@/modules/utilities";
-// import { Video } from "@/modules/video";
+import { Video } from "@/modules/video";
 
 export default function AppPage() {
     return (
@@ -20,18 +20,18 @@ export default function AppPage() {
             <Header />
             <NavigationDots />
             <Home />
-            {/* <Video />
-            <Overview />
-            <Inspiration />
-            <Location />
-            <Privilege />
-            <Utilities />
-            <Ground />
-            <Apartment />
-            <Library />
-            <Partner />
-            <News />
-            <Contact /> */}
+            <Video />
+            {/* <Overview /> */}
+            {/* <Inspiration /> */}
+            {/* <Location /> */}
+            {/* <Privilege /> */}
+            {/* <Utilities /> */}
+            {/* <Ground /> */}
+            {/* <Apartment /> */}
+            {/* <Library /> */}
+            {/* <Partner /> */}
+            {/* <News /> */}
+            {/* <Contact /> */}
         </main>
     );
 }

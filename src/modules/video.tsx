@@ -1,6 +1,7 @@
 "use client";
 
 import { Icons } from "@/components/icons";
+import { HERO_IMG_URL_MOBILE } from "@/constants";
 import { useSectionObserver } from "@/hooks/use-section-observer";
 import { ESectionId } from "@/types";
 import { useEffect, useRef, useState } from "react";
@@ -42,7 +43,8 @@ export const Video = () => {
     return (
         <section
             id={ESectionId.VIDEO}
-            className="bg-secondary relative aspect-video h-full w-full"
+            className="relative h-screen w-full"
+            style={{ backgroundImage: `url(${HERO_IMG_URL_MOBILE})` }}
         >
             <video
                 ref={videoRef}
