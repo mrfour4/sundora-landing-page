@@ -1,6 +1,7 @@
 "use client";
 
 import { APARTMENTS } from "@/constants";
+import { useIsMobile } from "@/hooks/use-mobile";
 import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
@@ -12,6 +13,7 @@ export const ApartmentList = () => {
     const tabRefs = useRef<(HTMLDivElement | null)[]>([]);
 
     const [floorIdx, setFloorIdx] = useState(0);
+    const isMobile = useIsMobile();
 
     const onClick = (idx: number) => {
         if (idx !== active) {
@@ -24,11 +26,13 @@ export const ApartmentList = () => {
     const hasFloors = floors.length > 1;
 
     return (
-        <div className="relative flex flex-col items-center justify-center overflow-hidden">
+        <div className="relative mt-6 flex flex-col items-center justify-center overflow-hidden">
             <div
-                className="relative flex w-fit items-center rounded-full px-10"
+                className="relative flex w-fit flex-col items-center gap-y-3 px-10 lg:flex-row lg:rounded-full"
                 style={{
-                    backgroundImage: `url(/images_avif/apartment-1.avif)`,
+                    backgroundImage: !isMobile
+                        ? `url(/images_avif/apartment-1.avif)`
+                        : undefined,
                 }}
             >
                 {APARTMENTS.map((tab, idx) => (
@@ -37,18 +41,21 @@ export const ApartmentList = () => {
                         ref={(el) => void (tabRefs.current[idx] = el)}
                         onClick={() => onClick(idx)}
                         className={cn(
-                            "cursor-pointer px-5 py-2 text-xs font-medium text-[#BEC0C4] transition-colors",
+                            "flex w-[204px] cursor-pointer items-center justify-center rounded-full px-5 py-2 text-xs font-medium text-[#BEC0C4] transition-colors lg:w-auto",
                             idx === active && "text-secondary font-bold",
                         )}
+                        style={{
+                            backgroundImage: `url(/images_avif/apartment-1.avif)`,
+                        }}
                     >
                         {tab.name}
                     </div>
                 ))}
             </div>
 
-            <div className="relative mt-6 flex w-full items-center justify-center gap-4 overflow-auto">
-                <div className="relative h-[440px] w-[650px] overflow-hidden">
-                    <div className="absolute inset-0 -z-10 h-[440px] w-[650px] animate-pulse bg-gray-200" />
+            <div className="relative mt-6 flex h-[350px] w-full items-center justify-center gap-4 overflow-auto px-3">
+                <div className="relative h-[350px] w-full overflow-hidden lg:h-[440px] lg:w-[650px]">
+                    <div className="absolute inset-0 -z-10 animate-pulse bg-gray-200 lg:h-[440px] lg:w-[650px]" />
                     <AnimatePresence mode="wait" initial={false}>
                         <motion.div
                             key={`${active}-${floorIdx}`}

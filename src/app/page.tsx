@@ -1,6 +1,6 @@
 import { Header } from "@/components/header";
 import { NavigationDots } from "@/components/navigation-dots";
-// import { Apartment } from "@/modules/apartment";
+import { Apartment } from "@/modules/apartment";
 // import { Contact } from "@/modules/contact";
 import { Ground } from "@/modules/ground";
 import { Home } from "@/modules/home";
@@ -27,7 +27,7 @@ export default function AppPage() {
             <Privilege />
             <Utilities />
             <Ground />
-            {/* <Apartment /> */}
+            <Apartment />
             {/* <Library /> */}
             {/* <Partner /> */}
             {/* <News /> */}
