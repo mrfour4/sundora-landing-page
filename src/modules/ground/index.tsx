@@ -15,7 +15,7 @@ export const Ground = () => {
     return (
         <section
             id={ESectionId.GROUND}
-            className="flex h-screen items-center justify-center gap-x-10"
+            className="flex h-dvh items-center justify-center gap-x-10"
         >
             <div>
                 <h1

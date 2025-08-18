@@ -14,7 +14,7 @@ export const Library = () => {
     return (
         <section
             id={ESectionId.LIBRARY}
-            className="bg-accent-foreground flex h-screen items-center gap-x-32 pt-10"
+            className="bg-accent-foreground flex h-dvh items-center gap-x-32 pt-10"
         >
             <div>
                 <Image

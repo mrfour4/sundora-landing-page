@@ -18,6 +18,7 @@ export const HERO_IMG_URL = "/images_avif/bg-home.avif";
 export const HERO_IMG_URL_MOBILE = "/images_avif/bg-home-mobile.avif";
 export const HOME_BOTTOM_IMG = "/images_avif/bg-bottom-home.avif";
 export const OVERVIEW_IMG = "/images_avif/bg-overview.avif";
+export const OVERVIEW_IMG_MOBILE = "/images_avif/bg-overview-mobile.avif";
 export const INSPIRATION_IMG = "/images_avif/bg-inspiration.avif";
 export const LOCATION_IMG = "/images_avif/bg-location.avif";
 export const PRIVILEGE_IMG = "/images_avif/bg-privilege.avif";

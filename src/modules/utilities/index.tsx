@@ -17,13 +17,10 @@ export const Utilities = () => {
     return (
         <section
             id={ESectionId.UTILITIES}
-            className="flex h-screen items-center justify-between pl-40"
+            className="flex h-dvh items-center justify-between pl-40"
         >
             <div className="relative shrink-0 pt-8 pr-7">
-                <UtilityImage
-                    index={activeIndex}
-                    direction={1}
-                />
+                <UtilityImage index={activeIndex} direction={1} />
 
                 <Image
                     src="/images_avif/utilities-placeholder.avif"

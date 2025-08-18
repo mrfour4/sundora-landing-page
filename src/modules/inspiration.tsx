@@ -12,7 +12,7 @@ export const Inspiration = () => {
     return (
         <section
             id={ESectionId.INSPIRATION}
-            className="flex h-screen flex-col items-center justify-center bg-cover bg-no-repeat"
+            className="flex h-dvh flex-col items-center justify-center bg-cover bg-no-repeat"
             style={{ backgroundImage: `url(${INSPIRATION_IMG})` }}
         >
             <div className="flex flex-1 items-center gap-x-16">

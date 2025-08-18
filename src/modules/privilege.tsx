@@ -12,7 +12,7 @@ export const Privilege = () => {
     return (
         <section
             id={ESectionId.PRIVILEGE}
-            className="relative flex h-screen items-center justify-between gap-x-10"
+            className="relative flex h-dvh items-center justify-between gap-x-10"
         >
             <Image
                 src="/images_avif/bg-privilege.avif"

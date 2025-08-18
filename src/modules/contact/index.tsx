@@ -15,7 +15,7 @@ export const Contact = () => {
     return (
         <section
             id={ESectionId.CONTACT}
-            className="flex h-screen items-center justify-center gap-x-40 px-28"
+            className="flex h-dvh items-center justify-center gap-x-40 px-28"
             style={{ backgroundImage: `url(${CONTACT_IMG})` }}
         >
             <div className="space-y-6">

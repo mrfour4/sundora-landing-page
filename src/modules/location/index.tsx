@@ -12,7 +12,7 @@ export const Location = () => {
     return (
         <section
             id={ESectionId.LOCATION}
-            className="flex h-screen flex-col justify-center bg-cover bg-no-repeat px-24 pt-20"
+            className="flex h-dvh flex-col justify-center bg-cover bg-no-repeat px-24 pt-20"
             style={{ backgroundImage: `url(${LOCATION_IMG})` }}
         >
             <div

@@ -2,26 +2,31 @@ import { useNavigationContext } from "@/components/navigation-context";
 import { ESectionId } from "@/types";
 import { useEffect } from "react";
 
-export const useSectionObserver = (id: ESectionId) => {
+type Opts = { rootId?: string };
+
+export const useSectionObserver = (id: ESectionId, opts?: Opts) => {
     const { setSectionId } = useNavigationContext();
 
     useEffect(() => {
-        const element = document.getElementById(id);
-        if (!element) return;
+        const el = document.getElementById(String(id));
+        if (!el) return;
 
-        const observer = new IntersectionObserver(
+        const root = opts?.rootId ? document.getElementById(opts.rootId) : null;
+
+        const io = new IntersectionObserver(
             ([entry]) => {
                 if (entry.isIntersecting) {
                     setSectionId(id);
                 }
             },
             {
-                rootMargin: "0px 0px -70% 0px", // Trigger khi phần tử vào 30% đầu viewport
-                threshold: 0.3,
+                root,
+                rootMargin: "-30% 0px -70% 0px",
+                threshold: [0, 0.01],
             },
         );
 
-        observer.observe(element);
-        return () => observer.unobserve(element);
-    }, [id, setSectionId]);
+        io.observe(el);
+        return () => io.disconnect();
+    }, [id, opts?.rootId, setSectionId]);
 };

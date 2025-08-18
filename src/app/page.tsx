@@ -8,7 +8,7 @@ import { Home } from "@/modules/home";
 // import { Library } from "@/modules/library";
 // import { Location } from "@/modules/location";
 // import { News } from "@/modules/news";
-// import { Overview } from "@/modules/overview";
+import { Overview } from "@/modules/overview";
 // import { Partner } from "@/modules/partner";
 // import { Privilege } from "@/modules/privilege";
 // import { Utilities } from "@/modules/utilities";
@@ -21,7 +21,7 @@ export default function AppPage() {
             <NavigationDots />
             <Home />
             <Video />
-            {/* <Overview /> */}
+            <Overview />
             {/* <Inspiration /> */}
             {/* <Location /> */}
             {/* <Privilege /> */}

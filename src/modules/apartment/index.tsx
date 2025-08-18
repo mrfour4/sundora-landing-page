@@ -11,7 +11,7 @@ export const Apartment = () => {
     return (
         <section
             id={ESectionId.APARTMENT}
-            className="relative flex h-screen items-center justify-center gap-x-20"
+            className="relative flex h-dvh items-center justify-center gap-x-20"
         >
             <div className="-translate-y-8">
                 <h2
