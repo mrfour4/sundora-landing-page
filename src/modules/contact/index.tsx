@@ -15,13 +15,13 @@ export const Contact = () => {
     return (
         <section
             id={ESectionId.CONTACT}
-            className="flex h-dvh items-center justify-center gap-x-40 px-28"
+            className="flex h-dvh flex-col-reverse items-center justify-center gap-y-4 pt-16 lg:flex-row lg:gap-x-40 lg:px-28 lg:pt-0"
             style={{ backgroundImage: `url(${CONTACT_IMG})` }}
         >
-            <div className="space-y-6">
+            <div className="space-y-2 lg:space-y-6">
                 <div className="flex gap-x-3">
                     <MapPin className="fill-secondary mt-1 size-4" />
-                    <ul className="space-y-3">
+                    <ul className="space-y-0 lg:space-y-3">
                         {CONTACT_LOCATIONS.map((c, index) => (
                             <li key={index}>
                                 <ContactItem
@@ -33,7 +33,7 @@ export const Contact = () => {
                         ))}
                     </ul>
                 </div>
-                <ul className="space-y-3">
+                <ul className="lg:space-y-3">
                     {CONTACTS.map((c, index) => (
                         <li key={index} className="flex items-start gap-x-3">
                             <c.icon className="fill-secondary mt-1 size-4" />

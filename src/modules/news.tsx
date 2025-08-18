@@ -3,6 +3,7 @@
 import { albra } from "@/app/fonts";
 import { Icons } from "@/components/icons";
 import { NEWS } from "@/constants";
+import { useIsMobile } from "@/hooks/use-mobile";
 import { useSectionObserver } from "@/hooks/use-section-observer";
 import { cn } from "@/lib/utils";
 import { ESectionId } from "@/types";
@@ -11,6 +12,12 @@ import Link from "next/link";
 
 export const News = () => {
     useSectionObserver(ESectionId.NEWS);
+
+    const isMobile = useIsMobile();
+
+    if (isMobile) {
+        return null;
+    }
 
     return (
         <section

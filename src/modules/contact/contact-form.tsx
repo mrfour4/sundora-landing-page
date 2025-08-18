@@ -11,6 +11,7 @@ import {
     FormLabel,
     FormMessage,
 } from "@/components/ui/form";
+import { useIsMobile } from "@/hooks/use-mobile";
 import { useServerAction } from "@/hooks/use-server-action";
 import { cn } from "@/lib/utils";
 import { contactSchema, TContactValues } from "@/schemas/contact-schema";
@@ -38,12 +39,14 @@ export const ContactForm = () => {
         afterSuccess: () => form.reset(),
     });
 
+    const isMobile = useIsMobile();
+
     const onSubmit = (values: TContactValues) => {
         submit(values);
     };
 
     return (
-        <div className="from-secondary to-secondary-foreground rounded-md bg-gradient-to-b px-8 py-6">
+        <div className="from-secondary to-secondary-foreground rounded-md bg-gradient-to-b px-6 py-5 lg:px-8 lg:py-6">
             <h1
                 className={cn(
                     "text-primary text-center text-4xl font-light uppercase",
@@ -183,7 +186,7 @@ export const ContactForm = () => {
                                             "border-secondary-foreground resize-none border-b text-sm font-light text-white outline-none",
                                             albra.className,
                                         )}
-                                        rows={3}
+                                        rows={isMobile ? 1 : 3}
                                         disabled={isPending}
                                         {...field}
                                     />
@@ -195,7 +198,7 @@ export const ContactForm = () => {
                         <Button
                             type="submit"
                             variant="outline"
-                            className="text-muted-foreground mt-6 size-auto cursor-pointer rounded-full bg-white! px-10 py-1 text-xs font-bold uppercase"
+                            className="text-muted-foreground mt-0 size-auto w-full cursor-pointer rounded-full bg-white! px-10 py-1 text-xs font-bold uppercase lg:mt-6 lg:w-auto"
                             disabled={isPending}
                         >
                             gửi thông tin

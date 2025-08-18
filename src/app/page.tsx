@@ -1,13 +1,13 @@
 import { Header } from "@/components/header";
 import { NavigationDots } from "@/components/navigation-dots";
 import { Apartment } from "@/modules/apartment";
-// import { Contact } from "@/modules/contact";
+import { Contact } from "@/modules/contact";
 import { Ground } from "@/modules/ground";
 import { Home } from "@/modules/home";
 import { Inspiration } from "@/modules/inspiration";
 import { Library } from "@/modules/library";
 import { Location } from "@/modules/location";
-// import { News } from "@/modules/news";
+import { News } from "@/modules/news";
 import { Overview } from "@/modules/overview";
 import { Partner } from "@/modules/partner";
 import { Privilege } from "@/modules/privilege";
@@ -30,8 +30,8 @@ export default function AppPage() {
             <Apartment />
             <Library />
             <Partner />
-            {/* <News /> */}
-            {/* <Contact /> */}
+            <News />
+            <Contact />
         </main>
     );
 }
