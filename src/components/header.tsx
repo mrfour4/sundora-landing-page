@@ -10,14 +10,14 @@ export const Header = () => {
     const isSecondary = useIsSecondary();
 
     return (
-        <header className="fixed inset-x-0 top-4 z-50 flex items-center justify-between px-8">
+        <header className="fixed inset-x-0 top-0 z-50 flex items-center justify-between px-6 lg:top-4 lg:px-8">
             <Logo />
             <div className="flex items-center gap-x-2">
                 <CallButton />
 
                 <VRButton
                     className={cn(
-                        "size-7 border-0",
+                        "size-6 border-0 lg:size-7",
                         isSecondary ? "bg-accent-foreground" : "bg-primary",
                     )}
                 />

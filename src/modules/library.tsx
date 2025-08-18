@@ -41,7 +41,7 @@ export const Library = () => {
                         thư viện
                     </h1>
 
-                    <VRButton />
+                    <VRButton showDetail />
                 </div>
                 <div className="mt-10 flex gap-x-24">
                     <div>

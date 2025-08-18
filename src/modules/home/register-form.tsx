@@ -44,11 +44,11 @@ export const RegisterForm = () => {
     return (
         <div
             style={{ backgroundImage: `url(${HOME_BOTTOM_IMG})` }}
-            className="flex h-28 items-center justify-between gap-x-20 px-20"
+            className="z-40 flex flex-col justify-between gap-x-20 gap-y-3 px-6 py-4 lg:h-28 lg:flex-row lg:items-center lg:px-20"
         >
             <Label
                 className={cn(
-                    "text-secondary text-lg font-light 2xl:ml-auto",
+                    "text-secondary text-sm font-light lg:text-lg 2xl:ml-auto",
                     albra.className,
                 )}
                 htmlFor={inputId}
@@ -59,59 +59,67 @@ export const RegisterForm = () => {
             <Form {...form}>
                 <form
                     onSubmit={form.handleSubmit(onSubmit)}
-                    className="flex items-center gap-x-10 xl:gap-x-20"
+                    className="items-center space-y-4 gap-x-16 lg:flex lg:flex-1 lg:space-y-0"
                 >
-                    <FormField
-                        control={form.control}
-                        name="fullName"
-                        render={({ field }) => (
-                            <FormItem>
-                                <FormControl>
-                                    <input
-                                        id={inputId}
-                                        placeholder="Họ và tên*"
+                    <div className="flex items-center justify-between lg:flex-1 lg:justify-end lg:gap-x-10">
+                        <FormField
+                            control={form.control}
+                            name="fullName"
+                            render={({ field }) => (
+                                <FormItem>
+                                    <FormControl>
+                                        <input
+                                            id={inputId}
+                                            placeholder="Họ và tên*"
+                                            className={cn(
+                                                "border-secondary-foreground border-b text-xs font-light text-white outline-none placeholder:text-xs placeholder:text-white focus-visible:border-b-2 focus-visible:placeholder:text-white/80 lg:text-sm lg:placeholder:text-sm",
+                                                albra.className,
+                                            )}
+                                            disabled={isPending}
+                                            {...field}
+                                        />
+                                    </FormControl>
+                                    <FormMessage
                                         className={cn(
-                                            "border-secondary-foreground border-b font-light text-white outline-none placeholder:text-sm placeholder:text-white focus-visible:border-b-2 focus-visible:placeholder:text-white/80",
+                                            "text-xs lg:text-sm",
                                             albra.className,
                                         )}
-                                        disabled={isPending}
-                                        {...field}
                                     />
-                                </FormControl>
-                                <FormMessage
-                                    className={cn("text-sm", albra.className)}
-                                />
-                            </FormItem>
-                        )}
-                    />
+                                </FormItem>
+                            )}
+                        />
 
-                    <FormField
-                        control={form.control}
-                        name="phone"
-                        render={({ field }) => (
-                            <FormItem>
-                                <FormControl>
-                                    <input
-                                        placeholder="Số điện thoại*"
+                        <FormField
+                            control={form.control}
+                            name="phone"
+                            render={({ field }) => (
+                                <FormItem>
+                                    <FormControl>
+                                        <input
+                                            placeholder="Số điện thoại*"
+                                            className={cn(
+                                                "border-secondary-foreground border-b text-xs font-light text-white outline-none placeholder:text-xs placeholder:text-white focus-visible:border-b-2 focus-visible:placeholder:text-white/80 lg:text-sm lg:placeholder:text-sm",
+                                                albra.className,
+                                            )}
+                                            disabled={isPending}
+                                            {...field}
+                                        />
+                                    </FormControl>
+                                    <FormMessage
                                         className={cn(
-                                            "border-secondary-foreground border-b font-light text-white outline-none placeholder:text-sm placeholder:text-white focus-visible:border-b-2 focus-visible:placeholder:text-white/80",
+                                            "text-xs lg:text-sm",
                                             albra.className,
                                         )}
-                                        disabled={isPending}
-                                        {...field}
                                     />
-                                </FormControl>
-                                <FormMessage
-                                    className={cn("text-sm", albra.className)}
-                                />
-                            </FormItem>
-                        )}
-                    />
+                                </FormItem>
+                            )}
+                        />
+                    </div>
 
                     <Button
                         type="submit"
                         variant="secondary"
-                        className="text-secondary-foreground-foreground px-5 py-1 uppercase"
+                        className="text-secondary-foreground-foreground w-full px-5 py-1 text-sm uppercase lg:w-auto"
                         disabled={isPending}
                     >
                         {isPending ? "đang gửi..." : "gửi thông tin"}

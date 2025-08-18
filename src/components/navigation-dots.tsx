@@ -7,6 +7,7 @@ import {
 } from "@/components/ui/tooltip";
 import { EXCEPTIONS, SECTION_TITLES } from "@/constants";
 import { useIsSecondary } from "@/hooks/use-is-secondary";
+import { useIsMobile } from "@/hooks/use-mobile";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { Icons } from "./icons";
@@ -14,12 +15,17 @@ import { useNavigationContext } from "./navigation-context";
 
 export const NavigationDots = () => {
     const { sectionId } = useNavigationContext();
+    const isMobile = useIsMobile();
 
     let isSecondary = useIsSecondary();
 
     const isException = !!sectionId && EXCEPTIONS.includes(sectionId);
     if (isException) {
         isSecondary = !isSecondary;
+    }
+
+    if (isMobile) {
+        return null;
     }
 
     return (

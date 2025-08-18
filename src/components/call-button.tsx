@@ -11,7 +11,7 @@ export const CallButton = () => {
 
     return (
         <Button
-            className="gap-1 rounded-full xl:size-auto"
+            className="gap-1 rounded-full px-3 py-1 lg:px-4 lg:py-1.5"
             asChild
             variant={isSecondary ? "secondary" : "default"}
         >
@@ -19,7 +19,7 @@ export const CallButton = () => {
                 <Phone className="size-3!" />
                 <span
                     className={cn(
-                        "from-secondary to-secondary-foreground bg-gradient-to-r bg-clip-text text-sm font-bold tracking-wider text-transparent",
+                        "from-secondary to-secondary-foreground bg-gradient-to-r bg-clip-text text-xs font-bold tracking-wider text-transparent lg:text-sm",
                         isSecondary && "text-primary",
                     )}
                 >
