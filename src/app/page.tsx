@@ -16,7 +16,7 @@ import { Video } from "@/modules/video";
 
 export default function AppPage() {
     return (
-        <main className="relative flex flex-col overflow-x-hidden">
+        <main className="relative flex flex-col">
             <Header />
             <NavigationDots />
             <Home />
