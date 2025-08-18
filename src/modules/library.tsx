@@ -3,6 +3,7 @@
 import { albra } from "@/app/fonts";
 import { Icons } from "@/components/icons";
 import { VRButton } from "@/components/vr-button";
+import { useIsMobile } from "@/hooks/use-mobile";
 import { useSectionObserver } from "@/hooks/use-section-observer";
 import { cn } from "@/lib/utils";
 import { ESectionId } from "@/types";
@@ -11,26 +12,59 @@ import Link from "next/link";
 
 export const Library = () => {
     useSectionObserver(ESectionId.LIBRARY);
+    const isMobile = useIsMobile();
+
     return (
         <section
             id={ESectionId.LIBRARY}
-            className="bg-accent-foreground flex h-dvh items-center gap-x-32 pt-10"
+            className="bg-accent-foreground flex h-dvh pt-20 lg:items-center lg:gap-x-32 lg:pt-10"
         >
-            <div>
+            <div className="w-full">
+                {isMobile && (
+                    <div className="mt-10 mb-9 flex flex-col items-center gap-y-3">
+                        <h1
+                            className={cn(
+                                "text-4xl font-light text-white uppercase",
+                                albra.className,
+                            )}
+                        >
+                            thư viện
+                        </h1>
+
+                        <VRButton showDetail />
+                    </div>
+                )}
                 <Image
                     src="/images_avif/library-1.avif"
                     alt="Hình ảnh dự án"
                     width={385}
                     height={371}
-                    className="shrink-0 object-cover"
+                    className="w-full shrink-0 object-cover"
                 />
                 <div className="from-secondary-foreground to-secondary flex h-14 items-center bg-gradient-to-b pl-8">
                     <p className="text-primary text-sm font-semibold">
                         Hình ảnh dự án
                     </p>
                 </div>
+
+                {isMobile && (
+                    <div className="mt-6 flex items-baseline justify-center gap-x-2.5">
+                        <Icons.arrowLeft className="text-secondary-foreground" />
+                        <div
+                            className={cn(
+                                "text-secondary inline-flex items-baseline gap-x-1",
+                                albra.className,
+                            )}
+                        >
+                            <span className="text-2xl text-white">01</span>
+                            <span>/</span>
+                            <span>02</span>
+                        </div>
+                        <Icons.arrowLeft className="text-secondary rotate-180" />
+                    </div>
+                )}
             </div>
-            <div>
+            <div className={cn(isMobile && "hidden")}>
                 <div className="flex items-center gap-8">
                     <h1
                         className={cn(

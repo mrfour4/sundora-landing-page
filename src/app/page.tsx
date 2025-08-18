@@ -5,7 +5,7 @@ import { Apartment } from "@/modules/apartment";
 import { Ground } from "@/modules/ground";
 import { Home } from "@/modules/home";
 import { Inspiration } from "@/modules/inspiration";
-// import { Library } from "@/modules/library";
+import { Library } from "@/modules/library";
 import { Location } from "@/modules/location";
 // import { News } from "@/modules/news";
 import { Overview } from "@/modules/overview";
@@ -28,7 +28,7 @@ export default function AppPage() {
             <Utilities />
             <Ground />
             <Apartment />
-            {/* <Library /> */}
+            <Library />
             {/* <Partner /> */}
             {/* <News /> */}
             {/* <Contact /> */}

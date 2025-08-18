@@ -53,7 +53,7 @@ export const ApartmentList = () => {
                 ))}
             </div>
 
-            <div className="relative mt-6 flex h-[350px] w-full items-center justify-center gap-4 overflow-auto px-3">
+            <div className="relative mt-6 flex w-full items-center justify-center gap-4 overflow-auto px-3">
                 <div className="relative h-[350px] w-full overflow-hidden lg:h-[440px] lg:w-[650px]">
                     <div className="absolute inset-0 -z-10 animate-pulse bg-gray-200 lg:h-[440px] lg:w-[650px]" />
                     <AnimatePresence mode="wait" initial={false}>

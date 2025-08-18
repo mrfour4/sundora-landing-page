@@ -39,7 +39,7 @@ export const VRButton = ({ className, showDetail = false }: Props) => {
             <Button
                 variant="ghost"
                 className={cn(
-                    "border-secondary hover:text-secondary cursor-pointer rounded-full border-1 text-sm font-medium text-inherit hover:bg-transparent!",
+                    "border-secondary hover:text-secondary cursor-pointer rounded-full border-1 text-xs font-medium text-inherit hover:bg-transparent! lg:text-sm",
                     !showDetail && "size-6 px-0! lg:size-7",
                 )}
                 asChild
