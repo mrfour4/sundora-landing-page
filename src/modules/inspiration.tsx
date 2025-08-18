@@ -48,7 +48,7 @@ export const Inspiration = () => {
                         )}
                     >
                         CHẤT TINH TẾ
-                        {!isMobile && <br />}
+                        {isMobile ? " " : <br />}
                         RIÊNG NƠI
                     </h1>
                     <h2

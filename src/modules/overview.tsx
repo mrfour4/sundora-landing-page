@@ -48,7 +48,7 @@ export const Overview = () => {
                             <h2>Tinh tế</h2>
                         </div>
                     </div>
-                    <p className="text-secondary-foreground w-full text-xs lg:mt-2 lg:w-1/2 lg:pr-20 lg:text-sm">
+                    <p className="text-secondary-foreground w-full text-justify text-xs lg:mt-2 lg:w-1/2 lg:pr-20 lg:text-sm">
                         Với vị trí tuyệt đẹp bên bờ sông Hàn, sở hữu tầm nhìn
                         không giới hạn cùng thiết kế ấn tượng và hệ tiện ích cao
                         cấp, Sundora Tower tạo nên phong cách sống mới tại Đà

@@ -40,7 +40,7 @@ export const Location = () => {
                 Hiếm hoi còn lại bên Sông Hàn
             </h2>
 
-            <div className="text-[9px] text-white lg:w-1/2 lg:text-sm">
+            <div className="text-justify text-[9px] text-white lg:w-1/2 lg:text-sm">
                 <p>
                     Giữa lòng Đà Nẵng nơi quỹ đất ven sông ngày càng trở nên
                     khan hiếm, dự án sở hữu vị trí vàng, gắn liền với bản sắc và

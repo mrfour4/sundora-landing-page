@@ -43,7 +43,7 @@ export const Privilege = () => {
                 >
                     đặc quyền
                 </h2>
-                <h2 className="text-primary lg:text-secondary text-lg font-semibold uppercase lg:mt-2 lg:text-xl">
+                <h2 className="text-primary lg:text-secondary mt-1 text-lg font-semibold uppercase lg:mt-2 lg:text-xl">
                     của nhịp sống bên sông
                 </h2>
 
@@ -83,7 +83,7 @@ export const Privilege = () => {
                         <Icons.arrowLeft className="text-secondary rotate-180" />
                     </div>
                 </div>
-                <div className="p-6 text-left text-sm text-[#444] lg:mt-4 lg:w-[300px] lg:space-y-5 lg:p-0 lg:text-white">
+                <div className="space-y-3 p-6 text-justify text-left text-sm text-[#444] lg:mt-4 lg:w-[300px] lg:space-y-5 lg:p-0 lg:text-white">
                     <p>
                         Giữa nhịp sống rộn ràng của thành phố trẻ, Sundora chọn
                         cách hiện diện khác biệt nhẹ nhàng nhưng đủ cuốn hút để
