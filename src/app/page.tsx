@@ -11,7 +11,7 @@ import { Location } from "@/modules/location";
 import { Overview } from "@/modules/overview";
 // import { Partner } from "@/modules/partner";
 import { Privilege } from "@/modules/privilege";
-// import { Utilities } from "@/modules/utilities";
+import { Utilities } from "@/modules/utilities";
 import { Video } from "@/modules/video";
 
 export default function AppPage() {
@@ -25,7 +25,7 @@ export default function AppPage() {
             <Inspiration />
             <Location />
             <Privilege />
-            {/* <Utilities /> */}
+            <Utilities />
             {/* <Ground /> */}
             {/* <Apartment /> */}
             {/* <Library /> */}

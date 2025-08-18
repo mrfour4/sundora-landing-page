@@ -6,14 +6,13 @@ import Image from "next/image";
 
 type Props = {
     index: number;
-    direction: number;
 };
 
-export const UtilityImage = ({ index, direction }: Props) => {
+export const UtilityImage = ({ index }: Props) => {
     const currentItem = UTILITIES_DATA[index];
 
     return (
-        <div className="relative h-[480px] w-[550px] overflow-hidden">
+        <div className="relative h-[300px] w-full overflow-hidden lg:h-[480px] lg:w-[550px]">
             <div className="absolute inset-0 -z-10 h-[480px] w-[550px] animate-pulse bg-gray-200" />
             <AnimatePresence mode="wait" initial={false}>
                 <motion.div

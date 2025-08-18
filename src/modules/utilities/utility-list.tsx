@@ -1,5 +1,6 @@
 import { albra } from "@/app/fonts";
 import { UTILITIES_DATA } from "@/constants";
+import { useIsMobile } from "@/hooks/use-mobile";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 
@@ -9,16 +10,18 @@ type Props = {
 };
 
 export const UtilityList = ({ activeIndex, onChange }: Props) => {
+    const isMobile = useIsMobile();
+
     return (
-        <div className="mt-4 ml-20 flex items-end justify-between">
-            <ul className="flex h-[258px] w-[300px] flex-1 flex-col justify-between">
+        <div className="mt-4 flex justify-between px-6 lg:ml-20 lg:px-0">
+            <ul className="ml-auto flex h-[200px] flex-col justify-between lg:h-[258px] lg:w-[300px] lg:flex-1">
                 {UTILITIES_DATA.map((uti, index) => {
                     const isActive = activeIndex === index;
                     return (
                         <li
                             key={uti.imageUrl}
                             className={cn(
-                                "flex w-fit cursor-pointer items-center gap-7 transition-transform ease-linear",
+                                "flex w-fit cursor-pointer items-center gap-x-4 transition-transform ease-linear lg:gap-7",
                                 isActive &&
                                     "border-primary -translate-x-20 border-b-2",
                             )}
@@ -36,7 +39,7 @@ export const UtilityList = ({ activeIndex, onChange }: Props) => {
                             </span>
                             <p
                                 className={cn(
-                                    "text-muted border-muted flex-1 border-b text-sm leading-loose uppercase",
+                                    "text-muted border-muted flex-1 border-b text-xs leading-loose uppercase lg:text-sm",
                                     isActive &&
                                         "text-secondary-foreground border-none font-semibold",
                                 )}
@@ -47,7 +50,12 @@ export const UtilityList = ({ activeIndex, onChange }: Props) => {
                     );
                 })}
             </ul>
-            <div className="invisible relative ml-auto flex h-[88px] items-center gap-x-1.5 overflow-hidden">
+            <div
+                className={cn(
+                    "invisible relative ml-auto flex h-[88px] items-center gap-x-1.5 overflow-hidden",
+                    isMobile && "hidden",
+                )}
+            >
                 <Image
                     src={UTILITIES_DATA[activeIndex].imageUrl}
                     alt={UTILITIES_DATA[activeIndex].name}
