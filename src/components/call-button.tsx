@@ -11,7 +11,7 @@ export const CallButton = () => {
 
     return (
         <Button
-            className="gap-1 rounded-full"
+            className="gap-1 rounded-full xl:size-auto"
             asChild
             variant={isSecondary ? "secondary" : "default"}
         >

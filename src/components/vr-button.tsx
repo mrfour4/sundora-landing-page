@@ -8,9 +8,10 @@ import Link from "next/link";
 
 type Props = {
     className?: HTMLDivElement["className"];
+    isDetail?: boolean;
 };
 
-export const VRButton = ({ className }: Props) => {
+export const VRButton = ({ className, isDetail = false }: Props) => {
     return (
         <motion.div
             animate={{
@@ -37,12 +38,15 @@ export const VRButton = ({ className }: Props) => {
         >
             <Button
                 variant="ghost"
-                className="border-secondary hover:text-secondary cursor-pointer rounded-full border-1 text-sm font-medium text-inherit hover:bg-transparent!"
+                className={cn(
+                    "border-secondary hover:text-secondary cursor-pointer rounded-full border-1 text-sm font-medium text-inherit hover:bg-transparent!",
+                    !isDetail && "size-7",
+                )}
                 asChild
             >
                 <Link href="https://tour.panoee.net/iframe/Sundora-Tower-Danang">
-                    <Icons.isolation className="shrink-0" />
-                    <span>VR 360 DỰ ÁN</span>
+                    <Icons.isolation className="size-4 shrink-0" />
+                    {isDetail && <span>VR 360 DỰ ÁN</span>}
                 </Link>
             </Button>
         </motion.div>
