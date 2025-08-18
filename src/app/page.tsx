@@ -4,7 +4,7 @@ import { NavigationDots } from "@/components/navigation-dots";
 // import { Contact } from "@/modules/contact";
 // import { Ground } from "@/modules/ground";
 import { Home } from "@/modules/home";
-// import { Inspiration } from "@/modules/inspiration";
+import { Inspiration } from "@/modules/inspiration";
 // import { Library } from "@/modules/library";
 // import { Location } from "@/modules/location";
 // import { News } from "@/modules/news";
@@ -22,7 +22,7 @@ export default function AppPage() {
             <Home />
             <Video />
             <Overview />
-            {/* <Inspiration /> */}
+            <Inspiration />
             {/* <Location /> */}
             {/* <Privilege /> */}
             {/* <Utilities /> */}
