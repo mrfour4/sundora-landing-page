@@ -60,7 +60,7 @@ export const Inspiration = () => {
                         Trái tim thành phố Đà Nẵng
                     </h2>
 
-                    <div className="text-muted-foreground mt-6 space-y-5 text-justify text-sm lg:w-md">
+                    <div className="text-muted-foreground mt-6 w-full space-y-5 text-sm lg:w-md [&_p]:text-justify">
                         <p>
                             Giữa nhịp sống rộn ràng của thành phố trẻ, Sundora
                             chọn cách hiện diện khác biệt nhẹ nhàng nhưng đủ

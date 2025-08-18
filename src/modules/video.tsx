@@ -43,7 +43,7 @@ export const Video = () => {
     return (
         <section
             id={ESectionId.VIDEO}
-            className="relative h-dvh w-full"
+            className="relative flex h-dvh w-full flex-col items-center justify-center"
             style={{ backgroundImage: `url(${HERO_IMG_URL_MOBILE})` }}
         >
             <video

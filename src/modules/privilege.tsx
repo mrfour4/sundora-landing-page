@@ -83,7 +83,7 @@ export const Privilege = () => {
                         <Icons.arrowLeft className="text-secondary rotate-180" />
                     </div>
                 </div>
-                <div className="space-y-3 p-6 text-justify text-left text-sm text-[#444] lg:mt-4 lg:w-[300px] lg:space-y-5 lg:p-0 lg:text-white">
+                <div className="space-y-3 p-6 text-justify text-sm text-[#444] lg:mt-4 lg:w-[300px] lg:space-y-5 lg:p-0 lg:text-white">
                     <p>
                         Giữa nhịp sống rộn ràng của thành phố trẻ, Sundora chọn
                         cách hiện diện khác biệt nhẹ nhàng nhưng đủ cuốn hút để
