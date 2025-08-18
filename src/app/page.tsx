@@ -2,7 +2,7 @@ import { Header } from "@/components/header";
 import { NavigationDots } from "@/components/navigation-dots";
 // import { Apartment } from "@/modules/apartment";
 // import { Contact } from "@/modules/contact";
-// import { Ground } from "@/modules/ground";
+import { Ground } from "@/modules/ground";
 import { Home } from "@/modules/home";
 import { Inspiration } from "@/modules/inspiration";
 // import { Library } from "@/modules/library";
@@ -26,7 +26,7 @@ export default function AppPage() {
             <Location />
             <Privilege />
             <Utilities />
-            {/* <Ground /> */}
+            <Ground />
             {/* <Apartment /> */}
             {/* <Library /> */}
             {/* <Partner /> */}

@@ -9,7 +9,7 @@ type Props = {
 
 export const GroupList = ({ activeIndex, onChange }: Props) => {
     return (
-        <ul className="mt-8 inline-flex h-[300px] flex-col space-y-4">
+        <ul className="mt-5 inline-flex h-[250px] flex-col space-y-4 lg:mt-8 lg:h-[300px]">
             {GROUNDS_DATA.map((ground, index) => {
                 const isActive = activeIndex === index;
                 return (
