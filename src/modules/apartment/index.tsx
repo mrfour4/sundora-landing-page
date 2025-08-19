@@ -1,7 +1,6 @@
 "use client";
 
 import { albra, sparkling } from "@/app/fonts";
-import { useIsMobile } from "@/hooks/use-mobile";
 import { useSectionObserver } from "@/hooks/use-section-observer";
 import { cn } from "@/lib/utils";
 import { ESectionId } from "@/types";
@@ -9,7 +8,6 @@ import { ApartmentList } from "./apartment-list";
 
 export const Apartment = () => {
     useSectionObserver(ESectionId.APARTMENT);
-    const isMobile = useIsMobile();
 
     return (
         <section

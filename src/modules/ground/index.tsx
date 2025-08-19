@@ -1,7 +1,6 @@
 "use client";
 
 import { albra } from "@/app/fonts";
-import { useIsMobile } from "@/hooks/use-mobile";
 import { useSectionObserver } from "@/hooks/use-section-observer";
 import { cn } from "@/lib/utils";
 import { ESectionId } from "@/types";
@@ -12,7 +11,6 @@ import { GroupList } from "./ground-list";
 export const Ground = () => {
     useSectionObserver(ESectionId.GROUND);
     const [activeIndex, setActiveIndex] = useState(0);
-    const isMobile = useIsMobile();
 
     return (
         <section
