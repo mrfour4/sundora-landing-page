@@ -70,7 +70,7 @@ export const ApartmentList = () => {
                                 alt={`${APARTMENTS[active].name} - tầng ${floorIdx + 1}`}
                                 width={650}
                                 height={440}
-                                className="size-full object-cover"
+                                className="size-full object-contain lg:object-cover"
                                 priority
                             />
                         </motion.div>

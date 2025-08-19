@@ -46,7 +46,7 @@ export const Partner = () => {
                             height={80}
                             className="h-[60px] shrink-0 object-contain lg:h-20"
                         />
-                        <p className="text-center text-sm font-semibold whitespace-pre-line text-white uppercase">
+                        <p className="text-center text-sm font-semibold whitespace-nowrap text-white uppercase">
                             {p.title}
                         </p>
                     </div>

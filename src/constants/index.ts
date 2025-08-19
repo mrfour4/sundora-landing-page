@@ -169,22 +169,22 @@ export const UTILITIES_DATA: TUtility[] = [
 export const PARTNERS: TPartner[] = [
     {
         imageUrl: "/images_avif/partner-1.avif",
-        title: "Đơn vị \nquản lý vận hành",
+        title: "quản lý vận hành",
         href: "#!",
     },
     {
         imageUrl: "/images_avif/partner-2.avif",
-        title: "Đơn vị \nthiết kế nội thất",
+        title: "NHÀ THẦU XÂY DỰNG",
         href: "#!",
     },
     {
         imageUrl: "/images_avif/partner-3.avif",
-        title: "Đơn vị \nthiết kế cảnh quan",
+        title: "ngân hàng bảo lãnh",
         href: "#!",
     },
     {
         imageUrl: "/images_avif/partner-4.avif",
-        title: "Ngân hàng \nbảo lãnh dự án",
+        title: "ngân hàng bảo lãnh",
         href: "#!",
     },
 ];
