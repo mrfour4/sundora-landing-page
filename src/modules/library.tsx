@@ -19,7 +19,7 @@ export const Library = () => {
             id={ESectionId.LIBRARY}
             className="bg-accent-foreground flex h-dvh pt-20 pb-6 lg:items-center lg:gap-x-32 lg:pt-10"
         >
-            <div className="mt-auto w-full lg:w-auto">
+            <div className="mt-10 w-full lg:w-auto">
                 {isMobile && (
                     <div className="mb-9 flex flex-col items-center gap-y-3">
                         <h1

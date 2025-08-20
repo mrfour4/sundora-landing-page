@@ -22,12 +22,12 @@ export const Partner = () => {
                     : `url(${PARTNER_IMG})`,
             }}
         >
-            <h2 className="mt-auto text-lg font-semibold text-white uppercase lg:mt-0">
+            <h2 className="xs:mt-auto mt-10 text-lg font-semibold text-white uppercase lg:mt-0">
                 một sản phẩm kiến tạo bởi
             </h2>
             <h1
                 className={cn(
-                    "mt-1.5 text-center text-4xl font-light text-white uppercase lg:mt-0 lg:text-[55px] lg:leading-20",
+                    "xs:text-4xl mt-1.5 text-center text-2xl font-light text-white uppercase lg:mt-0 lg:text-[55px] lg:leading-20",
                     albra.className,
                 )}
             >

@@ -20,7 +20,7 @@ export const TravelTimeline = () => {
                     </div>
                     <ul
                         className={cn(
-                            "text-secondary border-secondary-foreground relative grid w-[400px] grid-cols-2 gap-x-4 border-l border-dashed pb-2 pl-3 text-[8px] leading-3.5",
+                            "text-secondary border-secondary-foreground xs:w-[400px] xs:gap-x-4 relative grid w-auto grid-cols-2 gap-x-2 border-l border-dashed pb-2 pl-3 text-[8px] leading-3.5",
                             group.locations.length < 5 && "grid-cols-1",
                         )}
                     >

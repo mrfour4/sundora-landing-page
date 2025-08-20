@@ -42,7 +42,7 @@ export const Overview = () => {
                             Cho những <br />
                             chủ nhân
                         </h3>
-                        <div className="text-shadow-secondary mt-2 flex items-center gap-1 text-3xl font-light whitespace-nowrap text-white uppercase text-shadow-[0_0_10px] lg:text-5xl">
+                        <div className="text-shadow-secondary xs:text-3xl mt-2 flex items-center gap-1 text-2xl font-light whitespace-nowrap text-white uppercase text-shadow-[0_0_10px] lg:text-5xl">
                             <h2 className="">Duy mỹ</h2>
                             <Icons.and className="w-4 lg:w-8" />
                             <h2>Tinh tế</h2>

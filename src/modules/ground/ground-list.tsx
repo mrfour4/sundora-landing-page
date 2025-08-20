@@ -16,7 +16,7 @@ export const GroupList = ({ activeIndex, onChange }: Props) => {
                     <li
                         key={index}
                         className={cn(
-                            "flex cursor-pointer items-center gap-x-3 border-b pb-1 text-lg text-[#C5B9A6]/50 transition-all",
+                            "xs:text-lg flex cursor-pointer items-center gap-x-3 border-b pb-1 text-sm text-[#C5B9A6]/50 transition-all",
                             isActive &&
                                 "text-secondary-foreground border-b-primary border-b-2 font-semibold opacity-100",
                         )}

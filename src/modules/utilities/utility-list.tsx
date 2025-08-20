@@ -21,9 +21,9 @@ export const UtilityList = ({ activeIndex, onChange }: Props) => {
                         <li
                             key={uti.imageUrl}
                             className={cn(
-                                "flex w-fit cursor-pointer items-center gap-x-4 transition-transform ease-linear lg:gap-7",
+                                "flex w-fit cursor-pointer items-center gap-x-4 py-1 transition-transform ease-linear lg:gap-7",
                                 isActive &&
-                                    "border-primary -translate-x-20 border-b-2",
+                                    "border-primary xs:-translate-x-20 -translate-x-10 border-b-2",
                             )}
                             onClick={() => onChange(index)}
                         >

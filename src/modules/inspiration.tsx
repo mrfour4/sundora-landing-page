@@ -43,7 +43,7 @@ export const Inspiration = () => {
                 <div className="p-6 lg:pl-20">
                     <h1
                         className={cn(
-                            "text-primary text-3xl font-light uppercase lg:text-5xl",
+                            "text-primary xs:text-3xl text-2xl font-light uppercase lg:text-5xl",
                             albra.className,
                         )}
                     >
@@ -53,7 +53,7 @@ export const Inspiration = () => {
                     </h1>
                     <h2
                         className={cn(
-                            "text-primary-foreground mt-2 text-lg lg:-translate-x-11 lg:text-xl",
+                            "text-primary-foreground xs:text-lg mt-2 text-base lg:-translate-x-11 lg:text-xl",
                             sparkling.className,
                         )}
                     >

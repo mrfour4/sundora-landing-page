@@ -24,7 +24,7 @@ export const Location = () => {
         >
             <div
                 className={cn(
-                    "text-shadow-secondary text-center text-4xl font-light text-white uppercase text-shadow-[0_0_10px] lg:text-start lg:text-5xl",
+                    "text-shadow-secondary xs:text-4xl text-center text-3xl font-light text-white uppercase text-shadow-[0_0_10px] lg:text-start lg:text-5xl",
                     albra.className,
                 )}
             >
@@ -33,7 +33,7 @@ export const Location = () => {
             </div>
             <h2
                 className={cn(
-                    "from-secondary to-secondary-foreground -mt-3 bg-gradient-to-b bg-clip-text text-center text-base leading-16 text-transparent lg:text-start lg:text-xl",
+                    "from-secondary to-secondary-foreground xs:text-base -mt-3 bg-gradient-to-b bg-clip-text text-center text-sm leading-16 text-transparent lg:text-start lg:text-xl",
                     sparkling.className,
                 )}
             >
