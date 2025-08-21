@@ -1,82 +1,82 @@
-"use client";
+'use client';
 
 import {
-    Tooltip,
-    TooltipContent,
-    TooltipTrigger,
-} from "@/components/ui/tooltip";
-import { EXCEPTIONS, SECTION_TITLES } from "@/constants";
-import { useIsSecondary } from "@/hooks/use-is-secondary";
-import { useIsMobile } from "@/hooks/use-mobile";
-import { cn } from "@/lib/utils";
-import Link from "next/link";
-import { Icons } from "./icons";
-import { useNavigationContext } from "./navigation-context";
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from '@/components/sundora/tooltip';
+import { EXCEPTIONS, SECTION_TITLES } from '@/constants';
+import { useIsSecondary } from '@/hooks/use-is-secondary';
+import { useIsMobile } from '@/hooks/use-mobile';
+import { cn } from '@/lib/utils';
+import Link from 'next/link';
+import { Icons } from './icons';
+import { useNavigationContext } from './navigation-context';
 
 export const NavigationDots = () => {
-    const { sectionId } = useNavigationContext();
-    const isMobile = useIsMobile();
+  const { sectionId } = useNavigationContext();
+  const isMobile = useIsMobile();
 
-    let isSecondary = useIsSecondary();
+  let isSecondary = useIsSecondary();
 
-    const isException = !!sectionId && EXCEPTIONS.includes(sectionId);
-    if (isException) {
-        isSecondary = !isSecondary;
-    }
+  const isException = !!sectionId && EXCEPTIONS.includes(sectionId);
+  if (isException) {
+    isSecondary = !isSecondary;
+  }
 
-    if (isMobile) {
-        return null;
-    }
+  if (isMobile) {
+    return null;
+  }
 
-    return (
-        <nav className="fixed top-1/2 right-8 z-50 flex -translate-y-1/2 flex-col items-end gap-y-5">
-            {Object.entries(SECTION_TITLES).map(([id, title]) =>
-                id === sectionId ? (
-                    <div className="flex items-center gap-x-1" key={id}>
-                        <p
-                            className={cn(
-                                "text-primary text-xs font-semibold",
-                                isSecondary && "text-secondary",
-                            )}
-                        >
-                            {title}
-                        </p>
-                        <Link href={`#${id}`}>
-                            <button
-                                className={cn(
-                                    "bg-primary text-secondary flex size-5 translate-x-1 cursor-pointer items-center justify-center rounded-full p-0.5",
-                                    isSecondary && "bg-secondary text-primary",
-                                )}
-                            >
-                                <Icons.dot />
-                            </button>
-                        </Link>
-                    </div>
-                ) : (
-                    <Tooltip delayDuration={0} key={id}>
-                        <TooltipTrigger asChild>
-                            <Link href={`#${id}`} className="flex h-auto">
-                                <button
-                                    className={cn(
-                                        "border-primary/50 hover:bg-primary size-3 cursor-pointer rounded-full border-1",
-                                        isSecondary &&
-                                            "border-secondary/50 hover:bg-secondary",
-                                    )}
-                                />
-                            </Link>
-                        </TooltipTrigger>
-                        <TooltipContent
-                            side="left"
-                            className={cn(
-                                "bg-primary text-secondary text-xs",
-                                isSecondary && "bg-secondary text-primary",
-                            )}
-                        >
-                            <p>{title}</p>
-                        </TooltipContent>
-                    </Tooltip>
-                ),
-            )}
-        </nav>
-    );
+  return (
+    <nav className="fixed top-1/2 right-8 z-50 flex -translate-y-1/2 flex-col items-end gap-y-5">
+      {Object.entries(SECTION_TITLES).map(([id, title]) =>
+        id === sectionId ? (
+          <div className="flex items-center gap-x-1" key={id}>
+            <p
+              className={cn(
+                'text-xs font-semibold text-sundora-primary',
+                isSecondary && 'text-sundora-secondary'
+              )}
+            >
+              {title}
+            </p>
+            <Link href={`#${id}`}>
+              <button
+                className={cn(
+                  'flex size-5 translate-x-1 cursor-pointer items-center justify-center rounded-full bg-sundora-primary p-0.5 text-sundora-secondary',
+                  isSecondary && 'bg-sundora-secondary text-sundora-primary'
+                )}
+              >
+                <Icons.dot />
+              </button>
+            </Link>
+          </div>
+        ) : (
+          <Tooltip delayDuration={0} key={id}>
+            <TooltipTrigger asChild>
+              <Link href={`#${id}`} className="flex h-auto">
+                <button
+                  className={cn(
+                    'size-3 cursor-pointer rounded-full border-1 border-sundora-primary/50 hover:bg-sundora-primary',
+                    isSecondary &&
+                      'border-sundora-secondary/50 hover:bg-sundora-secondary'
+                  )}
+                />
+              </Link>
+            </TooltipTrigger>
+            <TooltipContent
+              side="left"
+              className={cn(
+                'bg-sundora-primary text-xs text-sundora-secondary',
+                isSecondary && 'bg-sundora-secondary text-sundora-primary'
+              )}
+            >
+              <p>{title}</p>
+            </TooltipContent>
+          </Tooltip>
+        )
+      )}
+    </nav>
+  );
 };
