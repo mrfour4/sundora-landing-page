@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 
 import { PostStatus } from "@prisma/client";
+import { CreateButton } from "./create-post";
 import { DataTableFacetedFilter } from "./faceted-filter";
 
 interface DataTableToolbarProps<TData> {
@@ -58,12 +59,7 @@ export function DataTableToolbar<TData>({
                     </Button>
                 )}
             </div>
-            <Button
-                type="submit"
-                className="rounded-md border border-blue-300/60 bg-gradient-to-b from-blue-100 to-blue-200 px-3 py-1.5 text-sm font-semibold text-blue-700 shadow-sm hover:opacity-95 focus:ring-2 focus:ring-blue-400/50 focus:outline-none"
-            >
-                Tạo bài viết
-            </Button>
+            <CreateButton />
         </div>
     );
 }

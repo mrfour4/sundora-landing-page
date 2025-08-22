@@ -1,4 +1,4 @@
-import { Archive, MoreHorizontal, Pencil, Trash } from "lucide-react";
+import { MoreHorizontal, Pencil, Trash } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -11,6 +11,7 @@ import {
 
 import { Post } from "@prisma/client";
 import { useState } from "react";
+import { ArchiveButton } from "./archive-post";
 import { DeletePost } from "./delete-post";
 import { EditPost } from "./edit-post";
 
@@ -20,6 +21,7 @@ type Props = {
 
 export const RowActions = ({ post }: Props) => {
     const [type, setType] = useState<"edit" | "delete" | null>(null);
+    const [open, setOpen] = useState(false);
 
     const onClose = () => {
         setType(null);
@@ -37,7 +39,7 @@ export const RowActions = ({ post }: Props) => {
                 onOpenChange={onClose}
                 post={post}
             />
-            <DropdownMenu>
+            <DropdownMenu open={open} onOpenChange={setOpen}>
                 <DropdownMenuTrigger asChild>
                     <Button variant="ghost" className="h-8 w-8 p-0">
                         <span className="sr-only">Open menu</span>
@@ -49,7 +51,10 @@ export const RowActions = ({ post }: Props) => {
                         <Pencil /> Edit
                     </DropdownMenuItem>
                     <DropdownMenuItem>
-                        <Archive /> Archive
+                        <ArchiveButton
+                            id={post.id}
+                            onClose={() => setOpen(false)}
+                        />
                     </DropdownMenuItem>
                     <DropdownMenuSeparator />
                     <DropdownMenuItem

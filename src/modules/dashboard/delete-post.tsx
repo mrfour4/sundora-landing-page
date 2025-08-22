@@ -1,5 +1,6 @@
 "use client";
 
+import { deletePost } from "@/app/actions/post";
 import { Button } from "@/components/ui/button";
 import {
     Dialog,
@@ -12,31 +13,42 @@ import {
 } from "@/components/ui/dialog";
 import { Post } from "@prisma/client";
 import { Loader2, Trash2 } from "lucide-react";
-import { useState } from "react";
+import { useActionState, useEffect } from "react";
+import { toast } from "sonner";
 
 type Props = {
     open: boolean;
-    onOpenChange: (open: boolean) => void;
+    onOpenChange: () => void;
     post: Post;
-    onConfirm?: () => Promise<void> | void; // callback xóa
 };
 
-export const DeletePost = ({ open, onOpenChange, post, onConfirm }: Props) => {
-    const [loading, setLoading] = useState(false);
+export const DeletePost = ({ open, onOpenChange, post }: Props) => {
+    const [state, formAction, isPending] = useActionState(
+        deletePost,
+        undefined,
+    );
 
-    async function handleConfirm() {
-        try {
-            setLoading(true);
-            await onConfirm?.();
-            onOpenChange(false);
-        } finally {
-            setLoading(false);
+    useEffect(() => {
+        if (isPending || !state) return;
+        if (state.ok) {
+            toast.success(state.message);
+        } else {
+            toast.error(state.message);
         }
-    }
+        onOpenChange();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [state, isPending]);
 
     return (
         <Dialog open={open} onOpenChange={onOpenChange}>
-            <DialogContent className="sm:max-w-md">
+            <DialogContent
+                className="sm:max-w-md"
+                onInteractOutside={(e) => {
+                    if (isPending) {
+                        e.preventDefault();
+                    }
+                }}
+            >
                 <DialogHeader>
                     <DialogTitle>Xóa bài viết?</DialogTitle>
                     <DialogDescription>
@@ -66,24 +78,25 @@ export const DeletePost = ({ open, onOpenChange, post, onConfirm }: Props) => {
                         <Button variant="ghost">Hủy</Button>
                     </DialogClose>
 
-                    <Button
-                        type="button"
-                        disabled={loading}
-                        onClick={handleConfirm}
-                        className="inline-flex items-center gap-2 rounded-md border border-red-300/60 bg-gradient-to-b from-red-500 to-red-600 px-3 py-1.5 text-sm font-semibold text-white shadow-sm transition hover:to-red-700 focus:ring-2 focus:ring-red-400/50 focus:outline-none"
-                    >
-                        {loading ? (
-                            <>
-                                <Loader2 className="size-4 animate-spin" />
-                                Đang xóa...
-                            </>
-                        ) : (
-                            <>
-                                <Trash2 className="size-4" />
-                                Xóa vĩnh viễn
-                            </>
-                        )}
-                    </Button>
+                    <form action={formAction}>
+                        <input type="hidden" name="id" value={post.id} />
+                        <Button
+                            type="submit"
+                            className="inline-flex items-center gap-2 rounded-md border border-red-300/60 bg-gradient-to-b from-red-500 to-red-600 px-3 py-1.5 text-sm font-semibold text-white shadow-sm transition hover:to-red-700 focus:ring-2 focus:ring-red-400/50 focus:outline-none"
+                        >
+                            {isPending ? (
+                                <>
+                                    <Loader2 className="size-4 animate-spin" />
+                                    Đang xóa...
+                                </>
+                            ) : (
+                                <>
+                                    <Trash2 className="size-4" />
+                                    Xóa vĩnh viễn
+                                </>
+                            )}
+                        </Button>
+                    </form>
                 </DialogFooter>
             </DialogContent>
         </Dialog>

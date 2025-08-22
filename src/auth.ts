@@ -1,41 +1,40 @@
-// auth.ts
-import NextAuth from 'next-auth';
-import Google from 'next-auth/providers/google';
+import NextAuth from "next-auth";
+import Google from "next-auth/providers/google";
+import { isAdmin } from "./lib/admin";
 
 const ADMIN =
-  process.env.ADMIN_EMAIL?.toLowerCase() ||
-  process.env.GMAIL_USER?.toLowerCase();
+    process.env.ADMIN_EMAIL?.toLowerCase() ||
+    process.env.GMAIL_USER?.toLowerCase();
 
 export const { handlers, signIn, signOut, auth } = NextAuth({
-  providers: [Google],
-  callbacks: {
-    async signIn({ profile, user }) {
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      const email = (user?.email ?? (profile as any)?.email ?? '')
-        .trim()
-        .toLowerCase();
-      return !!ADMIN && email === ADMIN;
-    },
-    authorized({ auth }) {
-      const email = auth?.user?.email?.toLowerCase();
-      return !!email && email === ADMIN;
-    },
-    async redirect({ url, baseUrl }) {
-      let u: URL;
-      try {
-        u = new URL(url, baseUrl);
-      } catch {
-        return baseUrl;
-      }
-      if (u.origin !== baseUrl) return baseUrl;
+    providers: [Google],
+    callbacks: {
+        async signIn({ profile, user }) {
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            const email = (user?.email ?? (profile as any)?.email ?? "")
+                .trim()
+                .toLowerCase();
+            return !!ADMIN && email === ADMIN;
+        },
+        authorized({ auth }) {
+            return isAdmin(auth);
+        },
+        async redirect({ url, baseUrl }) {
+            let u: URL;
+            try {
+                u = new URL(url, baseUrl);
+            } catch {
+                return baseUrl;
+            }
+            if (u.origin !== baseUrl) return baseUrl;
 
-      if (u.pathname === '/auth') return `${baseUrl}/admin`;
+            if (u.pathname === "/auth") return `${baseUrl}/admin`;
 
-      return u.href;
+            return u.href;
+        },
     },
-  },
-  pages: {
-    signIn: '/auth',
-    error: '/auth/error',
-  },
+    pages: {
+        signIn: "/auth",
+        error: "/auth/error",
+    },
 });

@@ -308,3 +308,5 @@ export const APARTMENTS: TAparment[] = [
         ],
     },
 ];
+
+export const DEFAULT_TITLE = "Tài liệu chưa có tiêu đề";
