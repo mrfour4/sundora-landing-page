@@ -160,29 +160,64 @@ export function TableSkeleton({
     rows?: number;
 }) {
     return (
-        <div className="overflow-hidden rounded-md border">
-            <Table>
-                <TableHeader>
-                    <TableRow>
-                        {Array.from({ length: columns }).map((_, i) => (
-                            <TableHead key={i}>
-                                <Skeleton className="h-4 w-20" />
-                            </TableHead>
-                        ))}
-                    </TableRow>
-                </TableHeader>
-                <TableBody>
-                    {Array.from({ length: rows }).map((_, r) => (
-                        <TableRow key={r}>
-                            {Array.from({ length: columns }).map((_, c) => (
-                                <TableCell key={c}>
-                                    <Skeleton className="h-4 w-full" />
-                                </TableCell>
+        <Card>
+            <CardHeader>
+                <div className="flex flex-wrap items-center gap-2">
+                    <Skeleton className="h-9 w-[220px]" />
+                    <Skeleton className="h-9 w-[120px]" />
+                    <Skeleton className="h-9 w-[100px]" />
+                    <div className="ml-auto flex items-center gap-2">
+                        <Skeleton className="h-9 w-9 rounded-md" />
+                        <Skeleton className="h-9 w-9 rounded-md" />
+                        <Skeleton className="h-9 w-9 rounded-md" />
+                    </div>
+                </div>
+            </CardHeader>
+
+            <CardContent>
+                <div className="overflow-hidden rounded-md border">
+                    <Table>
+                        <TableHeader>
+                            <TableRow className="transition-colors hover:bg-transparent">
+                                {Array.from({ length: columns }).map(
+                                    (_, idx) => (
+                                        <TableHead key={idx}>
+                                            <Skeleton className="h-4 w-[120px]" />
+                                        </TableHead>
+                                    ),
+                                )}
+                            </TableRow>
+                        </TableHeader>
+                        <TableBody>
+                            {Array.from({ length: rows }).map((_, r) => (
+                                <TableRow
+                                    key={r}
+                                    className="transition-colors hover:bg-transparent"
+                                >
+                                    {Array.from({ length: columns }).map(
+                                        (__, c) => (
+                                            <TableCell key={c}>
+                                                <Skeleton className="h-4 w-full" />
+                                            </TableCell>
+                                        ),
+                                    )}
+                                </TableRow>
                             ))}
-                        </TableRow>
-                    ))}
-                </TableBody>
-            </Table>
-        </div>
+                        </TableBody>
+                    </Table>
+                </div>
+            </CardContent>
+
+            <CardFooter>
+                <div className="flex w-full items-center justify-between gap-2">
+                    <Skeleton className="h-4 w-[180px]" />
+                    <div className="flex items-center gap-2">
+                        <Skeleton className="h-9 w-9 rounded-md" />
+                        <Skeleton className="h-9 w-9 rounded-md" />
+                        <Skeleton className="h-9 w-[90px] rounded-md" />
+                    </div>
+                </div>
+            </CardFooter>
+        </Card>
     );
 }
