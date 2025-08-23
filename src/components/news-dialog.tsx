@@ -101,11 +101,11 @@ export function NewsDialog({
                                                 li: ({children}) => <li className="mb-2">{children}</li>,
                                                 strong: ({children}) => <strong className="font-semibold text-[#8B4513]">{children}</strong>,
                                                 img: ({src, alt}) => {
-                                                    if (src?.startsWith('data:')) return null;
+                                                    if (typeof src === 'string' && src?.startsWith('data:')) return null;
                                                     return (
                                                         <div className="my-6">
                                                             <Image 
-                                                                src={src || ''} 
+                                                                src={typeof src === 'string' ? src : ''} 
                                                                 alt={alt || ''} 
                                                                 width={600} 
                                                                 height={400}
