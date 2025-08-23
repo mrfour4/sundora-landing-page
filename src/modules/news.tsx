@@ -22,7 +22,7 @@ export const News = () => {
     return (
         <section
             id={ESectionId.NEWS}
-            className="flex h-dvh flex-col justify-center px-24"
+            className="flex h-dvh flex-col overflow-auto justify-center px-24"
         >
             <h1
                 className={cn("text-5xl font-light uppercase", albra.className)}
