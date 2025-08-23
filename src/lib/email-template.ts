@@ -3,10 +3,10 @@ import { readFile } from "node:fs/promises";
 import path from "node:path";
 
 export const COMPANY_NAME = process.env.COMPANY_NAME ?? "Sundora Tower";
-export const SUPPORT_EMAIL =
-    process.env.SUPPORT_EMAIL ??
-    process.env.GMAIL_TO ??
-    process.env.GMAIL_USER!;
+export const SUPPORT_EMAIL = "Sundora.fanpage@gmail.com"
+    // process.env.SUPPORT_EMAIL ??
+    // process.env.GMAIL_TO ??
+    // process.env.GMAIL_USER!;
 export const SUPPORT_PHONE = process.env.SUPPORT_PHONE ?? "";
 export const WEBSITE_URL = process.env.WEBSITE_URL ?? "https://sundora.vn";
 export const BRAND_COLOR = process.env.BRAND_COLOR ?? "#c39249";

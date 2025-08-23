@@ -192,23 +192,35 @@ export const PARTNERS: TPartner[] = [
 export const NEWS: TNews[] = [
     {
         imageUrl: "/images_avif/news-1.avif",
-        title: "Sống trọn từng khoảnh khắc tại Sundora Tower",
+        title: "Sundora Tower - Trọn Vẹn Sông Hàn Trong Tầm Mắt",
         href: "#!",
+        date: "T3, Tháng 7 22, 2025",
+        description: "Sundora Tower là dự án căn hộ cao cấp tọa lạc ngay bên bờ sông Hàn – biểu tượng của thành phố Đà Nẵng.",
+        htmlFile: "/news/new-1-html/SundoraTowerTrnVnSngHnTrongTmMt.html",
     },
     {
         imageUrl: "/images_avif/news-2.avif",
-        title: "Sống trọn từng khoảnh khắc tại Sundora Tower",
+        title: "VÌ sao căn hộ view sông luôn được ưu ái?",
         href: "#!",
+        date: "T2, Tháng 7 15, 2025",
+        description: "Nằm tại khu vực lõi trung tâm của Đà Nẵng, Sundora Tower nổi bật như một tuyệt tác kiến tạo không gian sống đỉnh cao.",
+        htmlFile: "/news/new-2-html/Vsaocnhviewsngluncui.html",
     },
     {
         imageUrl: "/images_avif/news-3.avif",
-        title: "Sống trọn từng khoảnh khắc tại Sundora Tower",
+        title: "TẦM VIEW “TRIỆU ĐÔ” - THƯỞNG LÃM PHÁO HOA NGAY TẠI NHÀ CÙNG SUNDORA TOWER",
         href: "#!",
+        date: "T6, Tháng 7 10, 2025",
+        description: "Với thiết kế hiện đại và tinh tế, Sundora Tower mang đến không gian sống đẳng cấp và tầm nhìn tuyệt đẹp.",
+        htmlFile: "/news/new-3-html/TMVIEWTRIUTHNGLMPHOHOANGAYTINHCNGSUNDORATOWER.html",
     },
     {
         imageUrl: "/images_avif/news-4.avif",
-        title: "Sống trọn từng khoảnh khắc tại Sundora Tower",
+        title: "Sundora Tower - Vị trí độc bản giữa trung tâm Đà Nẵng",
         href: "#!",
+        date: "T3, Tháng 7 5, 2025",
+        description: "Sundora Tower tích hợp đầy đủ tiện ích cao cấp, mang đến trải nghiệm sống hoàn hảo cho cư dân.",
+        htmlFile: "/news/new-4-html/SundoraTowerVtrcbngiatrungtmNng.html",
     },
 ];
 
@@ -238,9 +250,9 @@ export const CONTACTS: TContact[] = [
     },
     {
         icon: Icons.mail,
-        href: "mailto:info@sundoratower.com",
+        href: "mailto:info@sundoratower.vn",
         label: "Email",
-        content: "info@sundoratower.com",
+        content: "info@sundoratower.vn",
     },
     {
         icon: Globe,

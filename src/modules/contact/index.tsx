@@ -48,15 +48,15 @@ export const Contact = () => {
                     <p className="text-sm font-semibold text-white">
                         Theo dõi chúng tôi tại:
                     </p>
-                    <Link
+                    <Link target="_blank"
                         href="https://www.facebook.com/profile.php?id=61578685858106"
                         className="ml-2"
                     >
                         <Icons.facebook />
                     </Link>
-                    <Link href="#!">
+                    {/* <Link href="#!">
                         <Icons.youtube />
-                    </Link>
+                    </Link> */}
                 </div>
             </div>
 

@@ -44,7 +44,7 @@ export const VRButton = ({ className, showDetail = false }: Props) => {
                 )}
                 asChild
             >
-                <Link href="https://tour.panoee.net/iframe/Sundora-Tower-Danang">
+                <Link target="_blank" href="https://tour.panoee.net/iframe/Sundora-Tower-Danang">
                     <Icons.isolation className="size-3 shrink-0 lg:size-4" />
                     {showDetail && <span>VR 360 DỰ ÁN</span>}
                 </Link>

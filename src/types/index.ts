@@ -46,6 +46,11 @@ export type TNews = {
     imageUrl: string;
     title: string;
     href: string;
+    date?: string;
+    description?: string;
+    content?: string;
+    markdownFile?: string;
+    htmlFile?: string;
 };
 
 export type TContactLocation = {
