@@ -29,7 +29,7 @@ export async function createPost(_: unknown, _fd: FormData) {
         redirect(`/admin/post/${post.slug}`);
     } catch (error) {
         if (isRedirectError(error)) throw error;
-        return errorMsg(error, "Tạo bài viết thất bại.");
+        return errorMsg(error, "Không thể tạo bài viết.");
     }
 }
 
@@ -42,7 +42,8 @@ export async function updatePost(_: unknown, formData: FormData) {
             where: { id },
             select: { id: true, thumbnail: true },
         });
-        if (!existing) return { ok: false, message: "Bài viết không tồn tại." };
+        if (!existing)
+            return { ok: false, message: "Không tìm thấy bài viết." };
 
         const data = parseFormData(formData, updatePostSchema);
 
@@ -62,7 +63,7 @@ export async function updatePost(_: unknown, formData: FormData) {
 
         return { ok: true, message: "Cập nhật thành công." };
     } catch (error) {
-        return errorMsg(error, "Cập nhật thất bại.");
+        return errorMsg(error, "Không thể cập nhật bài viết.");
     }
 }
 
@@ -79,7 +80,7 @@ export async function deletePost(_: unknown, formData: FormData) {
         revalidatePath("/admin");
         revalidatePath("/");
 
-        return { ok: true, message: "Đã xóa bài viết." };
+        return { ok: true, message: "Xóa thành công." };
     } catch (error) {
         return errorMsg(error, "Không thể xóa bài viết.");
     }
@@ -94,9 +95,7 @@ export async function deletePostsBulk(ids: string[]) {
         });
 
         const thumbnails = posts.reduce((acc, p) => {
-            if (p.thumbnail !== null) {
-                acc.push(p.thumbnail);
-            }
+            if (p.thumbnail !== null) acc.push(p.thumbnail);
             return acc;
         }, [] as string[]);
 
@@ -112,9 +111,9 @@ export async function deletePostsBulk(ids: string[]) {
             revalidatePath(`/admin/${p.slug}`);
         });
 
-        return { ok: true, message: "Deleted successfully" };
+        return { ok: true, message: "Xóa thành công các bài viết đã chọn." };
     } catch (error) {
-        return errorMsg(error, "Không thể xóa bài viết.");
+        return errorMsg(error, "Không thể xóa các bài viết đã chọn.");
     }
 }
 
@@ -123,9 +122,7 @@ export async function archivePostsBulk(ids: string[]) {
         await ensureAdmin();
         const posts = await prisma.post.updateManyAndReturn({
             where: { id: { in: ids } },
-            data: {
-                status: PostStatus.ARCHIVED,
-            },
+            data: { status: PostStatus.ARCHIVED },
         });
 
         revalidatePath("/admin");
@@ -135,11 +132,15 @@ export async function archivePostsBulk(ids: string[]) {
             revalidatePath(`/admin/${p.slug}`);
         });
 
-        return { ok: true, message: "Archived successfully" };
+        return {
+            ok: true,
+            message: "Lưu trữ thành công các bài viết đã chọn.",
+        };
     } catch (error) {
-        return errorMsg(error, "Không thể archived bài viết.");
+        return errorMsg(error, "Không thể lưu trữ các bài viết đã chọn.");
     }
 }
+
 async function deleteThumbnails(thumbnails: string[]) {
     const validThumbnails = thumbnails.filter((t) => isValidUrl(t));
     if (!validThumbnails.length) return;
@@ -155,7 +156,7 @@ function isValidUrl(url: string | null) {
     try {
         new URL(url);
         return true;
-    } catch (error) {
+    } catch {
         return false;
     }
 }

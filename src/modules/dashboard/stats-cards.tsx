@@ -21,34 +21,33 @@ export async function StatsCards() {
 
     const items = [
         {
-            title: "Total Posts",
+            title: "Tổng bài viết",
             value: stats.total,
-            desc: "All posts in system",
+            desc: "Tất cả bài trong hệ thống",
             icon: FileText,
-            // xanh ngọc → cyan
             chip: "bg-emerald-500/10 text-emerald-600 ring-emerald-500/20",
             bar: "from-emerald-400/40 via-cyan-400/40 to-amber-400/30",
         },
         {
-            title: "Published",
+            title: "Đã xuất bản",
             value: stats[PostStatus.PUBLISHED],
-            desc: "Live on website",
+            desc: "Đang hiển thị trên website",
             icon: Eye,
             chip: "bg-cyan-500/10 text-cyan-600 ring-cyan-500/20",
             bar: "from-cyan-400/40 via-fuchsia-400/30 to-emerald-400/30",
         },
         {
-            title: "Drafts",
+            title: "Bản nháp",
             value: stats[PostStatus.DRAFT],
-            desc: "Work in progress",
+            desc: "Đang soạn thảo",
             icon: FileEdit,
             chip: "bg-amber-500/10 text-amber-700 ring-amber-500/20",
             bar: "from-amber-400/40 via-rose-300/30 to-cyan-300/30",
         },
         {
-            title: "Archived",
+            title: "Đã lưu trữ",
             value: stats[PostStatus.ARCHIVED],
-            desc: "No longer active",
+            desc: "Không còn hoạt động",
             icon: Archive,
             chip: "bg-zinc-500/10 text-zinc-700 ring-zinc-400/30",
             bar: "from-zinc-300/40 via-slate-300/30 to-emerald-300/20",

@@ -6,6 +6,7 @@ import { X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 
+import { getPostStatusLabel } from "@/lib/utils";
 import { PostStatus } from "@prisma/client";
 import { CreateButton } from "./create-post";
 import { DataTableFacetedFilter } from "./faceted-filter";
@@ -20,7 +21,7 @@ export function DataTableToolbar<TData>({
     const isFiltered = table.getState().columnFilters.length > 0;
 
     const statuses = Object.values(PostStatus).map((status) => ({
-        label: status.toLocaleLowerCase(),
+        label: getPostStatusLabel(status),
         value: status,
     }));
 
@@ -28,7 +29,7 @@ export function DataTableToolbar<TData>({
         <div className="flex items-center justify-between">
             <div className="flex flex-1 items-center gap-2">
                 <Input
-                    placeholder="Filter title..."
+                    placeholder="Lọc tiêu đề..."
                     value={
                         (table
                             .getColumn("title")
@@ -44,7 +45,7 @@ export function DataTableToolbar<TData>({
                 {table.getColumn("status") && (
                     <DataTableFacetedFilter
                         column={table.getColumn("status")}
-                        title="Status"
+                        title="Trạng thái"
                         options={statuses}
                     />
                 )}
@@ -54,7 +55,7 @@ export function DataTableToolbar<TData>({
                         size="sm"
                         onClick={() => table.resetColumnFilters()}
                     >
-                        Reset
+                        Xóa lọc
                         <X />
                     </Button>
                 )}

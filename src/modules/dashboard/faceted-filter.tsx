@@ -68,7 +68,7 @@ export function DataTableFacetedFilter<TData, TValue>({
                                         variant="secondary"
                                         className="rounded-sm px-1 font-normal"
                                     >
-                                        {selectedValues.size} selected
+                                        {selectedValues.size} đã chọn
                                     </Badge>
                                 ) : (
                                     options
@@ -94,7 +94,7 @@ export function DataTableFacetedFilter<TData, TValue>({
                 <Command>
                     <CommandInput placeholder={title} />
                     <CommandList>
-                        <CommandEmpty>No results found.</CommandEmpty>
+                        <CommandEmpty>Không có kết quả.</CommandEmpty>
                         <CommandGroup>
                             {options.map((option) => {
                                 const isSelected = selectedValues.has(
@@ -159,7 +159,7 @@ export function DataTableFacetedFilter<TData, TValue>({
                                         }
                                         className="justify-center text-center"
                                     >
-                                        Clear filters
+                                        Xóa lọc
                                     </CommandItem>
                                 </CommandGroup>
                             </>

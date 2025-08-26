@@ -27,6 +27,7 @@ import {
     SelectTrigger,
 } from "@/components/ui/select";
 import { useUploadThing } from "@/hooks/use-upload-file";
+import { getPostStatusLabel } from "@/lib/utils";
 import { updatePostSchema } from "@/schemas/post";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useTransition } from "react";
@@ -77,6 +78,13 @@ export const EditPost = ({ open, onOpenChange, post }: Props) => {
     };
 
     const postStatus = Object.values(PostStatus);
+    const getPostLabel = (value?: string) => {
+        const status = postStatus.find((status) => value === status);
+        if (status) {
+            return getPostStatusLabel(status);
+        }
+        return "Chọn trạng thái";
+    };
 
     return (
         <Dialog open={open} onOpenChange={onOpenChange}>
@@ -131,15 +139,8 @@ export const EditPost = ({ open, onOpenChange, post }: Props) => {
                                             defaultValue={post.status}
                                         >
                                             <FormControl>
-                                                <SelectTrigger className="min-w-[124px] capitalize">
-                                                    {postStatus
-                                                        .find(
-                                                            (status) =>
-                                                                field.value ===
-                                                                status,
-                                                        )
-                                                        ?.toLocaleLowerCase() ??
-                                                        "Chọn trạng thái"}
+                                                <SelectTrigger className="min-w-[140px] capitalize">
+                                                    {getPostLabel(field.value)}
                                                 </SelectTrigger>
                                             </FormControl>
                                             <SelectContent>
@@ -152,7 +153,9 @@ export const EditPost = ({ open, onOpenChange, post }: Props) => {
                                                             variant={status}
                                                             className="capitalize"
                                                         >
-                                                            {status.toLocaleLowerCase()}
+                                                            {getPostStatusLabel(
+                                                                status,
+                                                            )}
                                                         </Badge>
                                                     </SelectItem>
                                                 ))}

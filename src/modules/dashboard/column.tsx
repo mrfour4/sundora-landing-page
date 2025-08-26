@@ -3,6 +3,7 @@
 import { Badge } from "@/components/ui/badge";
 import { Checkbox } from "@/components/ui/checkbox";
 import { formatTime } from "@/lib/format-time";
+import { getPostStatusLabel } from "@/lib/utils";
 import { Post, PostStatus } from "@prisma/client";
 import { ColumnDef } from "@tanstack/react-table";
 import Link from "next/link";
@@ -23,14 +24,14 @@ export const columns: ColumnDef<Post>[] = [
                 onCheckedChange={(value) =>
                     table.toggleAllPageRowsSelected(!!value)
                 }
-                aria-label="Select all"
+                aria-label="Chọn tất cả"
             />
         ),
         cell: ({ row }) => (
             <Checkbox
                 checked={row.getIsSelected()}
                 onCheckedChange={(value) => row.toggleSelected(!!value)}
-                aria-label="Select row"
+                aria-label="Chọn dòng"
             />
         ),
         enableSorting: false,
@@ -38,7 +39,7 @@ export const columns: ColumnDef<Post>[] = [
     },
     {
         accessorKey: "thumbnail",
-        header: "Thumbnail",
+        header: "Ảnh bìa",
         cell: ({ row }) => {
             const post = row.original as Post;
             return <Thumbnail src={post.thumbnail} />;
@@ -46,7 +47,9 @@ export const columns: ColumnDef<Post>[] = [
     },
     {
         accessorKey: "title",
-        header: ({ column }) => <ColumnHeader column={column} title="Title" />,
+        header: ({ column }) => (
+            <ColumnHeader column={column} title="Tiêu đề" />
+        ),
         cell: ({ row }) => {
             const post = row.original as Post;
             return (
@@ -61,13 +64,14 @@ export const columns: ColumnDef<Post>[] = [
     },
     {
         accessorKey: "status",
-        header: ({ column }) => <ColumnHeader column={column} title="Status" />,
+        header: ({ column }) => (
+            <ColumnHeader column={column} title="Trạng thái" />
+        ),
         cell: ({ row }) => {
             const status = row.getValue("status") as PostStatus;
-
             return (
                 <Badge variant={status} className="capitalize">
-                    {status.toLocaleLowerCase()}
+                    {getPostStatusLabel(status)}
                 </Badge>
             );
         },
@@ -78,12 +82,11 @@ export const columns: ColumnDef<Post>[] = [
     {
         accessorKey: "updatedAt",
         header: ({ column }) => (
-            <ColumnHeader column={column} title="Updated" />
+            <ColumnHeader column={column} title="Cập nhật" />
         ),
         cell: ({ row }) => {
             const updatedAt = row.getValue("updatedAt") as string;
             const formatted = formatTime(updatedAt);
-
             return formatted;
         },
     },
