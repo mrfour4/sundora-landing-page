@@ -1,5 +1,7 @@
 import { PostStatus } from "@prisma/client";
 import { type ClassValue, clsx } from "clsx";
+import { format } from "date-fns";
+import { vi } from "date-fns/locale";
 import { twMerge } from "tailwind-merge";
 
 export function cn(...inputs: ClassValue[]) {
@@ -31,4 +33,8 @@ export function vnNormalize(s: string) {
         .replace(/đ/g, "d")
         .replace(/Đ/g, "D")
         .toLowerCase();
+}
+
+export function formatDate(date: Date | string | number) {
+    return format(new Date(date), "EEEE, 'ngày' d/M/yyyy", { locale: vi });
 }

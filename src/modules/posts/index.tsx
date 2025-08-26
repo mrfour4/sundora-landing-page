@@ -37,7 +37,7 @@ export const Posts = ({ data }: Props) => {
 
             <section
                 id={ESectionId.NEWS}
-                className="flex h-dvh w-full flex-col justify-center overflow-hidden px-24"
+                className="flex h-dvh w-full flex-col justify-center overflow-hidden px-14 lg:px-28"
             >
                 <h1
                     className={cn(
@@ -63,7 +63,7 @@ export const Posts = ({ data }: Props) => {
                                     <div
                                         className={cn(
                                             index % 2 === 1 &&
-                                                "-translate-y-10",
+                                                "lg:-translate-y-10",
                                         )}
                                     >
                                         <Image
@@ -86,7 +86,6 @@ export const Posts = ({ data }: Props) => {
                         ))}
                     </CarouselContent>
 
-                    {/* Keep buttons clickable above slides */}
                     <CarouselPrevious className="pointer-events-auto z-50" />
                     <CarouselNext className="pointer-events-auto z-50" />
                 </Carousel>
