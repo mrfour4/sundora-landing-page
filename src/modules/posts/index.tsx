@@ -37,7 +37,7 @@ export const Posts = ({ data }: Props) => {
 
             <section
                 id={ESectionId.NEWS}
-                className="flex h-dvh w-full flex-col justify-center overflow-hidden px-14 lg:px-28"
+                className="flex h-screen w-full flex-col justify-center overflow-hidden px-14 lg:px-28"
             >
                 <h1
                     className={cn(

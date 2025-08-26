@@ -15,7 +15,7 @@ export const Contact = () => {
     return (
         <section
             id={ESectionId.CONTACT}
-            className="xs:mt-16 mt-auto flex h-dvh flex-col-reverse items-center justify-center gap-y-4 lg:flex-row lg:gap-x-40 lg:px-28 lg:pt-0"
+            className="xs:mt-16 mt-auto flex h-screen flex-col-reverse items-center justify-center gap-y-4 lg:flex-row lg:gap-x-40 lg:px-28 lg:pt-0"
             style={{ backgroundImage: `url(${CONTACT_IMG})` }}
         >
             <div className="space-y-2 lg:space-y-6">

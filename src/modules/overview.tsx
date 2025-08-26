@@ -17,7 +17,7 @@ export const Overview = () => {
     return (
         <section
             id={ESectionId.OVERVIEW}
-            className="flex h-dvh flex-col justify-center bg-[#002349] bg-cover bg-no-repeat"
+            className="flex h-screen flex-col justify-center bg-[#002349] bg-cover bg-no-repeat"
             style={{
                 backgroundImage: !isMobile ? `url(${OVERVIEW_IMG})` : undefined,
             }}

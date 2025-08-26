@@ -42,7 +42,7 @@ export const Privilege = () => {
     return (
         <section
             id={ESectionId.PRIVILEGE}
-            className="relative flex h-dvh flex-col justify-center gap-x-10 pt-20 lg:flex-row lg:items-center lg:justify-between lg:pt-0"
+            className="relative flex h-screen flex-col justify-center gap-x-10 pt-20 lg:flex-row lg:items-center lg:justify-between lg:pt-0"
         >
             {!isMobile && (
                 <Image

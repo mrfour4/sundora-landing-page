@@ -36,7 +36,7 @@ export default async function SignIn({ searchParams }: Props) {
         (search?.error && (errorMap[search.error] || errorMap.default)) || null;
 
     return (
-        <main className="relative grid min-h-dvh place-items-center">
+        <main className="relative grid min-h-screen place-items-center">
             {/* Gradient background nhiều màu */}
             <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(45rem_45rem_at_20%_10%,#ff80b5_0%,transparent_60%),radial-gradient(50rem_50rem_at_80%_50%,#9089fc_0%,transparent_60%),conic-gradient(from_180deg_at_50%_50%,#34d399_0deg,#22d3ee_120deg,#f59e0b_240deg,#34d399_360deg)] opacity-70" />
 
