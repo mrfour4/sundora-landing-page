@@ -33,13 +33,13 @@ export const PostContentDialog = ({ post, open, onOpenChange }: Props) => {
                 </VisuallyHidden>
 
                 <ScrollArea className="h-[80vh]">
-                    <p className="text-muted-foreground -mb-5 px-2 text-sm lg:px-20">
+                    <p className="text-muted-foreground -mb-5 px-0 text-sm lg:px-20">
                         {formatDate(post.updatedAt)}
                     </p>
                     <PlateEditor
                         value={post.content || undefined}
                         className="px-0 py-0"
-                        contentStyle="px-2! lg:px-20! pt-0! pb-10!"
+                        contentStyle="px-0! lg:px-20! pt-6! pb-10!"
                         readOnly
                     />
                 </ScrollArea>
