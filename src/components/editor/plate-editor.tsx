@@ -5,26 +5,39 @@ import { Plate, usePlateEditor } from "platejs/react";
 import { EditorKit } from "@/components/editor/editor-kit";
 import { Editor, EditorContainer } from "@/components/ui/editor";
 import { useMounted } from "@/hooks/use-mounted";
+import { cn } from "@/lib/utils";
 import { Value } from "platejs";
 
 type Props = {
     value?: unknown;
+    className?: HTMLDivElement["className"];
+    contentStyle?: string;
+    readOnly: boolean;
 };
 
-export function PlateEditor({ value }: Props) {
+export function PlateEditor({
+    value,
+    className,
+    contentStyle,
+    readOnly,
+}: Props) {
     const mounted = useMounted();
 
     const editor = usePlateEditor({
         plugins: EditorKit,
         value: (value as Value) ?? undefined,
+        readOnly,
     });
 
     if (!mounted) return null;
 
     return (
         <Plate editor={editor}>
-            <EditorContainer>
-                <Editor placeholder="Type something..." />
+            <EditorContainer className={cn(className)}>
+                <Editor
+                    placeholder="Type something..."
+                    className={contentStyle}
+                />
             </EditorContainer>
 
             {/* <SettingsDialog /> */}

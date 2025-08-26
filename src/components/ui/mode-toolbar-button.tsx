@@ -64,6 +64,7 @@ export function ModeToolbarButton(props: DropdownMenuProps) {
             const post = await getPostBySlug(slug);
 
             if (!post) {
+                setReadOnly(false);
                 return;
             }
 

@@ -201,7 +201,9 @@ export async function editPost(slug: string) {
     }
 }
 
-export async function getPostBySlug(slug: string) {
+export async function getPostBySlug(slug?: string) {
+    if (!slug) return null;
+
     return prisma.post.findFirst({
         where: {
             slug,

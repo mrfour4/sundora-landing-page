@@ -14,6 +14,7 @@ import {
 import { KEYS } from "platejs";
 import { useEditorReadOnly } from "platejs/react";
 
+import { useParams } from "next/navigation";
 import { AlignToolbarButton } from "./align-toolbar-button";
 import { EmojiToolbarButton } from "./emoji-toolbar-button";
 import { ExportToolbarButton } from "./export-toolbar-button";
@@ -44,6 +45,10 @@ import { TurnIntoToolbarButton } from "./turn-into-toolbar-button";
 
 export function FixedToolbarButtons() {
     const readOnly = useEditorReadOnly();
+
+    const { slug } = useParams<{ slug: string }>();
+
+    if (!slug) return null;
 
     return (
         <ScrollArea className="ml-auto">

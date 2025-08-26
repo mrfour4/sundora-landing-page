@@ -55,7 +55,7 @@ export const columns: ColumnDef<Post>[] = [
             return (
                 <Link
                     href={`/admin/post/${post.slug}`}
-                    className="hover:underline"
+                    className="line-clamp-1 max-w-[400px] truncate hover:underline"
                 >
                     {post.title}
                 </Link>
