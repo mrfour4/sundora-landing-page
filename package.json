@@ -1,5 +1,5 @@
 {
-    "name": "plate-playground-template",
+    "name": "sundora-landing-page",
     "version": "0.1.0",
     "private": true,
     "scripts": {
@@ -10,7 +10,8 @@
         "lint:fix": "next lint --fix && prettier --write . --log-level warn",
         "preview": "next build && next start",
         "start": "next start",
-        "typecheck": "tsc --noEmit"
+        "typecheck": "tsc --noEmit",
+        "postinstall": "prisma generate --no-engine"
     },
     "dependencies": {
         "@ai-sdk/openai": "^1.3.22",
