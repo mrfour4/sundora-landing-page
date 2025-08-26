@@ -28,7 +28,7 @@ export const ApartmentList = () => {
     return (
         <div className="relative mt-6 flex flex-col items-center justify-center overflow-hidden">
             <div
-                className="relative flex w-fit flex-col items-center gap-y-3 bg-[#071230] px-10 lg:flex-row lg:rounded-full"
+                className="relative flex w-fit flex-col items-center gap-y-3 px-10 lg:flex-row lg:rounded-full"
                 style={{
                     backgroundImage: !isMobile
                         ? `url(/images_avif/apartment-1.avif)`
