@@ -60,6 +60,8 @@ export async function updatePost(_: unknown, formData: FormData) {
             data: {
                 ...data,
                 slug,
+                publishedAt:
+                    data.status === PostStatus.PUBLISHED ? new Date() : null,
             },
             select: { slug: true },
         });
