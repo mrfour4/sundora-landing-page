@@ -3,7 +3,7 @@
 import { Badge } from "@/components/ui/badge";
 import { Checkbox } from "@/components/ui/checkbox";
 import { formatTime } from "@/lib/format-time";
-import { getPostStatusLabel } from "@/lib/utils";
+import { getPostStatusLabel, vnNormalize } from "@/lib/utils";
 import { Post, PostStatus } from "@prisma/client";
 import { ColumnDef } from "@tanstack/react-table";
 import Link from "next/link";
@@ -60,6 +60,11 @@ export const columns: ColumnDef<Post>[] = [
                     {post.title}
                 </Link>
             );
+        },
+        filterFn: (row, id, value) => {
+            const q = vnNormalize(value);
+            if (!q) return true;
+            return vnNormalize(row.getValue(id)).includes(q);
         },
     },
     {

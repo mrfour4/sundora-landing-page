@@ -1,3 +1,4 @@
+import { PlateEditor } from "@/components/editor/plate-editor";
 import { prisma } from "@/lib/prisma";
 import { notFound } from "next/navigation";
 
@@ -13,9 +14,9 @@ export default async function PostPage({ params }: Props) {
         },
     });
 
-    if (!slug) {
+    if (!post) {
         notFound();
     }
 
-    return <div>{post?.title}</div>;
+    return <PlateEditor value={post?.content} />;
 }

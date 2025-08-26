@@ -23,3 +23,12 @@ export function getPostStatusLabel(status: PostStatus): string {
             return String(status);
     }
 }
+
+export function vnNormalize(s: string) {
+    return s
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .replace(/đ/g, "d")
+        .replace(/Đ/g, "D")
+        .toLowerCase();
+}

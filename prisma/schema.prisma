@@ -18,7 +18,7 @@ model Post {
   title       String     @db.VarChar(200)
   slug        String     @unique @db.VarChar(210)
   thumbnail   String?    @db.Text
-  content     String     @db.Text
+  content     Json?
   status      PostStatus @default(DRAFT)
   publishedAt DateTime?
   createdAt   DateTime   @default(now())

@@ -8,7 +8,7 @@ import { utapi } from "@/lib/server-upload";
 import { makeUniqueSlug } from "@/lib/unique-slug";
 import { errorMsg } from "@/lib/utils";
 import { idSchema, updatePostSchema } from "@/schemas/post";
-import { PostStatus } from "@prisma/client";
+import { PostStatus, Prisma } from "@prisma/client";
 import { revalidatePath } from "next/cache";
 import { isRedirectError } from "next/dist/client/components/redirect-error";
 import { redirect } from "next/navigation";
@@ -20,7 +20,6 @@ export async function createPost(_: unknown, _fd: FormData) {
         const post = await prisma.post.create({
             data: {
                 title: DEFAULT_TITLE,
-                content: "",
                 slug,
             },
         });
@@ -51,9 +50,17 @@ export async function updatePost(_: unknown, formData: FormData) {
             await deleteThumbnails([existing.thumbnail]);
         }
 
+        let slug = data.slug;
+        if (slug) {
+            slug = await makeUniqueSlug(slug);
+        }
+
         const updated = await prisma.post.update({
             where: { id },
-            data,
+            data: {
+                ...data,
+                slug,
+            },
             select: { slug: true },
         });
 
@@ -139,6 +146,67 @@ export async function archivePostsBulk(ids: string[]) {
     } catch (error) {
         return errorMsg(error, "Không thể lưu trữ các bài viết đã chọn.");
     }
+}
+
+export async function savePost(slug: string, content: unknown) {
+    try {
+        await ensureAdmin();
+        const existing = await prisma.post.findFirst({ where: { slug } });
+
+        if (!existing) {
+            return { ok: false, message: "Không tìm thấy bài viết." };
+        }
+
+        const updated = await prisma.post.update({
+            where: { id: existing.id },
+            data: {
+                content: content as Prisma.JsonArray,
+                status: PostStatus.ARCHIVED,
+            },
+            select: { slug: true },
+        });
+
+        revalidatePath("/admin");
+        revalidatePath("/");
+        revalidatePath(`/admin/post/${updated.slug}`);
+
+        return { ok: true, message: "Lưu bài viết thành công." };
+    } catch (error) {
+        return errorMsg(error, "Không thể lưu bài viết.");
+    }
+}
+
+export async function editPost(slug: string) {
+    try {
+        await ensureAdmin();
+        const existing = await prisma.post.findFirst({ where: { slug } });
+
+        if (!existing) {
+            return { ok: false, message: "Không tìm thấy bài viết." };
+        }
+
+        const updated = await prisma.post.update({
+            where: { id: existing.id },
+            data: { status: PostStatus.DRAFT },
+            select: { slug: true },
+        });
+
+        revalidatePath("/admin");
+        revalidatePath("/");
+        revalidatePath(`/admin/post/${updated.slug}`);
+
+        return { ok: true, message: "Lưu bài viết thành công." };
+    } catch (error) {
+        return errorMsg(error, "Không thể lưu bài viết.");
+    }
+}
+
+export async function getPostBySlug(slug: string) {
+    return prisma.post.findFirst({
+        where: {
+            slug,
+        },
+    });
 }
 
 async function deleteThumbnails(thumbnails: string[]) {

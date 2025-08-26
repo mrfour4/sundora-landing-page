@@ -26,7 +26,9 @@ import {
     SelectItem,
     SelectTrigger,
 } from "@/components/ui/select";
+import { DEFAULT_TITLE } from "@/constants";
 import { useUploadThing } from "@/hooks/use-upload-file";
+import { slugify } from "@/lib/slugify";
 import { getPostStatusLabel } from "@/lib/utils";
 import { updatePostSchema } from "@/schemas/post";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -48,13 +50,14 @@ const formSchema = updatePostSchema.extend({
 type TFormValues = z.infer<typeof formSchema>;
 
 export const EditPost = ({ open, onOpenChange, post }: Props) => {
-    const { title, thumbnail, status } = post;
+    const { title, thumbnail, status, slug } = post;
     const form = useForm<TFormValues>({
         resolver: zodResolver(formSchema),
         defaultValues: {
             title,
             thumbnail: thumbnail ?? "",
             status,
+            slug,
         },
     });
 
@@ -86,6 +89,11 @@ export const EditPost = ({ open, onOpenChange, post }: Props) => {
         return "Chọn trạng thái";
     };
 
+    const generateSlug = (value?: string) => {
+        const slug = slugify(value || form.getValues("title") || DEFAULT_TITLE);
+        form.setValue("slug", slug);
+    };
+
     return (
         <Dialog open={open} onOpenChange={onOpenChange}>
             <DialogContent
@@ -102,7 +110,7 @@ export const EditPost = ({ open, onOpenChange, post }: Props) => {
                 <DialogHeader>
                     <DialogTitle>Chỉnh sửa bài viết</DialogTitle>
                     <DialogDescription>
-                        Cập nhật tiêu đề, ảnh bìa và trạng thái.
+                        Cập nhật tiêu đề, đường dẫn, ảnh bìa và trạng thái.
                     </DialogDescription>
                 </DialogHeader>
 
@@ -118,8 +126,11 @@ export const EditPost = ({ open, onOpenChange, post }: Props) => {
                                         <FormLabel>Tiêu đề</FormLabel>
                                         <FormControl>
                                             <Input
-                                                placeholder="Tiêu đề"
+                                                placeholder="Nhập tiêu đề"
                                                 {...field}
+                                                onBlur={() => {
+                                                    generateSlug(field.value);
+                                                }}
                                             />
                                         </FormControl>
 
@@ -171,6 +182,26 @@ export const EditPost = ({ open, onOpenChange, post }: Props) => {
                                 )}
                             />
                         </div>
+                        <FormField
+                            control={form.control}
+                            name="slug"
+                            render={({ field }) => (
+                                <FormItem className="flex-1">
+                                    <FormLabel>Đường dẫn</FormLabel>
+                                    <FormControl>
+                                        <Input
+                                            placeholder="Nhập đường dẫn (không dấu, gạch ngang)"
+                                            {...field}
+                                            onBlur={(e) =>
+                                                generateSlug(e.target.value)
+                                            }
+                                        />
+                                    </FormControl>
+
+                                    <FormMessage />
+                                </FormItem>
+                            )}
+                        />
                         <FormField
                             control={form.control}
                             name="thumbnail"
