@@ -8,6 +8,7 @@ import { utapi } from "@/lib/server-upload";
 import { makeUniqueSlug } from "@/lib/unique-slug";
 import { errorMsg } from "@/lib/utils";
 import { idSchema, updatePostSchema } from "@/schemas/post";
+import { PostStatus } from "@prisma/client";
 import { revalidatePath } from "next/cache";
 import { isRedirectError } from "next/dist/client/components/redirect-error";
 import { redirect } from "next/navigation";
@@ -46,10 +47,7 @@ export async function updatePost(_: unknown, formData: FormData) {
         const data = parseFormData(formData, updatePostSchema);
 
         if (existing.thumbnail && existing.thumbnail !== data.thumbnail) {
-            const fileKey = new URL(existing.thumbnail).pathname.split(
-                "/f/",
-            )[1];
-            await utapi.deleteFiles(fileKey);
+            await deleteThumbnails([existing.thumbnail]);
         }
 
         const updated = await prisma.post.update({
@@ -73,12 +71,91 @@ export async function deletePost(_: unknown, formData: FormData) {
         await ensureAdmin();
         const id = idSchema.parse(formData.get("id"));
 
-        await prisma.post.delete({ where: { id } });
+        const post = await prisma.post.delete({ where: { id } });
+        if (post.thumbnail) {
+            await deleteThumbnails([post.thumbnail]);
+        }
+
         revalidatePath("/admin");
         revalidatePath("/");
 
         return { ok: true, message: "Đã xóa bài viết." };
     } catch (error) {
         return errorMsg(error, "Không thể xóa bài viết.");
+    }
+}
+
+export async function deletePostsBulk(ids: string[]) {
+    try {
+        await ensureAdmin();
+        const posts = await prisma.post.findMany({
+            where: { id: { in: ids } },
+            select: { thumbnail: true, slug: true },
+        });
+
+        const thumbnails = posts.reduce((acc, p) => {
+            if (p.thumbnail !== null) {
+                acc.push(p.thumbnail);
+            }
+            return acc;
+        }, [] as string[]);
+
+        await Promise.all([
+            deleteThumbnails(thumbnails),
+            prisma.post.deleteMany({ where: { id: { in: ids } } }),
+        ]);
+
+        revalidatePath("/admin");
+        revalidatePath("/");
+
+        posts.forEach((p) => {
+            revalidatePath(`/admin/${p.slug}`);
+        });
+
+        return { ok: true, message: "Deleted successfully" };
+    } catch (error) {
+        return errorMsg(error, "Không thể xóa bài viết.");
+    }
+}
+
+export async function archivePostsBulk(ids: string[]) {
+    try {
+        await ensureAdmin();
+        const posts = await prisma.post.updateManyAndReturn({
+            where: { id: { in: ids } },
+            data: {
+                status: PostStatus.ARCHIVED,
+            },
+        });
+
+        revalidatePath("/admin");
+        revalidatePath("/");
+
+        posts.forEach((p) => {
+            revalidatePath(`/admin/${p.slug}`);
+        });
+
+        return { ok: true, message: "Archived successfully" };
+    } catch (error) {
+        return errorMsg(error, "Không thể archived bài viết.");
+    }
+}
+async function deleteThumbnails(thumbnails: string[]) {
+    const validThumbnails = thumbnails.filter((t) => isValidUrl(t));
+    if (!validThumbnails.length) return;
+
+    const fileKeys = validThumbnails.map(
+        (thumbnail) => new URL(thumbnail).pathname.split("/f/")[1],
+    );
+    await utapi.deleteFiles(fileKeys);
+}
+
+function isValidUrl(url: string | null) {
+    if (!url) return false;
+    try {
+        new URL(url);
+        return true;
+    } catch (error) {
+        return false;
     }
 }

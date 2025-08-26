@@ -41,7 +41,7 @@ type Props = {
 };
 
 const formSchema = updatePostSchema.extend({
-    thumbnail: z.url(),
+    thumbnail: z.url({ error: "Vui lòng chọn ảnh bìa hợp lệ" }),
 });
 
 type TFormValues = z.infer<typeof formSchema>;
@@ -94,8 +94,7 @@ export const EditPost = ({ open, onOpenChange, post }: Props) => {
                 <DialogHeader>
                     <DialogTitle>Chỉnh sửa bài viết</DialogTitle>
                     <DialogDescription>
-                        Cập nhật tiêu đề, hình ảnh, nội dung hoặc trạng thái bài
-                        viết.
+                        Cập nhật tiêu đề, ảnh bìa và trạng thái.
                     </DialogDescription>
                 </DialogHeader>
 
@@ -108,7 +107,7 @@ export const EditPost = ({ open, onOpenChange, post }: Props) => {
                                 name="title"
                                 render={({ field }) => (
                                     <FormItem className="flex-1">
-                                        <FormLabel>Title</FormLabel>
+                                        <FormLabel>Tiêu đề</FormLabel>
                                         <FormControl>
                                             <Input
                                                 placeholder="Tiêu đề"
@@ -125,7 +124,7 @@ export const EditPost = ({ open, onOpenChange, post }: Props) => {
                                 name="status"
                                 render={({ field }) => (
                                     <FormItem>
-                                        <FormLabel>Status</FormLabel>
+                                        <FormLabel>Trạng thái</FormLabel>
                                         <Select
                                             onValueChange={field.onChange}
                                             value={field.value}
@@ -140,7 +139,7 @@ export const EditPost = ({ open, onOpenChange, post }: Props) => {
                                                                 status,
                                                         )
                                                         ?.toLocaleLowerCase() ??
-                                                        "Select status"}
+                                                        "Chọn trạng thái"}
                                                 </SelectTrigger>
                                             </FormControl>
                                             <SelectContent>
@@ -174,7 +173,7 @@ export const EditPost = ({ open, onOpenChange, post }: Props) => {
                             name="thumbnail"
                             render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel>Thumbnail</FormLabel>
+                                    <FormLabel>Ảnh bìa</FormLabel>
                                     <FormControl>
                                         <ImageUploadDropzone
                                             url={field.value}
@@ -203,7 +202,7 @@ export const EditPost = ({ open, onOpenChange, post }: Props) => {
                                 e.stopPropagation();
                             }}
                         >
-                            Submit
+                            Lưu
                         </Button>
                     </form>
                 </Form>

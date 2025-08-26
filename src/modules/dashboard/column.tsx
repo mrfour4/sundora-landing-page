@@ -6,6 +6,7 @@ import { formatTime } from "@/lib/format-time";
 import { Post, PostStatus } from "@prisma/client";
 import { ColumnDef } from "@tanstack/react-table";
 import Link from "next/link";
+import { TableBulkAction } from "./bulk-action";
 import { ColumnHeader } from "./column-header";
 import { RowActions } from "./row-actions";
 import { Thumbnail } from "./thumbnail";
@@ -88,6 +89,7 @@ export const columns: ColumnDef<Post>[] = [
     },
     {
         id: "actions",
+        header: ({ table }) => <TableBulkAction table={table} />,
         cell: ({ row }) => {
             const post = row.original as Post;
             return <RowActions post={post} />;

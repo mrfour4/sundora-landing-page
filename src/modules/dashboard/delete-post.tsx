@@ -82,6 +82,7 @@ export const DeletePost = ({ open, onOpenChange, post }: Props) => {
                         <input type="hidden" name="id" value={post.id} />
                         <Button
                             type="submit"
+                            disabled={isPending}
                             className="inline-flex items-center gap-2 rounded-md border border-red-300/60 bg-gradient-to-b from-red-500 to-red-600 px-3 py-1.5 text-sm font-semibold text-white shadow-sm transition hover:to-red-700 focus:ring-2 focus:ring-red-400/50 focus:outline-none"
                         >
                             {isPending ? (

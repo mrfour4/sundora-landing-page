@@ -48,7 +48,7 @@ export const RowActions = ({ post }: Props) => {
                 </DropdownMenuTrigger>
                 <DropdownMenuContent align="end">
                     <DropdownMenuItem onClick={() => setType("edit")}>
-                        <Pencil /> Edit
+                        <Pencil /> Chỉnh sửa
                     </DropdownMenuItem>
                     <DropdownMenuItem>
                         <ArchiveButton
@@ -61,7 +61,7 @@ export const RowActions = ({ post }: Props) => {
                         variant="destructive"
                         onClick={() => setType("delete")}
                     >
-                        <Trash /> Delete
+                        <Trash /> Xoá
                     </DropdownMenuItem>
                 </DropdownMenuContent>
             </DropdownMenu>
