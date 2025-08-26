@@ -32,7 +32,7 @@ export const ArchiveButton = ({ id, onClose }: Props) => {
             <button
                 type="submit"
                 disabled={isPending}
-                className="flex items-center gap-2"
+                className="flex items-center gap-2 disabled:opacity-50"
                 onClick={(e) => {
                     e.stopPropagation();
                 }}

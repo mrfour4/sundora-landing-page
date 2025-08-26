@@ -5,9 +5,9 @@ import { ZodEffects } from "zod/v3";
 function unwrapObjectSchema(schema: z.ZodTypeAny): z.ZodObject<any> {
     let cur: z.ZodTypeAny = schema;
     while (cur instanceof ZodEffects) cur = cur.innerType();
-    if (!(cur instanceof z.ZodObject))
+    if (!(cur instanceof z.ZodObject)) {
         throw new Error("schema must be ZodObject");
-    /* eslint-disable  @typescript-eslint/no-explicit-any */
+    }
     return cur as z.ZodObject<any>;
 }
 
@@ -22,9 +22,17 @@ export function parseFormData<T extends z.ZodTypeAny>(
     for (const key of Object.keys(shape)) {
         const def = shape[key] as z.ZodTypeAny | undefined;
         if (!def) continue;
+
         const all = formData.getAll(key);
         if (all.length === 0) continue;
-        out[key] = def instanceof z.ZodArray ? all : all[0];
+
+        if (def instanceof z.ZodArray) {
+            out[key] = all.map((val) => (val === "" ? undefined : val));
+        } else {
+            const value = all[0];
+            out[key] = value === "" ? undefined : value;
+        }
     }
+
     return schema.parse(out);
 }

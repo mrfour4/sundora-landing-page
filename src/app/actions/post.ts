@@ -4,6 +4,7 @@ import { DEFAULT_TITLE } from "@/constants";
 import { ensureAdmin } from "@/lib/admin";
 import { parseFormData } from "@/lib/parse-form-data";
 import { prisma } from "@/lib/prisma";
+import { utapi } from "@/lib/server-upload";
 import { makeUniqueSlug } from "@/lib/unique-slug";
 import { errorMsg } from "@/lib/utils";
 import { idSchema, updatePostSchema } from "@/schemas/post";
@@ -38,11 +39,18 @@ export async function updatePost(_: unknown, formData: FormData) {
         const id = idSchema.parse(formData.get("id"));
         const existing = await prisma.post.findUnique({
             where: { id },
-            select: { id: true, title: true, slug: true },
+            select: { id: true, thumbnail: true },
         });
         if (!existing) return { ok: false, message: "Bài viết không tồn tại." };
 
         const data = parseFormData(formData, updatePostSchema);
+
+        if (existing.thumbnail && existing.thumbnail !== data.thumbnail) {
+            const fileKey = new URL(existing.thumbnail).pathname.split(
+                "/f/",
+            )[1];
+            await utapi.deleteFiles(fileKey);
+        }
 
         const updated = await prisma.post.update({
             where: { id },

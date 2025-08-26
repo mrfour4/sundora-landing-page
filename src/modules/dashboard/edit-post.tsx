@@ -8,6 +8,7 @@ import {
 import { Post, PostStatus } from "@prisma/client";
 
 import { updatePost } from "@/app/actions/post";
+import { ImageUploadDropzone } from "@/components/custom-uploader";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
@@ -25,12 +26,13 @@ import {
     SelectItem,
     SelectTrigger,
 } from "@/components/ui/select";
-import { UploadDropzone } from "@/components/upload-image";
-import { TUpdatePost, updatePostSchema } from "@/schemas/post";
+import { useUploadThing } from "@/hooks/use-upload-file";
+import { updatePostSchema } from "@/schemas/post";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useTransition } from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
+import z from "zod";
 
 type Props = {
     open: boolean;
@@ -38,10 +40,16 @@ type Props = {
     post: Post;
 };
 
+const formSchema = updatePostSchema.extend({
+    thumbnail: z.url(),
+});
+
+type TFormValues = z.infer<typeof formSchema>;
+
 export const EditPost = ({ open, onOpenChange, post }: Props) => {
     const { title, thumbnail, status } = post;
-    const form = useForm<TUpdatePost>({
-        resolver: zodResolver(updatePostSchema),
+    const form = useForm<TFormValues>({
+        resolver: zodResolver(formSchema),
         defaultValues: {
             title,
             thumbnail: thumbnail ?? "",
@@ -50,11 +58,13 @@ export const EditPost = ({ open, onOpenChange, post }: Props) => {
     });
 
     const [isPending, startTransition] = useTransition();
+    const { isUploading } = useUploadThing("imageUploader");
 
     const onAction = async (formData: FormData) => {
         const isValid = await form.trigger();
 
         if (!isValid) return;
+
         startTransition(async () => {
             const result = await updatePost(null, formData);
             if (!result.ok) {
@@ -72,7 +82,11 @@ export const EditPost = ({ open, onOpenChange, post }: Props) => {
         <Dialog open={open} onOpenChange={onOpenChange}>
             <DialogContent
                 onInteractOutside={(e) => {
-                    if (isPending) {
+                    const isThumbnailChanged =
+                        form.getValues("thumbnail") &&
+                        post.thumbnail !== form.getValues("thumbnail");
+
+                    if (isPending || isThumbnailChanged) {
                         e.preventDefault();
                     }
                 }}
@@ -162,20 +176,33 @@ export const EditPost = ({ open, onOpenChange, post }: Props) => {
                                 <FormItem>
                                     <FormLabel>Thumbnail</FormLabel>
                                     <FormControl>
-                                        <UploadDropzone
-                                            endpoint="imageUploader"
-                                            onClientUploadComplete={(res) => {
-                                                // field.onChange(res.url)
+                                        <ImageUploadDropzone
+                                            url={field.value}
+                                            disabled={isPending}
+                                            onChange={(url) => {
+                                                field.onChange(url);
                                             }}
                                         />
                                     </FormControl>
 
+                                    <input
+                                        type="hidden"
+                                        name="thumbnail"
+                                        value={field.value ?? ""}
+                                    />
                                     <FormMessage />
                                 </FormItem>
                             )}
                         />
 
-                        <Button type="submit" disabled={isPending}>
+                        <Button
+                            type="submit"
+                            disabled={isPending || isUploading}
+                            className="w-full"
+                            onClick={(e) => {
+                                e.stopPropagation();
+                            }}
+                        >
                             Submit
                         </Button>
                     </form>
