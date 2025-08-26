@@ -8,7 +8,7 @@ export const SUPPORT_EMAIL =
     process.env.GMAIL_TO ??
     process.env.GMAIL_USER!;
 export const SUPPORT_PHONE = process.env.SUPPORT_PHONE ?? "";
-export const WEBSITE_URL = process.env.WEBSITE_URL ?? "https://sundora.vn";
+export const WEBSITE_URL = "https://sundoratower.vn";
 export const BRAND_COLOR = process.env.BRAND_COLOR ?? "#c39249";
 
 export function buildSubject(d: TContactValues) {

@@ -90,6 +90,8 @@ export const Privilege = () => {
                     />
 
                     <div className="relative h-[426px] w-full shrink-0 overflow-hidden">
+                        <div className="absolute inset-0 -z-10 animate-pulse bg-gray-200" />
+
                         <AnimatePresence
                             initial={false}
                             custom={direction}
