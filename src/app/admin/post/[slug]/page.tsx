@@ -1,4 +1,4 @@
-import { PlateEditor } from "@/components/editor/plate-editor";
+import { EditorClient } from "@/components/editor";
 import { prisma } from "@/lib/prisma";
 import { PostStatus } from "@prisma/client";
 import { notFound } from "next/navigation";
@@ -20,7 +20,7 @@ export default async function PostPage({ params }: Props) {
     }
 
     return (
-        <PlateEditor
+        <EditorClient
             value={post?.content}
             readOnly={post.status !== PostStatus.DRAFT}
         />

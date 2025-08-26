@@ -1,4 +1,4 @@
-import { PlateEditor } from "@/components/editor/plate-editor";
+import { EditorClient } from "@/components/editor";
 import {
     Dialog,
     DialogContent,
@@ -36,7 +36,7 @@ export const PostContentDialog = ({ post, open, onOpenChange }: Props) => {
                     <p className="text-muted-foreground -mb-5 px-0 text-sm lg:px-20">
                         {formatDate(post.updatedAt)}
                     </p>
-                    <PlateEditor
+                    <EditorClient
                         value={post.content || undefined}
                         className="px-0 py-0"
                         contentStyle="px-0! lg:px-20! pt-6! pb-10!"

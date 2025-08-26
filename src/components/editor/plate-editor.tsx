@@ -4,7 +4,6 @@ import { Plate, usePlateEditor } from "platejs/react";
 
 import { EditorKit } from "@/components/editor/editor-kit";
 import { Editor, EditorContainer } from "@/components/ui/editor";
-import { useMounted } from "@/hooks/use-mounted";
 import { cn } from "@/lib/utils";
 import { Value } from "platejs";
 
@@ -21,15 +20,11 @@ export function PlateEditor({
     contentStyle,
     readOnly,
 }: Props) {
-    const mounted = useMounted();
-
     const editor = usePlateEditor({
         plugins: EditorKit,
         value: (value as Value) ?? undefined,
         readOnly,
     });
-
-    if (!mounted) return null;
 
     return (
         <Plate editor={editor}>
