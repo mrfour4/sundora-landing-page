@@ -238,9 +238,9 @@ export const CONTACTS: TContact[] = [
     },
     {
         icon: Icons.mail,
-        href: "mailto:info@sundoratower.com",
+        href: "mailto:info@sundoratower.vn",
         label: "Email",
-        content: "info@sundoratower.com",
+        content: "info@sundoratower.vn",
     },
     {
         icon: Globe,

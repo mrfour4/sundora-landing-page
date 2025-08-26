@@ -51,10 +51,16 @@ export const Contact = () => {
                     <Link
                         href="https://www.facebook.com/profile.php?id=61578685858106"
                         className="ml-2"
+                        target="_blank"
+                        rel="noopener noreferrer"
                     >
                         <Icons.facebook />
                     </Link>
-                    <Link href="https://zalo.me/46251002081481672">
+                    <Link
+                        href="https://zalo.me/46251002081481672"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
                         <Icons.zalo />
                     </Link>
                 </div>
