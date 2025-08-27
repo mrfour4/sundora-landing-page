@@ -7,7 +7,6 @@ import { useNavigationContext } from "./navigation-context";
 
 export const Logo = () => {
     const { sectionId } = useNavigationContext();
-    console.log("🚀 ~ Logo ~ sectionId:", sectionId);
     const isRich = sectionId && RICH_LOGO_IN_VIEWS.includes(sectionId);
 
     return (

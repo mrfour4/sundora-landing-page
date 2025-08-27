@@ -2,6 +2,7 @@
 
 import { Icons } from "@/components/icons";
 import { Button } from "@/components/sundora/button";
+import { useIsMobile } from "@/hooks/use-mobile";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 import Link from "next/link";
@@ -12,6 +13,8 @@ type Props = {
 };
 
 export const VRButton = ({ className, showDetail = false }: Props) => {
+    const isMobile = useIsMobile();
+
     return (
         <motion.div
             animate={{
@@ -49,7 +52,9 @@ export const VRButton = ({ className, showDetail = false }: Props) => {
                     target="_blank"
                     rel="noopener noreferrer"
                 >
-                    <Icons.isolation className="size-3 shrink-0 lg:size-4" />
+                    {!isMobile && (
+                        <Icons.isolation className="size-3 shrink-0 lg:size-4" />
+                    )}
                     {showDetail && <span>VR 360 DỰ ÁN</span>}
                 </Link>
             </Button>

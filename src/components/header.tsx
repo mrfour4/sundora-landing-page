@@ -19,9 +19,7 @@ export const Header = () => {
 
                 <VRButton
                     className={cn(
-                        // isMobile && "size-6 border-0 lg:size-7",
-                        isMobile &&
-                            "text-sundora-secondary ml-auto [&_svg]:hidden",
+                        isMobile && "text-sundora-secondary ml-auto",
                         isSecondary
                             ? "bg-sundora-accent-foreground"
                             : "bg-sundora-primary",

@@ -40,7 +40,6 @@ export const ourFileRouter = {
         .onUploadComplete(async ({ file, metadata }) => {
             if (metadata.fileKey) {
                 await utapi.deleteFiles(metadata.fileKey);
-                console.log("deleted: ", metadata.fileKey);
             }
             return { thumbnail: file.ufsUrl };
         }),
