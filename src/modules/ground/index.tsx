@@ -15,7 +15,7 @@ export const Ground = () => {
     return (
         <section
             id={ESectionId.GROUND}
-            className="flex h-screen flex-col items-center justify-center pt-20 lg:flex-row lg:gap-x-10 lg:pt-0"
+            className="flex min-h-screen flex-col items-center justify-center pt-20 lg:flex-row lg:gap-x-10 lg:pt-0"
         >
             <div>
                 <h1

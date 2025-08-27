@@ -15,7 +15,7 @@ export const Partner = () => {
     return (
         <section
             id={ESectionId.PARTNERS}
-            className="flex h-screen flex-col items-center justify-center bg-cover bg-no-repeat pt-20 lg:pt-0"
+            className="flex min-h-screen flex-col items-center justify-center bg-cover bg-no-repeat pt-20 lg:pt-0"
             style={{
                 backgroundImage: isMobile
                     ? `url(${PARTNER_IMG_MOBILE})`

@@ -12,7 +12,7 @@ export const Apartment = () => {
     return (
         <section
             id={ESectionId.APARTMENT}
-            className="relative flex h-screen flex-col justify-center gap-x-20 pt-20 lg:flex-row lg:items-center lg:pt-0"
+            className="relative flex min-h-screen flex-col justify-center gap-x-20 pt-20 lg:flex-row lg:items-center lg:pt-0"
         >
             <div className="text-center lg:-translate-y-8">
                 <h2

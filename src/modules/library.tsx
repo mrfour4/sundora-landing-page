@@ -14,10 +14,15 @@ export const Library = () => {
     useSectionObserver(ESectionId.LIBRARY);
     const isMobile = useIsMobile();
 
+    const IMAGES_URL = [
+        "/images_avif/library-4.avif",
+        "/images_avif/library-5.avif",
+    ];
+
     return (
         <section
             id={ESectionId.LIBRARY}
-            className="bg-sundora-accent-foreground flex h-screen pt-20 pb-6 lg:items-center lg:gap-x-32 lg:pt-10"
+            className="bg-sundora-accent-foreground flex min-h-screen pt-20 pb-6 lg:items-center lg:gap-x-32 lg:pt-10"
         >
             <div className="mt-10 w-full lg:w-auto">
                 {isMobile && (
@@ -35,7 +40,7 @@ export const Library = () => {
                     </div>
                 )}
                 <Image
-                    src="/images_avif/library-1.avif"
+                    src="/images_avif/library-4.avif"
                     alt="Hình ảnh dự án"
                     width={385}
                     height={371}
@@ -47,22 +52,20 @@ export const Library = () => {
                     </p>
                 </div>
 
-                {isMobile && (
-                    <div className="mt-6 flex items-baseline justify-center gap-x-2.5">
-                        <Icons.arrowLeft className="text-sundora-secondary-foreground" />
-                        <div
-                            className={cn(
-                                "text-sundora-secondary inline-flex items-baseline gap-x-1",
-                                albra.className,
-                            )}
-                        >
-                            <span className="text-2xl text-white">01</span>
-                            <span>/</span>
-                            <span>02</span>
-                        </div>
-                        <Icons.arrowLeft className="text-sundora-secondary rotate-180" />
+                <div className="mt-6 flex items-baseline justify-center gap-x-2.5">
+                    <Icons.arrowLeft className="text-sundora-secondary-foreground" />
+                    <div
+                        className={cn(
+                            "text-sundora-secondary inline-flex items-baseline gap-x-1",
+                            albra.className,
+                        )}
+                    >
+                        <span className="text-2xl text-white">01</span>
+                        <span>/</span>
+                        <span>02</span>
                     </div>
-                )}
+                    <Icons.arrowLeft className="text-sundora-secondary rotate-180" />
+                </div>
             </div>
             <div className={cn(isMobile && "hidden")}>
                 <div className="flex items-center gap-8">

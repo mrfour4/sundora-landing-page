@@ -8,11 +8,11 @@ export const useSectionObserver = (id: ESectionId, opts?: Opts) => {
     const { setSectionId } = useNavigationContext();
 
     useEffect(() => {
-        const isSmallScreen =
-            typeof window !== "undefined" &&
-            window.matchMedia("(max-width: 1024px), (pointer: coarse)").matches;
+        // const isSmallScreen =
+        //     typeof window !== "undefined" &&
+        //     window.matchMedia("(max-width: 1024px), (pointer: coarse)").matches;
 
-        if (opts?.disableOnMobile !== false && isSmallScreen) return;
+        // if (opts?.disableOnMobile !== false && isSmallScreen) return;
 
         const el = document.getElementById(String(id));
         if (!el) return;

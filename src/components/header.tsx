@@ -12,19 +12,21 @@ export const Header = () => {
     const isMobile = useIsMobile();
 
     return (
-        <header className="fixed inset-x-0 top-0 z-50 flex items-center justify-between px-6 lg:top-4 lg:px-8">
+        <header className="fixed inset-x-0 top-0 z-50 flex flex-col justify-between px-6 lg:top-4 lg:flex-row lg:items-center lg:px-8">
             <Logo />
             <div className="flex items-center gap-x-2">
                 <CallButton />
 
                 <VRButton
                     className={cn(
-                        isMobile && "size-6 border-0 lg:size-7",
+                        // isMobile && "size-6 border-0 lg:size-7",
+                        isMobile &&
+                            "text-sundora-secondary ml-auto [&_svg]:hidden",
                         isSecondary
                             ? "bg-sundora-accent-foreground"
                             : "bg-sundora-primary",
                     )}
-                    showDetail={!isMobile}
+                    showDetail
                 />
             </div>
         </header>

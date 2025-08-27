@@ -15,7 +15,7 @@ export const Inspiration = () => {
     return (
         <section
             id={ESectionId.INSPIRATION}
-            className="flex h-screen flex-col items-center justify-center bg-cover bg-no-repeat"
+            className="flex min-h-screen flex-col items-center justify-center bg-cover bg-no-repeat"
             style={{
                 backgroundImage: isMobile
                     ? `url(${INSPIRATION_IMG_MOBILE})`

@@ -20,7 +20,7 @@ export const Utilities = () => {
     return (
         <section
             id={ESectionId.UTILITIES}
-            className="flex h-screen flex-col pt-20 lg:flex-row lg:items-center lg:justify-between lg:pt-0 lg:pl-40"
+            className="flex min-h-screen flex-col pt-20 lg:flex-row lg:items-center lg:justify-between lg:pt-0 lg:pl-40"
         >
             <div
                 className={cn(

@@ -15,7 +15,7 @@ export const Location = () => {
     return (
         <section
             id={ESectionId.LOCATION}
-            className="flex h-screen flex-col bg-cover bg-no-repeat px-6 pt-20 lg:justify-center lg:px-24"
+            className="flex min-h-screen flex-col bg-cover bg-no-repeat px-6 pt-20 lg:justify-center lg:px-24"
             style={{
                 backgroundImage: isMobile
                     ? `url(${LOCATION_IMG_MOBILE})`

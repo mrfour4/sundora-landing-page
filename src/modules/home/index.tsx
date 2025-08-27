@@ -16,7 +16,7 @@ export const Home = () => {
     return (
         <section
             id={ESectionId.HOME}
-            className="flex h-screen flex-col bg-cover bg-no-repeat"
+            className="flex min-h-screen flex-col bg-cover bg-no-repeat"
             style={{
                 backgroundImage: isMobile
                     ? `url(${HERO_IMG_URL_MOBILE})`
