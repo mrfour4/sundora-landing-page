@@ -53,6 +53,8 @@ export const Home = () => {
                             alt="Sundora house"
                             width={414}
                             height={679}
+                            quality={100}
+                            priority
                             className="-mt-28 -mb-32 h-[600px] w-[414px] object-cover"
                         />
                     )}
