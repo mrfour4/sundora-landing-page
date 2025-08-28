@@ -15,8 +15,8 @@ export const Privilege = () => {
     const isMobile = useIsMobile();
 
     const images = [
-        { src: "/images_avif/privilege-1.avif", alt: "Bến du thuyền 1" },
-        { src: "/images_avif/privilege-2.avif", alt: "Bến du thuyền 2" },
+        { src: "/images_avif/privilege-4.avif", alt: "Bến du thuyền 1" },
+        { src: "/images_avif/privilege-3.avif", alt: "Bến du thuyền 2" },
     ];
 
     const [idx, setIdx] = useState(0);
@@ -164,7 +164,7 @@ export const Privilege = () => {
                 <>
                     <div className="flex flex-col gap-y-4">
                         <Image
-                            src="/images_avif/privilege-1.avif"
+                            src="/images_avif/privilege-4.avif"
                             alt="Bến du thuyền"
                             width={500}
                             height={767}
@@ -188,10 +188,10 @@ export const Privilege = () => {
                     </div>
 
                     <Image
-                        src="/images_avif/privilege-2.avif"
+                        src="/images_avif/privilege-3.avif"
                         alt="Bến du thuyền"
                         width={400}
-                        height={350}
+                        height={300}
                         className="shrink-0 object-cover"
                     />
                 </>
