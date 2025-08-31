@@ -60,7 +60,7 @@ export const Video = () => {
                 Trình duyệt của bạn không hỗ trợ video.
             </video>
             {!isPlaying && (
-                <div className="absolute inset-0 flex items-center justify-center bg-black/30 transition-colors hover:bg-black/50">
+                <div className="absolute inset-0 hidden items-center justify-center bg-black/30 transition-colors hover:bg-black/50 lg:flex">
                     <button
                         onClick={handleToggle}
                         className="flex items-center justify-center"
