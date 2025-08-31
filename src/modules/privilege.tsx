@@ -86,10 +86,10 @@ export const Privilege = () => {
                         alt=""
                         width={596}
                         height={576}
-                        className="absolute inset-x-0 bottom-0 -z-10"
+                        className="absolute inset-x-0 bottom-0 -z-10 h-[180px]"
                     />
 
-                    <div className="relative h-[426px] w-full shrink-0 overflow-hidden">
+                    <div className="relative h-[192px] w-full shrink-0 overflow-hidden">
                         <div className="absolute inset-0 -z-10 animate-pulse bg-gray-200" />
 
                         <AnimatePresence
@@ -111,12 +111,11 @@ export const Privilege = () => {
                                 }}
                             >
                                 <Image
+                                    fill
                                     src={images[idx].src}
                                     alt="Bến du thuyền"
-                                    width={500}
-                                    height={767}
-                                    className="h-full w-full object-cover"
-                                    priority
+                                    className="object-cover"
+                                    quality={100}
                                 />
                             </motion.div>
                         </AnimatePresence>
@@ -167,7 +166,7 @@ export const Privilege = () => {
                             src="/images_avif/privilege-4.avif"
                             alt="Bến du thuyền"
                             width={500}
-                            height={767}
+                            height={281}
                             className="shrink-0 object-cover"
                         />
 
@@ -191,7 +190,8 @@ export const Privilege = () => {
                         src="/images_avif/privilege-3.avif"
                         alt="Bến du thuyền"
                         width={400}
-                        height={300}
+                        height={225}
+                        quality={100}
                         className="shrink-0 object-cover"
                     />
                 </>
