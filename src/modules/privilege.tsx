@@ -161,30 +161,13 @@ export const Privilege = () => {
 
             {!isMobile && (
                 <>
-                    <div className="flex flex-col gap-y-4">
-                        <Image
-                            src="/images_avif/privilege-4.avif"
-                            alt="Bến du thuyền"
-                            width={500}
-                            height={281}
-                            className="shrink-0 object-cover"
-                        />
-
-                        <div className="flex items-baseline gap-x-2.5">
-                            <Icons.arrowLeft className="text-sundora-secondary-foreground" />
-                            <div
-                                className={cn(
-                                    "text-sundora-secondary inline-flex items-baseline gap-x-1",
-                                    albra.className,
-                                )}
-                            >
-                                <span className="text-2xl text-white">01</span>
-                                <span>/</span>
-                                <span>02</span>
-                            </div>
-                            <Icons.arrowLeft className="text-sundora-secondary rotate-180" />
-                        </div>
-                    </div>
+                    <Image
+                        src="/images_avif/privilege-4.avif"
+                        alt="Bến du thuyền"
+                        width={500}
+                        height={281}
+                        className="shrink-0 object-cover"
+                    />
 
                     <Image
                         src="/images_avif/privilege-3.avif"
