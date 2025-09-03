@@ -55,7 +55,7 @@ export const Home = () => {
                             height={600}
                             quality={100}
                             priority
-                            className="-mt-28 -mb-32 h-[600px] w-[350px] object-cover"
+                            className="-mt-28 -mb-32 h-[600px] w-[350px] object-contain"
                         />
                     ) : (
                         <div className="relative -mt-28 -mb-32 h-[589px] w-full shrink-0">
