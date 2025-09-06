@@ -1,23 +1,27 @@
 import NextAuth from "next-auth";
 import Google from "next-auth/providers/google";
-import { isAdmin } from "./lib/admin";
-
-const ADMIN =
-    process.env.ADMIN_EMAIL?.toLowerCase() ||
-    process.env.GMAIL_USER?.toLowerCase();
+import { canUpload, getUserRoles, rolesOfEmail } from "./lib/rbac";
 
 export const { handlers, signIn, signOut, auth } = NextAuth({
     providers: [Google],
     callbacks: {
         async signIn({ profile, user }) {
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
             const email = (user?.email ?? (profile as any)?.email ?? "")
                 .trim()
                 .toLowerCase();
-            return !!ADMIN && email === ADMIN;
+
+            return rolesOfEmail(email).length > 0;
         },
-        authorized({ auth }) {
-            return isAdmin(auth);
+        authorized({ auth: session }) {
+            return canUpload(session);
+        },
+        async session({ session }) {
+            session.user = {
+                ...session.user,
+                // @ts-expect-error
+                roles: getUserRoles(session),
+            };
+            return session;
         },
         async redirect({ url, baseUrl }) {
             let u: URL;
@@ -27,14 +31,9 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
                 return baseUrl;
             }
             if (u.origin !== baseUrl) return baseUrl;
-
             if (u.pathname === "/auth") return `${baseUrl}/admin`;
-
             return u.href;
         },
     },
-    pages: {
-        signIn: "/auth",
-        error: "/auth/error",
-    },
+    pages: { signIn: "/auth", error: "/auth/error" },
 });

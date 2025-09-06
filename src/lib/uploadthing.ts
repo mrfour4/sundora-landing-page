@@ -1,8 +1,9 @@
 import type { FileRouter } from "uploadthing/next";
 
+import { auth } from "@/auth";
 import { createUploadthing } from "uploadthing/next";
 import z from "zod";
-import { ensureAdmin } from "./admin";
+import { ensureUploader } from "./rbac";
 import { utapi } from "./server-upload";
 
 const f = createUploadthing();
@@ -29,7 +30,7 @@ export const ourFileRouter = {
     })
         .input(z.object({ prevUrl: z.url().nullable() }))
         .middleware(async ({ input }) => {
-            await ensureAdmin();
+            await ensureUploader(auth);
 
             const fileKey = input.prevUrl
                 ? new URL(input.prevUrl).pathname.split("/f/")[1]

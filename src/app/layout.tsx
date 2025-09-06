@@ -1,11 +1,10 @@
+import { NavigationProvider } from "@/components/navigation-context";
+import { Toaster } from "@/components/ui/sonner";
+import { ourFileRouter } from "@/lib/uploadthing";
 import { NextSSRPlugin } from "@uploadthing/react/next-ssr-plugin";
 import type { Metadata, Viewport } from "next";
 import Script from "next/script";
 import { extractRouterConfig } from "uploadthing/server";
-
-import { NavigationProvider } from "@/components/navigation-context";
-import { Toaster } from "@/components/ui/sonner";
-import { ourFileRouter } from "@/lib/uploadthing";
 import { montserrat } from "./fonts";
 import "./globals.css";
 

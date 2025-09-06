@@ -16,6 +16,7 @@ import {
     DropdownMenuSeparator,
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { useIsPublisher } from "@/hooks/use-publisher";
 import { Post } from "@prisma/client";
 import { Table } from "@tanstack/react-table";
 import { Archive, Loader2, MoreHorizontal, Trash, Trash2 } from "lucide-react";
@@ -34,6 +35,8 @@ export const TableBulkAction = <TData,>({ table }: Props) => {
 
     const ids = selectedRows.map((r) => r.original.id);
 
+    const isPublisher = useIsPublisher();
+
     const onConfirm = () => {
         startTransition(async () => {
             const res = await deletePostsBulk(ids);
@@ -48,6 +51,8 @@ export const TableBulkAction = <TData,>({ table }: Props) => {
     };
 
     const onArchive = () => {
+        if (!isPublisher) return;
+
         startTransition(async () => {
             const res = await archivePostsBulk(ids);
             if (!res.ok) {
@@ -58,6 +63,10 @@ export const TableBulkAction = <TData,>({ table }: Props) => {
             table.resetRowSelection();
         });
     };
+
+    if (!isPublisher) {
+        return null;
+    }
 
     return (
         <>

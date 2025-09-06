@@ -27,6 +27,7 @@ import {
     SelectTrigger,
 } from "@/components/ui/select";
 import { DEFAULT_TITLE } from "@/constants";
+import { useIsPublisher } from "@/hooks/use-publisher";
 import { useUploadThing } from "@/hooks/use-upload-file";
 import { slugify } from "@/lib/slugify";
 import { getPostStatusLabel } from "@/lib/utils";
@@ -51,12 +52,14 @@ type TFormValues = z.infer<typeof formSchema>;
 
 export const EditPost = ({ open, onOpenChange, post }: Props) => {
     const { title, thumbnail, status, slug } = post;
+    const isPublisher = useIsPublisher();
+
     const form = useForm<TFormValues>({
         resolver: zodResolver(formSchema),
         defaultValues: {
             title,
             thumbnail: thumbnail ?? "",
-            status,
+            status: isPublisher ? status : PostStatus.DRAFT,
             slug,
         },
     });
@@ -80,7 +83,12 @@ export const EditPost = ({ open, onOpenChange, post }: Props) => {
         });
     };
 
-    const postStatus = Object.values(PostStatus);
+    const postStatus = Object.values(PostStatus).filter((status) => {
+        if (!isPublisher) {
+            return status === PostStatus.DRAFT;
+        }
+        return true;
+    });
     const getPostLabel = (value?: string) => {
         const status = postStatus.find((status) => value === status);
         if (status) {
@@ -147,7 +155,11 @@ export const EditPost = ({ open, onOpenChange, post }: Props) => {
                                         <Select
                                             onValueChange={field.onChange}
                                             value={field.value}
-                                            defaultValue={post.status}
+                                            defaultValue={
+                                                isPublisher
+                                                    ? post.status
+                                                    : PostStatus.DRAFT
+                                            }
                                         >
                                             <FormControl>
                                                 <SelectTrigger className="min-w-[140px] capitalize">

@@ -9,6 +9,7 @@ import {
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
+import { useIsPublisher } from "@/hooks/use-publisher";
 import { Post } from "@prisma/client";
 import { useState } from "react";
 import { ArchiveButton } from "./archive-post";
@@ -26,6 +27,8 @@ export const RowActions = ({ post }: Props) => {
     const onClose = () => {
         setType(null);
     };
+
+    const isPublisher = useIsPublisher();
 
     return (
         <>
@@ -50,19 +53,23 @@ export const RowActions = ({ post }: Props) => {
                     <DropdownMenuItem onClick={() => setType("edit")}>
                         <Pencil /> Chỉnh sửa
                     </DropdownMenuItem>
-                    <DropdownMenuItem>
-                        <ArchiveButton
-                            id={post.id}
-                            onClose={() => setOpen(false)}
-                        />
-                    </DropdownMenuItem>
-                    <DropdownMenuSeparator />
-                    <DropdownMenuItem
-                        variant="destructive"
-                        onClick={() => setType("delete")}
-                    >
-                        <Trash /> Xoá
-                    </DropdownMenuItem>
+                    {isPublisher && (
+                        <>
+                            <DropdownMenuItem>
+                                <ArchiveButton
+                                    id={post.id}
+                                    onClose={() => setOpen(false)}
+                                />
+                            </DropdownMenuItem>
+                            <DropdownMenuSeparator />
+                            <DropdownMenuItem
+                                variant="destructive"
+                                onClick={() => setType("delete")}
+                            >
+                                <Trash /> Xoá
+                            </DropdownMenuItem>
+                        </>
+                    )}
                 </DropdownMenuContent>
             </DropdownMenu>
         </>
