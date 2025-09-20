@@ -4,7 +4,6 @@ import { Plate, usePlateEditor } from "platejs/react";
 
 import { EditorKit } from "@/components/editor/editor-kit";
 import { Editor, EditorContainer } from "@/components/ui/editor";
-import { useBeforeUnload } from "@/hooks/use-unsaved-warning";
 import { cn } from "@/lib/utils";
 import { Value } from "platejs";
 
@@ -27,7 +26,7 @@ export function PlateEditor({
         readOnly,
     });
 
-    useBeforeUnload(!readOnly);
+    // useBeforeUnload(!readOnly);
 
     return (
         <Plate editor={editor}>
