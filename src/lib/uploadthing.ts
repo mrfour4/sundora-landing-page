@@ -9,8 +9,15 @@ import { utapi } from "./server-upload";
 const f = createUploadthing();
 
 export const ourFileRouter = {
-    editorUploader: f(["image", "text", "blob", "pdf", "video", "audio"])
-        .middleware(() => {
+    editorUploader: f({
+        image: { maxFileSize: "16MB", maxFileCount: 1 },
+        text: { maxFileSize: "16MB" },
+        blob: { maxFileSize: "16MB" },
+        pdf: { maxFileSize: "16MB" },
+        video: { maxFileSize: "16MB" },
+        audio: { maxFileSize: "16MB" },
+    })
+        .middleware(({ files }) => {
             return {};
         })
         .onUploadComplete(({ file }) => {
@@ -24,7 +31,7 @@ export const ourFileRouter = {
         }),
     imageUploader: f({
         image: {
-            maxFileSize: "8MB",
+            maxFileSize: "16MB",
             maxFileCount: 1,
         },
     })
